@@ -113,15 +113,18 @@ SANFREIGHT CUSTOM BRANDING STYLES
 #panel-navigation .inner ul li:hover  .sanfreight-logo-container .logo-dark  { opacity: 0; }
 
 /* ── Footer / contact logos ─────────────────────────── */
-.mimco-logo img.sanfreight-logo-img-footer,
-.app-logo img.sanfreight-logo-img-footer,
-.partial-Sanfreight img.sanfreight-logo-img-footer {
-    display: block;
-    width: 260px;
-    height: 65px;
-    object-fit: fill;
-    object-view-box: inset(26% 27% 26% 28%);
-    object-position: left center;
+/* Hide the img, show logo via background on the parent .mimco-logo instead */
+.mimco-logo img.sanfreight-logo-img-footer {
+    display: none;
+}
+.mimco-logo {
+    width: 500px !important;
+    height: 125px !important;
+    background-image: url('/images/sanfreight-logo-white-new.webp');
+    /* artwork is centered with ~33% padding: crop it by scaling bg to 3.1x and offsetting */
+    background-size: 1553px 388px;
+    background-position: -531px -127px;
+    background-repeat: no-repeat;
 }
 
 /* ── Screen loader logos ────────────────────────────── */
