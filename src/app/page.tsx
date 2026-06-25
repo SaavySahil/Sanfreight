@@ -19,6 +19,7 @@ function getPageData(): PageData {
       "src",
       "content",
       "pages",
+      "en",
       "page.json"
     );
     if (!fs.existsSync(filePath)) {

@@ -23,3 +23,82 @@ body {
   background-color: #fff;
   z-index: 999;
 }
+
+
+/*
+================================================================
+SANFREIGHT CUSTOM BRANDING STYLES
+================================================================
+*/
+.sanfreight-logo-container {
+    display: inline-flex;
+    align-items: center;
+    height: 38px;
+    vertical-align: middle;
+}
+.sanfreight-logo-container img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Header theme-based logo visibility toggle */
+#header .sanfreight-logo-container .logo-light {
+    display: block;
+}
+#header .sanfreight-logo-container .logo-dark {
+    display: none;
+}
+
+/* Dark theme / Scrolled / Panel-open states display the dark/colored logo */
+#header[data-theme="dark-blue"] .sanfreight-logo-container .logo-light,
+#header[data-theme="dark"] .sanfreight-logo-container .logo-light,
+#header.scrolling .sanfreight-logo-container .logo-light,
+#header.open .sanfreight-logo-container .logo-light,
+#header.panel-opened .sanfreight-logo-container .logo-light {
+    display: none !important;
+}
+#header[data-theme="dark-blue"] .sanfreight-logo-container .logo-dark,
+#header[data-theme="dark"] .sanfreight-logo-container .logo-dark,
+#header.scrolling .sanfreight-logo-container .logo-dark,
+#header.open .sanfreight-logo-container .logo-dark,
+#header.panel-opened .sanfreight-logo-container .logo-dark {
+    display: block !important;
+}
+
+/* Side panel and footer contact logos */
+.mimco-logo img.sanfreight-logo-img-footer,
+.app-logo img.sanfreight-logo-img-footer {
+    max-height: 48px;
+    width: auto;
+    max-width: 180px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Interloader screen logo */
+.logo-wrapper img.sanfreight-logo-img-loader {
+    max-height: 48px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Intro loader favicon */
+.intro-loader .logo-wrapper img.sanfreight-logo-img-loader-m {
+    max-height: 40px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Intro loader brand text logo */
+.logo-wrapper img.sanfreight-logo-img-loader-text {
+    max-height: 36px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
