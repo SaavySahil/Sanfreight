@@ -30,35 +30,43 @@ body {
 SANFREIGHT CUSTOM BRANDING STYLES
 ================================================================
 */
+
+/* ── Header logo container ─────────────────────────── */
 .sanfreight-logo-container {
     display: inline-flex;
     align-items: center;
     vertical-align: middle;
-}
-.sanfreight-logo-container.xs-version {
-    height: 18px;
-}
-.sanfreight-logo-container.md-version {
-    height: 28px;
-}
-.sanfreight-logo-container img {
-    height: 100%;
-    width: auto;
-    object-fit: contain;
+    overflow: hidden;
 }
 
-/* Header theme-based logo visibility toggle */
-#header .sanfreight-logo-container .logo-light {
+/* XS = inside the panel-opener button (header) */
+.sanfreight-logo-container.xs-version {
+    width: 160px;
+    height: 36px;
+}
+
+/* MD = inside the side navigation panel */
+.sanfreight-logo-container.md-version {
+    width: 240px;
+    height: 54px;
+}
+
+.sanfreight-logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: left center;
+}
+
+/* Default: show white logo (on transparent/dark header bg) */
+.sanfreight-logo-container .logo-light {
     display: block;
 }
-#header .sanfreight-logo-container .logo-dark {
+.sanfreight-logo-container .logo-dark {
     display: none;
 }
 
-/* Toggle logo based on theme background/contrast:
-   - Default header background is dark, so show logo-light.
-   - For light background themes (dark, dark-blue, dark-transparent), scrolled state, and panel open states, show logo-dark.
-*/
+/* Scrolled / panel-open / dark-bg states → show the dark (colored) logo */
 #header[data-theme="dark-blue"] .sanfreight-logo-container .logo-light,
 #header[data-theme="dark"] .sanfreight-logo-container .logo-light,
 #header[data-theme="dark-transparent"] .sanfreight-logo-container .logo-light,
@@ -76,55 +84,72 @@ SANFREIGHT CUSTOM BRANDING STYLES
     display: block !important;
 }
 
-/* Side navigation panel logo visibility & contrast toggle */
-#panel-navigation .sanfreight-logo-container .logo-light {
-    display: block;
-}
-#panel-navigation .sanfreight-logo-container .logo-dark {
-    display: none;
-}
+/* Side navigation panel: white logo default, dark on hover/active */
+#panel-navigation .sanfreight-logo-container .logo-light { display: block; }
+#panel-navigation .sanfreight-logo-container .logo-dark  { display: none; }
 #panel-navigation .inner ul li.active .sanfreight-logo-container .logo-light,
-#panel-navigation .inner ul li:hover .sanfreight-logo-container .logo-light {
-    display: none !important;
-}
+#panel-navigation .inner ul li:hover  .sanfreight-logo-container .logo-light { display: none  !important; }
 #panel-navigation .inner ul li.active .sanfreight-logo-container .logo-dark,
-#panel-navigation .inner ul li:hover .sanfreight-logo-container .logo-dark {
-    display: block !important;
-}
+#panel-navigation .inner ul li:hover  .sanfreight-logo-container .logo-dark  { display: block !important; }
 
-/* Side panel and footer contact logos */
+/* ── Footer / contact logos ─────────────────────────── */
 .mimco-logo img.sanfreight-logo-img-footer,
-.app-logo img.sanfreight-logo-img-footer {
-    max-height: 48px;
-    width: auto;
-    max-width: 180px;
-    object-fit: contain;
+.app-logo img.sanfreight-logo-img-footer,
+.partial-Sanfreight img.sanfreight-logo-img-footer {
     display: block;
+    width: 260px;
+    height: auto;
+    max-height: 80px;
+    object-fit: contain;
+    object-position: left center;
 }
 
-/* Interloader screen logo */
+/* ── Screen loader logos ────────────────────────────── */
 .logo-wrapper img.sanfreight-logo-img-loader {
-    max-height: 48px;
-    width: auto;
-    object-fit: contain;
     display: block;
+    width: 220px;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
     margin: 0 auto;
 }
 
-/* Intro loader favicon */
 .intro-loader .logo-wrapper img.sanfreight-logo-img-loader-m {
-    max-height: 40px;
-    width: auto;
-    object-fit: contain;
     display: block;
+    width: 100px;
+    height: auto;
+    object-fit: contain;
     margin: 0 auto;
 }
 
-/* Intro loader brand text logo */
 .logo-wrapper img.sanfreight-logo-img-loader-text {
-    max-height: 36px;
-    width: auto;
-    object-fit: contain;
     display: block;
+    width: 200px;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
     margin: 0 auto;
 }
+
+/* ── Hero "SANFREIGHT" big text ─────────────────────── */
+/* Matches the original MIMCO .imco styling exactly */
+.sanfreight-hero-text {
+    display: inline-block;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: clamp(80px, 14vw, 200px);
+    line-height: 1;
+    letter-spacing: -0.01em;
+    font-family: Aeonik, sans-serif;
+    white-space: nowrap;
+}
+
+.module-homepage-intro .app-logo img.sanfreight-hero-logo {
+    display: block !important;
+    width: 360px;
+    height: auto;
+    object-fit: contain;
+    object-position: left center;
+}
+
