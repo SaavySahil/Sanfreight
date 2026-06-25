@@ -36,61 +36,72 @@ SANFREIGHT CUSTOM BRANDING STYLES
     display: inline-flex;
     align-items: center;
     vertical-align: middle;
-    overflow: hidden;
+    position: relative;   /* so children can be absolutely stacked */
+    flex-shrink: 0;
 }
 
 /* XS = inside the panel-opener button (header) */
 .sanfreight-logo-container.xs-version {
-    width: 160px;
-    height: 36px;
+    width: 200px;
+    height: 45px;
 }
 
 /* MD = inside the side navigation panel */
 .sanfreight-logo-container.md-version {
-    width: 240px;
-    height: 54px;
+    width: 260px;
+    height: 58px;
 }
 
+/* Both logo images fill the container exactly and stack on top of each other */
 .sanfreight-logo-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: contain;
     object-position: left center;
+    transition: opacity 0.25s ease;
 }
 
-/* Default: show white logo (on transparent/dark header bg) */
-.sanfreight-logo-container .logo-light {
-    display: block;
-}
+/* ── HEADER: ALWAYS white logo, dark logo NEVER shown ── */
+/* Hide dark logo everywhere in the header — no scroll-toggle */
 .sanfreight-logo-container .logo-dark {
-    display: none;
+    opacity: 0;
+    pointer-events: none;
 }
-
-/* Scrolled / panel-open / dark-bg states → show the dark (colored) logo */
-#header[data-theme="dark-blue"] .sanfreight-logo-container .logo-light,
-#header[data-theme="dark"] .sanfreight-logo-container .logo-light,
-#header[data-theme="dark-transparent"] .sanfreight-logo-container .logo-light,
+/* White logo is always visible */
+.sanfreight-logo-container .logo-light {
+    opacity: 1;
+    pointer-events: auto;
+}
+/* Override: prevent ANY header state from hiding the white logo */
+#header .sanfreight-logo-container .logo-light,
+#header[data-theme] .sanfreight-logo-container .logo-light,
 #header.scrolling .sanfreight-logo-container .logo-light,
 #header.open .sanfreight-logo-container .logo-light,
 #header.panel-opened .sanfreight-logo-container .logo-light {
-    display: none !important;
+    opacity: 1 !important;
+    display: block !important;
+    pointer-events: auto !important;
 }
-#header[data-theme="dark-blue"] .sanfreight-logo-container .logo-dark,
-#header[data-theme="dark"] .sanfreight-logo-container .logo-dark,
-#header[data-theme="dark-transparent"] .sanfreight-logo-container .logo-dark,
+#header .sanfreight-logo-container .logo-dark,
+#header[data-theme] .sanfreight-logo-container .logo-dark,
 #header.scrolling .sanfreight-logo-container .logo-dark,
 #header.open .sanfreight-logo-container .logo-dark,
 #header.panel-opened .sanfreight-logo-container .logo-dark {
-    display: block !important;
+    opacity: 0 !important;
+    display: block !important;   /* keep in DOM for layout, just invisible */
+    pointer-events: none !important;
 }
 
-/* Side navigation panel: white logo default, dark on hover/active */
-#panel-navigation .sanfreight-logo-container .logo-light { display: block; }
-#panel-navigation .sanfreight-logo-container .logo-dark  { display: none; }
+/* ── Side navigation panel: also always white ─────── */
+#panel-navigation .sanfreight-logo-container .logo-light { opacity: 1; }
+#panel-navigation .sanfreight-logo-container .logo-dark  { opacity: 0; }
 #panel-navigation .inner ul li.active .sanfreight-logo-container .logo-light,
-#panel-navigation .inner ul li:hover  .sanfreight-logo-container .logo-light { display: none  !important; }
+#panel-navigation .inner ul li:hover  .sanfreight-logo-container .logo-light { opacity: 1; }
 #panel-navigation .inner ul li.active .sanfreight-logo-container .logo-dark,
-#panel-navigation .inner ul li:hover  .sanfreight-logo-container .logo-dark  { display: block !important; }
+#panel-navigation .inner ul li:hover  .sanfreight-logo-container .logo-dark  { opacity: 0; }
 
 /* ── Footer / contact logos ─────────────────────────── */
 .mimco-logo img.sanfreight-logo-img-footer,
