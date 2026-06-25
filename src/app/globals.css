@@ -40,10 +40,12 @@ SANFREIGHT CUSTOM BRANDING STYLES
     flex-shrink: 0;
 }
 
-/* XS = inside the panel-opener button (header) */
+/* XS = inside the panel-opener button (header).
+   Artwork occupies only the center ~32% of the image canvas (33% padding on all sides).
+   Use object-view-box to crop to just the artwork area. */
 .sanfreight-logo-container.xs-version {
-    width: 200px;
-    height: 45px;
+    width: 140px;
+    height: 35px;
 }
 
 /* MD = inside the side navigation panel */
@@ -62,6 +64,13 @@ SANFREIGHT CUSTOM BRANDING STYLES
     object-fit: contain;
     object-position: left center;
     transition: opacity 0.25s ease;
+}
+
+/* Crop into the actual artwork area (artwork is centered in the canvas with ~33% padding all sides).
+   Pixel coords: x 684-1328, y 164-335 out of 2000x500. */
+.sanfreight-logo-container.xs-version img {
+    object-fit: fill;
+    object-view-box: inset(26% 27% 26% 28%);
 }
 
 /* ── HEADER: ALWAYS white logo, dark logo NEVER shown ── */
@@ -109,9 +118,9 @@ SANFREIGHT CUSTOM BRANDING STYLES
 .partial-Sanfreight img.sanfreight-logo-img-footer {
     display: block;
     width: 260px;
-    height: auto;
-    max-height: 80px;
-    object-fit: contain;
+    height: 65px;
+    object-fit: fill;
+    object-view-box: inset(26% 27% 26% 28%);
     object-position: left center;
 }
 
