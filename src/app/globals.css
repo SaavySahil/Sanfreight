@@ -33,8 +33,13 @@ SANFREIGHT CUSTOM BRANDING STYLES
 .sanfreight-logo-container {
     display: inline-flex;
     align-items: center;
-    height: 38px;
     vertical-align: middle;
+}
+.sanfreight-logo-container.xs-version {
+    height: 18px;
+}
+.sanfreight-logo-container.md-version {
+    height: 28px;
 }
 .sanfreight-logo-container img {
     height: 100%;
@@ -50,9 +55,13 @@ SANFREIGHT CUSTOM BRANDING STYLES
     display: none;
 }
 
-/* Dark theme / Scrolled / Panel-open states display the dark/colored logo */
+/* Toggle logo based on theme background/contrast:
+   - Default header background is dark, so show logo-light.
+   - For light background themes (dark, dark-blue, dark-transparent), scrolled state, and panel open states, show logo-dark.
+*/
 #header[data-theme="dark-blue"] .sanfreight-logo-container .logo-light,
 #header[data-theme="dark"] .sanfreight-logo-container .logo-light,
+#header[data-theme="dark-transparent"] .sanfreight-logo-container .logo-light,
 #header.scrolling .sanfreight-logo-container .logo-light,
 #header.open .sanfreight-logo-container .logo-light,
 #header.panel-opened .sanfreight-logo-container .logo-light {
@@ -60,9 +69,26 @@ SANFREIGHT CUSTOM BRANDING STYLES
 }
 #header[data-theme="dark-blue"] .sanfreight-logo-container .logo-dark,
 #header[data-theme="dark"] .sanfreight-logo-container .logo-dark,
+#header[data-theme="dark-transparent"] .sanfreight-logo-container .logo-dark,
 #header.scrolling .sanfreight-logo-container .logo-dark,
 #header.open .sanfreight-logo-container .logo-dark,
 #header.panel-opened .sanfreight-logo-container .logo-dark {
+    display: block !important;
+}
+
+/* Side navigation panel logo visibility & contrast toggle */
+#panel-navigation .sanfreight-logo-container .logo-light {
+    display: block;
+}
+#panel-navigation .sanfreight-logo-container .logo-dark {
+    display: none;
+}
+#panel-navigation .inner ul li.active .sanfreight-logo-container .logo-light,
+#panel-navigation .inner ul li:hover .sanfreight-logo-container .logo-light {
+    display: none !important;
+}
+#panel-navigation .inner ul li.active .sanfreight-logo-container .logo-dark,
+#panel-navigation .inner ul li:hover .sanfreight-logo-container .logo-dark {
     display: block !important;
 }
 
