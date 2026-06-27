@@ -31,6 +31,18 @@ SANFREIGHT CUSTOM BRANDING STYLES
 ================================================================
 */
 
+/* ── Interactive image section: center title vertically after logo removal ── */
+.module-homepage-interactive-image .foreground .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.module-homepage-interactive-image .foreground .wrapper .logo-wrapper {
+    display: none !important;
+}
+
 /* ── Header logo ─────────────────────────── */
 /* Remove dark panel background left over from panel-opener button */
 #header .inner .left {
