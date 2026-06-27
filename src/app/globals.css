@@ -31,36 +31,51 @@ SANFREIGHT CUSTOM BRANDING STYLES
 ================================================================
 */
 
-/* ── Header logo container ─────────────────────────── */
-/* Remove dark panel background — hamburger button replaced with plain logo div */
+/* ── Header logo ─────────────────────────── */
+/* Remove dark panel background left over from panel-opener button */
 #header .inner .left {
     background: none !important;
     padding: 0 !important;
 }
 
-.sanfreight-logo-container {
-    display: inline-flex;
-    align-items: center;
-    vertical-align: middle;
-    flex-shrink: 0;
+/* Give the logo div the same padding the old panel-opener button had */
+#header .inner .left .sanfreight-logo-container.xs-version {
+    padding: 15px 19px;
+    width: auto;
+    height: auto;
 }
 
+/* Logo container — plain div replacing the old panel-opener button */
+.sanfreight-logo-container {
+    display: block;
+    flex-shrink: 0;
+    line-height: 0;
+}
+
+/* xs = header logo size */
 .sanfreight-logo-container.xs-version {
     width: 140px;
     height: 35px;
 }
 
-/* MD = inside the side navigation panel */
+/* xs logo image — fill container, crop artwork (image has ~33% padding on all sides) */
+.sanfreight-logo-container.xs-version img {
+    display: block;
+    width: 140px;
+    height: 35px;
+    object-fit: fill;
+    object-view-box: inset(26% 27% 26% 28%);
+}
+
+/* MD = side panel size (kept for any remaining uses) */
 .sanfreight-logo-container.md-version {
     width: 260px;
     height: 58px;
 }
-
-/* Single dark logo — displayed as a block, cropped to artwork area */
-.sanfreight-logo-container img {
+.sanfreight-logo-container.md-version img {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 260px;
+    height: 58px;
     object-fit: fill;
     object-view-box: inset(26% 27% 26% 28%);
 }
