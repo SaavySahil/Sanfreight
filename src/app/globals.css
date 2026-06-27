@@ -38,13 +38,6 @@ SANFREIGHT CUSTOM BRANDING STYLES
     padding: 0 !important;
 }
 
-/* Give the logo div the same padding the old panel-opener button had */
-#header .inner .left .sanfreight-logo-container.xs-version {
-    padding: 15px 19px;
-    width: auto;
-    height: auto;
-}
-
 /* Logo container — plain div replacing the old panel-opener button */
 .sanfreight-logo-container {
     display: block;
