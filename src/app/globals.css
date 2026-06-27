@@ -32,17 +32,19 @@ SANFREIGHT CUSTOM BRANDING STYLES
 */
 
 /* ── Header logo container ─────────────────────────── */
+/* Remove dark panel background — hamburger button replaced with plain logo div */
+#header .inner .left {
+    background: none !important;
+    padding: 0 !important;
+}
+
 .sanfreight-logo-container {
     display: inline-flex;
     align-items: center;
     vertical-align: middle;
-    position: relative;   /* so children can be absolutely stacked */
     flex-shrink: 0;
 }
 
-/* XS = inside the panel-opener button (header).
-   Artwork occupies only the center ~32% of the image canvas (33% padding on all sides).
-   Use object-view-box to crop to just the artwork area. */
 .sanfreight-logo-container.xs-version {
     width: 140px;
     height: 35px;
@@ -54,63 +56,14 @@ SANFREIGHT CUSTOM BRANDING STYLES
     height: 58px;
 }
 
-/* Both logo images fill the container exactly and stack on top of each other */
+/* Single dark logo — displayed as a block, cropped to artwork area */
 .sanfreight-logo-container img {
-    position: absolute;
-    top: 0;
-    left: 0;
+    display: block;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    object-position: left center;
-    transition: opacity 0.25s ease;
-}
-
-/* Crop into the actual artwork area (artwork is centered in the canvas with ~33% padding all sides).
-   Pixel coords: x 684-1328, y 164-335 out of 2000x500. */
-.sanfreight-logo-container.xs-version img {
     object-fit: fill;
     object-view-box: inset(26% 27% 26% 28%);
 }
-
-/* ── HEADER: ALWAYS white logo, dark logo NEVER shown ── */
-/* Hide dark logo everywhere in the header — no scroll-toggle */
-.sanfreight-logo-container .logo-dark {
-    opacity: 0;
-    pointer-events: none;
-}
-/* White logo is always visible */
-.sanfreight-logo-container .logo-light {
-    opacity: 1;
-    pointer-events: auto;
-}
-/* Override: prevent ANY header state from hiding the white logo */
-#header .sanfreight-logo-container .logo-light,
-#header[data-theme] .sanfreight-logo-container .logo-light,
-#header.scrolling .sanfreight-logo-container .logo-light,
-#header.open .sanfreight-logo-container .logo-light,
-#header.panel-opened .sanfreight-logo-container .logo-light {
-    opacity: 1 !important;
-    display: block !important;
-    pointer-events: auto !important;
-}
-#header .sanfreight-logo-container .logo-dark,
-#header[data-theme] .sanfreight-logo-container .logo-dark,
-#header.scrolling .sanfreight-logo-container .logo-dark,
-#header.open .sanfreight-logo-container .logo-dark,
-#header.panel-opened .sanfreight-logo-container .logo-dark {
-    opacity: 0 !important;
-    display: block !important;   /* keep in DOM for layout, just invisible */
-    pointer-events: none !important;
-}
-
-/* ── Side navigation panel: also always white ─────── */
-#panel-navigation .sanfreight-logo-container .logo-light { opacity: 1; }
-#panel-navigation .sanfreight-logo-container .logo-dark  { opacity: 0; }
-#panel-navigation .inner ul li.active .sanfreight-logo-container .logo-light,
-#panel-navigation .inner ul li:hover  .sanfreight-logo-container .logo-light { opacity: 1; }
-#panel-navigation .inner ul li.active .sanfreight-logo-container .logo-dark,
-#panel-navigation .inner ul li:hover  .sanfreight-logo-container .logo-dark  { opacity: 0; }
 
 /* ── Footer / contact logos ─────────────────────────── */
 /* Hide the img, show logo via background on the parent .mimco-logo instead */
