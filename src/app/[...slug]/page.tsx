@@ -4,7 +4,6 @@ import { notFound } from "next/navigation";
 import Script from "next/script";
 import PageTransition from "@/components/PageTransition";
 import teamMembers from "../teamMembers.json";
-import { LogoMarquee } from "@/components/ui/logo-marquee";
 
 interface PageData {
   title: string;
@@ -53,22 +52,6 @@ export default async function DynamicPage({ params }: PageProps) {
   const slug = resolvedParams.slug;
   const data = getPageData(slug);
 
-  const isHomepage = slug.join("/") === "en";
-  const heroSplitIdx = (() => {
-    if (!isHomepage) return 0;
-    const html = data.bodyHtml;
-    const heroStart = html.indexOf("module-homepage-intro");
-    if (heroStart === -1) return 0;
-    const moduleStart = html.lastIndexOf("<div", heroStart);
-    let depth = 0, p = moduleStart;
-    while (p < html.length) {
-      if (html.substring(p, p + 4) === "<div") depth++;
-      if (html.substring(p, p + 6) === "</div>") { depth--; if (depth === 0) return p + 6; }
-      p++;
-    }
-    return 0;
-  })();
-
   return (
     <>
       {/* Dynamic transition controller for body classes and screen loader */}
@@ -83,24 +66,10 @@ window.ADMIN_AJAX_URL = "https://www.mimcocapital.com/wp-admin/admin-ajax.php";`
       />
 
       {/* Render the scraped page body content */}
-      {isHomepage ? (
-        <>
-          <div
-            suppressHydrationWarning={true}
-            dangerouslySetInnerHTML={{ __html: data.bodyHtml.substring(0, heroSplitIdx) }}
-          />
-          <LogoMarquee />
-          <div
-            suppressHydrationWarning={true}
-            dangerouslySetInnerHTML={{ __html: data.bodyHtml.substring(heroSplitIdx) }}
-          />
-        </>
-      ) : (
-        <div
-          suppressHydrationWarning={true}
-          dangerouslySetInnerHTML={{ __html: data.bodyHtml }}
-        />
-      )}
+      <div
+        suppressHydrationWarning={true}
+        dangerouslySetInnerHTML={{ __html: data.bodyHtml }}
+      />
 
       {/* Load core scripts */}
       <Script src="/js/email-decode.min.js" strategy="beforeInteractive" />
