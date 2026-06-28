@@ -21,8 +21,6 @@ export function LogoMarquee() {
       padding: "40px 0",
       borderTop: "1px solid rgba(0,0,0,0.06)",
       borderBottom: "1px solid rgba(0,0,0,0.06)",
-      position: "relative",
-      zIndex: 10,
     }}>
       <p style={{
         textAlign: "center",
