@@ -149,24 +149,3 @@ SANFREIGHT CUSTOM BRANDING STYLES
     object-position: left center;
 }
 
-
-/* ── Team slideshow: static 3 cards centered, no carousel ── */
-.module-team-slideshow .team-slideshow-container {
-    overflow: visible !important;
-}
-.module-team-slideshow .infinite-slideshow {
-    display: flex !important;
-    justify-content: center !important;
-    gap: 32px !important;
-    animation: none !important;
-    transform: none !important;
-    width: auto !important;
-    flex-wrap: nowrap !important;
-}
-.module-team-slideshow .infinite-slideshow .slide:nth-child(n+4) {
-    display: none !important;
-}
-.module-team-slideshow .slide {
-    flex: 0 0 auto !important;
-    width: 280px !important;
-}
