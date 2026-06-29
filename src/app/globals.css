@@ -149,3 +149,16 @@ SANFREIGHT CUSTOM BRANDING STYLES
     object-position: left center;
 }
 
+
+/* ── Team section: stack cards vertically on mobile ── */
+@media (max-width: 959px) {
+  .module-team-slideshow .infinite-slideshow:first-of-type {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 32px !important;
+  }
+  .module-team-slideshow .infinite-slideshow:first-of-type > .slide {
+    width: 85vw !important;
+    max-width: 340px !important;
+  }
+}
