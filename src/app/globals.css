@@ -175,3 +175,44 @@ SANFREIGHT CUSTOM BRANDING STYLES
     overflow-y: auto !important;
   }
 }
+
+/* ── Intelligent logo crossfade system ── */
+/*
+  Strategy: both logos are absolutely stacked. The existing Header JS already
+  sets data-theme on #header as sections scroll past (light-transparent / dark / light).
+  We simply drive opacity from that attribute — zero JS, zero scroll listeners,
+  perfectly in sync with the site's own theme system. GPU-composited via will-change.
+*/
+.sf-logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 146px;
+  height: 40px;
+  object-fit: contain;
+  will-change: opacity;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+
+/* Dark logo: visible on light/dark-bg sections */
+.sf-logo--dark  { opacity: 1; }
+/* White logo: hidden by default */
+.sf-logo--white { opacity: 0; }
+
+/* Hero + image sections: light-transparent = white logo on top */
+#header[data-theme="light-transparent"] .sf-logo--dark  { opacity: 0; }
+#header[data-theme="light-transparent"] .sf-logo--white { opacity: 1; }
+
+/* Menu open state: always white */
+#header[data-theme="menu"] .sf-logo--dark  { opacity: 0; }
+#header[data-theme="menu"] .sf-logo--white { opacity: 1; }
+
+/* Explicit light sections: dark logo */
+#header[data-theme="light"] .sf-logo--dark  { opacity: 1; }
+#header[data-theme="light"] .sf-logo--white { opacity: 0; }
+
+/* Dark sections (content on light bg): dark logo */
+#header[data-theme="dark"] .sf-logo--dark  { opacity: 1; }
+#header[data-theme="dark"] .sf-logo--white { opacity: 0; }
