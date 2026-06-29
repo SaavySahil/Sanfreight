@@ -162,3 +162,16 @@ SANFREIGHT CUSTOM BRANDING STYLES
     max-width: 340px !important;
   }
 }
+
+/* ── Contact popin: allow 5th address card to be visible ── */
+.module-contact-popin .content .contacts {
+  overflow-y: auto !important;
+}
+.module-contact-popin .content .contacts .partial-localisations .inner {
+  overflow-y: visible !important;
+}
+@media (min-width: 960px) {
+  .module-contact-popin .content .contacts {
+    overflow-y: auto !important;
+  }
+}
