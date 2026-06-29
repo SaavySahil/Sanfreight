@@ -201,18 +201,25 @@ SANFREIGHT CUSTOM BRANDING STYLES
 /* White logo: hidden by default */
 .sf-logo--white { opacity: 0; }
 
-/* Hero + image sections: light-transparent = white logo on top */
-#header[data-theme="light-transparent"] .sf-logo--dark  { opacity: 0; }
+/*
+  Theme mapping (from Header JS source):
+  "dark" / "dark-blue" → header gets active-bg = section has LIGHT background → dark logo
+  "light" / "light-transparent" → header stays transparent = section has DARK background → white logo
+  Default (no data-theme yet) = page load starts on hero = dark bg → white logo
+*/
+
+/* Default: white logo (page loads on dark hero) */
+.sf-logo--dark  { opacity: 0; }
+.sf-logo--white { opacity: 1; }
+
+/* Light-background sections: show dark logo */
+#header[data-theme="dark"] .sf-logo--dark,
+#header[data-theme="dark-blue"] .sf-logo--dark { opacity: 1; }
+#header[data-theme="dark"] .sf-logo--white,
+#header[data-theme="dark-blue"] .sf-logo--white { opacity: 0; }
+
+/* Dark-background sections: show white logo */
+#header[data-theme="light"] .sf-logo--dark,
+#header[data-theme="light-transparent"] .sf-logo--dark { opacity: 0; }
+#header[data-theme="light"] .sf-logo--white,
 #header[data-theme="light-transparent"] .sf-logo--white { opacity: 1; }
-
-/* Menu open state: always white */
-#header[data-theme="menu"] .sf-logo--dark  { opacity: 0; }
-#header[data-theme="menu"] .sf-logo--white { opacity: 1; }
-
-/* Explicit light sections: dark logo */
-#header[data-theme="light"] .sf-logo--dark  { opacity: 1; }
-#header[data-theme="light"] .sf-logo--white { opacity: 0; }
-
-/* Dark sections (content on light bg): dark logo */
-#header[data-theme="dark"] .sf-logo--dark  { opacity: 1; }
-#header[data-theme="dark"] .sf-logo--white { opacity: 0; }
