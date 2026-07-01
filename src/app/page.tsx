@@ -3,6 +3,7 @@ import path from "path";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import PageTransition from "@/components/PageTransition";
+// Script is still used below for the app bundle
 import teamMembers from "./teamMembers.json";
 
 interface PageData {
@@ -45,16 +46,8 @@ export default function Home() {
 
   return (
     <>
-      {/* Dynamic transition controller for body classes and screen loader */}
-      <PageTransition bodyClass={data.bodyClass} />
-
-      {/* Set window.teamMembers global variable for the scripts */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `window.teamMembers = ${JSON.stringify(teamMembers)};
-window.ADMIN_AJAX_URL = "https://www.mimcocapital.com/wp-admin/admin-ajax.php";`
-        }}
-      />
+      {/* Dynamic transition controller, click intercept, and globals injection */}
+      <PageTransition bodyClass={data.bodyClass} teamMembers={teamMembers} />
 
       {/* Render the scraped page body content */}
       <div

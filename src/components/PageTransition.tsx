@@ -4,25 +4,43 @@ import { useEffect } from "react";
 
 interface PageTransitionProps {
   bodyClass: string;
+  teamMembers?: unknown;
 }
 
-export default function PageTransition({ bodyClass }: PageTransitionProps) {
+export default function PageTransition({ bodyClass, teamMembers }: PageTransitionProps) {
   useEffect(() => {
-    // 1. Apply the dynamic body class from scraped page
+    // Inject globals needed by the scraped app bundle
+    if (teamMembers) {
+      (window as any).teamMembers = teamMembers;
+    }
+    (window as any).ADMIN_AJAX_URL = "https://www.mimcocapital.com/wp-admin/admin-ajax.php";
+
+    // Prevent Next.js App Router from intercepting internal <a> clicks —
+    // the scraped app's own AJAX router must drive navigation exclusively.
+    const clickIntercept = (e: MouseEvent) => {
+      const a = (e.target as Element)?.closest?.("a[href]") as HTMLAnchorElement | null;
+      if (!a) return;
+      const href = a.getAttribute("href") || "";
+      if (!href || href[0] === "#" || href.includes("://") ||
+          href.startsWith("mailto:") || href.startsWith("tel:") ||
+          a.target === "_blank" || a.getAttribute("download") != null) return;
+      e.stopPropagation();
+    };
+    document.addEventListener("click", clickIntercept, true);
+
+    // Apply the dynamic body class from scraped page
     if (bodyClass) {
       document.body.className = bodyClass;
     }
 
-    // 2. Reveal the page by fading out the screen loader
+    // Reveal the page by fading out the screen loader
     const revealPage = () => {
       document.body.style.opacity = "1";
       const loader = document.getElementById("screen-loader");
       if (loader) {
         loader.style.transition = "opacity 0.5s ease-out";
         loader.style.opacity = "0";
-        setTimeout(() => {
-          loader.style.display = "none";
-        }, 500);
+        setTimeout(() => { loader.style.display = "none"; }, 500);
       }
     };
 
@@ -30,9 +48,14 @@ export default function PageTransition({ bodyClass }: PageTransitionProps) {
       revealPage();
     } else {
       window.addEventListener("load", revealPage);
-      return () => window.removeEventListener("load", revealPage);
+      return () => {
+        window.removeEventListener("load", revealPage);
+        document.removeEventListener("click", clickIntercept, true);
+      };
     }
-  }, [bodyClass]);
+
+    return () => { document.removeEventListener("click", clickIntercept, true); };
+  }, [bodyClass, teamMembers]);
 
   return null;
 }
