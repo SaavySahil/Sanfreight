@@ -54,26 +54,13 @@ export default async function DynamicPage({ params }: PageProps) {
 
   return (
     <>
-      {/* Dynamic transition controller for body classes and screen loader */}
-      <PageTransition bodyClass={data.bodyClass} />
-
-      {/* Set window.teamMembers global variable for the scripts */}
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `window.teamMembers = ${JSON.stringify(teamMembers)};
-window.ADMIN_AJAX_URL = "https://www.mimcocapital.com/wp-admin/admin-ajax.php";`
-        }}
-      />
-
-      {/* Render the scraped page body content */}
+      <PageTransition bodyClass={data.bodyClass} teamMembers={teamMembers} />
       <div
         suppressHydrationWarning={true}
         dangerouslySetInnerHTML={{ __html: data.bodyHtml }}
       />
-
-      {/* Load core scripts */}
-      <Script src="/js/email-decode.min.js" strategy="beforeInteractive" />
-      <Script src="/js/app-16e2282a.js" strategy="lazyOnload" type="module" />
+      <Script src="/js/email-decode.min.js" strategy="afterInteractive" />
+      <Script src="/js/app-16e2282a.js" strategy="afterInteractive" />
     </>
   );
 }
