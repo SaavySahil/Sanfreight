@@ -1,0 +1,445 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - link "Skip to main content" [ref=e3] [cursor=pointer]:
+      - /url: "#main"
+    - generic:
+      - generic:
+        - generic:
+          - generic:
+            - dialog "Use of cookies and similar technologies":
+              - generic [ref=e6]:
+                - generic [ref=e7]: Use of cookies and similar technologies
+                - generic [ref=e10]:
+                  - paragraph [ref=e11]:
+                    - generic [ref=e12]:
+                      - text: "We strive to steadily improve and evolve our content and offers, and adapt them to your interests and browsing habits. With your consent, we would like to store and retrieve information on your device and process your personal data (IP address, technical IDs) for the following purposes:"
+                      - generic [ref=e13]: Tracking your use of our websites (Analysis).
+                  - paragraph [ref=e14]:
+                    - generic [ref=e15]: To this end, your data will also be processed by third parties and outside the EEA.
+                  - paragraph [ref=e16]:
+                    - generic [ref=e17]: You can learn more about the purposes of data processing as well as enable and disable individual options in the privacy settings. Your consent is voluntary and may be withdrawn at any time with future effect.
+                - generic [ref=e19]:
+                  - generic [ref=e20]:
+                    - button "Accept all" [ref=e23] [cursor=pointer]:
+                      - img [ref=e25]
+                      - generic [ref=e27]: Accept all
+                    - button "Decline all" [ref=e30] [cursor=pointer]:
+                      - img [ref=e32]
+                      - generic [ref=e34]: Decline all
+                    - button "Settings" [ref=e37] [cursor=pointer]:
+                      - img [ref=e39]
+                      - generic [ref=e42]: Settings
+                  - generic [ref=e44]:
+                    - link "Privacy notice" [ref=e48] [cursor=pointer]:
+                      - /url: /data-protection-notice/?prevent-auto-open-privacy-settings
+                    - link "Corporate information" [ref=e52] [cursor=pointer]:
+                      - /url: /corporate-information/?prevent-auto-open-privacy-settings
+    - navigation "Quicklinks" [ref=e54]:
+      - link "Home Bosch Global" [ref=e55] [cursor=pointer]:
+        - /url: /
+        - img [ref=e56]
+      - generic [ref=e68]:
+        - generic [ref=e69]:
+          - generic [ref=e70]:
+            - button "Products and services" [ref=e71] [cursor=pointer]:
+              - generic [ref=e72]: Products and services
+            - button "Company" [ref=e73] [cursor=pointer]:
+              - generic [ref=e74]: Company
+            - button "Careers" [ref=e75] [cursor=pointer]:
+              - generic [ref=e76]: Careers
+          - link "Contact" [ref=e78] [cursor=pointer]:
+            - /url: /contact/
+            - generic [ref=e79]: 
+          - button "Ask or search anything..." [ref=e80] [cursor=pointer]:
+            - generic [ref=e81]: 
+          - button "Select a language" [ref=e82] [cursor=pointer]:
+            - generic [ref=e83]: 󰎅
+          - button "Open Main Navigation" [ref=e84] [cursor=pointer]
+        - text:         
+  - main [ref=e90]:
+    - generic [ref=e91]:
+      - heading "In the valley of the sun" [level=1] [ref=e96]:
+        - link "In the valley of the sun" [ref=e98] [cursor=pointer]:
+          - /url: /stories/bosch-climate-technology-phoenix/
+          - text: In the valley of the
+          - generic [ref=e99]:
+            - text: sun
+            - generic [ref=e100]: 
+      - generic [ref=e101]:
+        - link "In the valley of the sun" [ref=e103] [cursor=pointer]:
+          - /url: /stories/bosch-climate-technology-phoenix/
+          - figure [ref=e104]:
+            - img "Person standing in front of a large technical unit outdoors." [ref=e106]
+        - generic [ref=e107]:
+          - link "Tradition meets technology" [ref=e108] [cursor=pointer]:
+            - /url: /stories/india-growth-market-technology-software-mobility/
+            - figure [ref=e109]:
+              - img "Sandeep C D, a man with dark hair in a motorcycle outfit looking confidently at the camera." [ref=e111]
+            - heading "Tradition meets technology " [level=2] [ref=e113]:
+              - text: Tradition meets
+              - generic [ref=e114]:
+                - text: technology
+                - generic [ref=e115]: 
+          - generic [ref=e116]:
+            - link "About us" [ref=e118] [cursor=pointer]:
+              - /url: /company/
+              - text: About
+              - generic [ref=e119]:
+                - text: us
+                - generic [ref=e120]: 
+            - link "Our open positions opens external site" [ref=e122] [cursor=pointer]:
+              - /url: https://jobs.bosch.com/en/
+              - text: Our open
+              - generic [ref=e123]:
+                - text: positions
+                - generic [ref=e124]: 
+            - link "Get in touch" [ref=e126] [cursor=pointer]:
+              - /url: /contact/
+              - text: Get in
+              - generic [ref=e127]:
+                - text: touch
+                - generic [ref=e128]: 
+    - region "Our products for your home" [ref=e129]:
+      - generic [ref=e130]:
+        - generic [ref=e133]:
+          - heading "Our products for your home" [level=2] [ref=e134]
+          - link "Show all products" [ref=e136] [cursor=pointer]:
+            - /url: /products-and-services/at-home/
+            - text: Show all
+            - generic [ref=e137]:
+              - text: products
+              - generic [ref=e138]: 
+        - generic [ref=e139]:
+          - generic [ref=e140]:
+            - link "Learn more" [ref=e141] [cursor=pointer]:
+              - /url: /products-and-services/at-home/#home-appliances
+              - figure [ref=e142]:
+                - img "Bosch products for home appliances" [ref=e144]
+              - paragraph [ref=e146]: Home appliances
+            - link "Learn more" [ref=e147] [cursor=pointer]:
+              - /url: /products-and-services/at-home/#power-tools
+              - figure [ref=e148]:
+                - img "Power tools for private customers from Bosch" [ref=e150]
+              - paragraph [ref=e152]: Power tools
+            - link "Learn more" [ref=e153] [cursor=pointer]:
+              - /url: /products-and-services/at-home/#garden-tools
+              - figure [ref=e154]:
+                - img "Garden tools from Bosch" [ref=e156]
+              - paragraph [ref=e158]: Garden tools
+            - link "Learn more" [ref=e159] [cursor=pointer]:
+              - /url: /products-and-services/at-home/#measuring-tools
+              - figure [ref=e160]:
+                - img "Measuring tools from Bosch" [ref=e162]
+              - paragraph [ref=e164]: Measuring tools
+            - link "Learn more" [ref=e165] [cursor=pointer]:
+              - /url: /products-and-services/at-home/#cleaning-tools
+              - figure [ref=e166]:
+                - img "Cleaning tools from Bosch" [ref=e168]
+              - paragraph [ref=e170]: Cleaning tools
+            - link "Learn more" [ref=e171] [cursor=pointer]:
+              - /url: /products-and-services/at-home/#heating-cooling-and-well-being
+              - figure [ref=e172]:
+                - img "Bosch products for heating, cooling, and well-being" [ref=e174]
+              - paragraph [ref=e176]: Heating, cooling, and well-being
+            - link "Learn more" [ref=e177] [cursor=pointer]:
+              - /url: /products-and-services/at-home/#smart-home
+              - figure [ref=e178]:
+                - img "Bosch solutions for your smart home" [ref=e180]
+              - paragraph [ref=e182]: Smart Home
+          - navigation "Slider page-indicator-default" [ref=e185]:
+            - generic [ref=e189]:
+              - button "Previous" [ref=e190] [cursor=pointer]: 
+              - button "Next" [ref=e191] [cursor=pointer]: 
+    - region "Our solutions for business clients" [ref=e192]:
+      - generic [ref=e193]:
+        - heading "Our solutions for business clients" [level=2] [ref=e196]
+        - generic [ref=e197]:
+          - link "Explore our complete portfolio of mobility solutions" [ref=e200] [cursor=pointer]:
+            - /url: /products-and-services/mobility/
+            - generic [ref=e201]:
+              - heading "Mobility" [level=3] [ref=e202]
+              - generic [ref=e203]:
+                - text: Explore our complete portfolio of mobility
+                - generic [ref=e204]:
+                  - text: solutions
+                  - generic [ref=e205]: 
+          - link "Discover our products and services for industry and trades" [ref=e208] [cursor=pointer]:
+            - /url: /products-and-services/industry-and-trades/
+            - generic [ref=e209]:
+              - heading "Industry and trades" [level=3] [ref=e210]
+              - generic [ref=e211]:
+                - text: Discover our products and services for industry and
+                - generic [ref=e212]:
+                  - text: trades
+                  - generic [ref=e213]: 
+    - region "Explore our stories" [ref=e214]:
+      - generic [ref=e215]:
+        - generic [ref=e217]:
+          - heading "Explore our stories" [level=2] [ref=e218]
+          - link "Explore all stories" [ref=e220] [cursor=pointer]:
+            - /url: /stories/
+            - text: Explore all
+            - generic [ref=e221]:
+              - text: stories
+              - generic [ref=e222]: 
+        - list [ref=e226]:
+          - listitem [ref=e227]:
+            - link "For a better life with asthma" [ref=e228] [cursor=pointer]:
+              - /url: /stories/vivatmo-asthma-management/
+              - figure [ref=e229]:
+                - img "A mother and child in kitchen using breath device, smartphone in hand" [ref=e231]
+              - generic [ref=e232]:
+                - paragraph [ref=e233]: Story | Vivatmo asthma management
+                - heading "For a better life with asthma " [level=3] [ref=e234]:
+                  - generic [ref=e235]: For a better life with
+                  - generic [ref=e236]:
+                    - text: asthma
+                    - generic [ref=e237]: 
+          - listitem [ref=e238]:
+            - link "The third major revolution" [ref=e239] [cursor=pointer]:
+              - /url: /stories/ai-strategic-partnerships-bcw/
+              - figure [ref=e240]:
+                - img "Bosch CEO Dr. Stefan Hartung talks about robotics, with a robotic arm in a factory hall shown next to him in a graphic overlay." [ref=e242]
+              - generic [ref=e243]:
+                - paragraph [ref=e244]: Blog post | CEO blog
+                - heading "The third major revolution " [level=3] [ref=e245]:
+                  - generic [ref=e246]: The third major
+                  - generic [ref=e247]:
+                    - text: revolution
+                    - generic [ref=e248]: 
+          - listitem [ref=e249]:
+            - link "Exploring by e-bike" [ref=e250] [cursor=pointer]:
+              - /url: /stories/ebike-trekking-touring/
+              - figure [ref=e251]:
+                - img "Two people riding e-bikes on an unpaved road in an open landscape." [ref=e253]
+              - generic [ref=e254]:
+                - paragraph [ref=e255]: Story | Bike tours
+                - heading "Exploring by e-bike " [level=3] [ref=e256]:
+                  - generic [ref=e257]: Exploring by
+                  - generic [ref=e258]:
+                    - text: e-bike
+                    - generic [ref=e259]: 
+          - listitem [ref=e260]:
+            - link "How Bosch is putting automated driving on the roads worldwide" [ref=e261] [cursor=pointer]:
+              - /url: /stories/advanced-driver-assistance-system-adas/
+              - figure [ref=e262]:
+                - img "Person seated in a vehicle with view of steering wheel and digital driver assistance display." [ref=e264]
+              - generic [ref=e265]:
+                - paragraph [ref=e266]: Story | The silent revolution
+                - heading "How Bosch is putting automated driving on the roads worldwide " [level=3] [ref=e267]:
+                  - generic [ref=e268]: How Bosch is putting automated driving on the roads
+                  - generic [ref=e269]:
+                    - text: worldwide
+                    - generic [ref=e270]: 
+          - listitem [ref=e271]:
+            - link "The Bosch Shopfloor Agent" [ref=e272] [cursor=pointer]:
+              - /url: /stories/agentic-ai-manufacturing-production/
+              - figure [ref=e273]:
+                - img "Person in workwear standing in a production hall between automated machines." [ref=e275]
+              - generic [ref=e276]:
+                - paragraph [ref=e277]: Story | AI for competitive factories
+                - heading "The Bosch Shopfloor Agent " [level=3] [ref=e278]:
+                  - generic [ref=e279]: The Bosch Shopfloor
+                  - generic [ref=e280]:
+                    - text: Agent
+                    - generic [ref=e281]: 
+    - region "Our featured topics" [ref=e282]:
+      - generic [ref=e283]:
+        - generic [ref=e286]:
+          - heading "Our featured topics" [level=2] [ref=e287]
+          - paragraph [ref=e288]: Bosch develops innovations that provide solutions to the major challenges of our time. How? It’s all explained in our featured topics.
+        - generic [ref=e289]:
+          - generic [ref=e290]:
+            - link "Innovation" [ref=e292] [cursor=pointer]:
+              - /url: /stories/topics/innovation/
+              - figure [ref=e294]:
+                - img "A person in a lab coat holding a pipette under blue lighting; face partially obscured by graphic overlays." [ref=e296]
+              - generic [ref=e297]:
+                - heading "Innovation " [level=3] [ref=e299]:
+                  - generic [ref=e300]:
+                    - text: Innovation
+                    - generic [ref=e301]: 
+                - paragraph [ref=e302]: Shaping the future
+            - link "Software-driven mobility" [ref=e304] [cursor=pointer]:
+              - /url: /stories/topics/software-driven-mobility/
+              - figure [ref=e306]:
+                - img "A vehicle display showing the large text “SOFTWARE-DRIVEN MOBILITY”" [ref=e308]
+              - generic [ref=e309]:
+                - heading "Software-driven mobility " [level=3] [ref=e311]:
+                  - text: Software-driven
+                  - generic [ref=e312]:
+                    - text: mobility
+                    - generic [ref=e313]: 
+                - paragraph [ref=e314]: The car of the future is personalized
+            - link "Artificial intelligence" [ref=e316] [cursor=pointer]:
+              - /url: /stories/topics/ai-for-a-better-future-at-bosch/
+              - figure [ref=e318]:
+                - img "A woman steps through the letters \"AI\"" [ref=e320]
+              - generic [ref=e321]:
+                - heading "Artificial intelligence " [level=3] [ref=e323]:
+                  - text: Artificial
+                  - generic [ref=e324]:
+                    - text: intelligence
+                    - generic [ref=e325]: 
+                - paragraph [ref=e326]: AI for a better future
+            - link "Energy efficiency" [ref=e328] [cursor=pointer]:
+              - /url: /stories/topics/energy-efficiency-at-home/
+              - figure [ref=e330]:
+                - img "A father plays with his child in a modern bathroom while the mother looks on." [ref=e332]
+              - generic [ref=e333]:
+                - heading "Energy efficiency " [level=3] [ref=e335]:
+                  - text: Energy
+                  - generic [ref=e336]:
+                    - text: efficiency
+                    - generic [ref=e337]: 
+                - paragraph [ref=e338]: Saving energy at home is easier than you think
+            - link "Hydrogen" [ref=e340] [cursor=pointer]:
+              - /url: /stories/topics/hydrogen-energy/
+              - figure [ref=e342]:
+                - img "Various hydrogen applications can be seen in molecules. These include a mobile fuel cell in a truck, hydrogen electrolysis and stationary fuel cells." [ref=e344]
+              - generic [ref=e345]:
+                - heading "Hydrogen " [level=3] [ref=e347]:
+                  - generic [ref=e348]:
+                    - text: Hydrogen
+                    - generic [ref=e349]: 
+                - paragraph [ref=e350]: Energy of the future
+            - link "Battery technology" [ref=e352] [cursor=pointer]:
+              - /url: /stories/topics/battery-technology/
+              - figure [ref=e354]:
+                - img "Wood artist Adam Detre stands surrounded by trees behind a Bosch GCM 18V-305 GDC Professional cordless crosscut and miter saw, carefully aligning a long piece of wood." [ref=e356]
+              - generic [ref=e357]:
+                - heading "Battery technology " [level=3] [ref=e359]:
+                  - text: Battery
+                  - generic [ref=e360]:
+                    - text: technology
+                    - generic [ref=e361]: 
+                - paragraph [ref=e362]: More than just a means of storing energy
+            - link "MEMS-sensors" [ref=e364] [cursor=pointer]:
+              - /url: /stories/topics/mems-micro-electro-mechanical-systems/
+              - figure [ref=e366]:
+                - img "A hand holds a tiny sensor on his fingertip." [ref=e368]
+              - generic [ref=e369]:
+                - heading "MEMS-sensors " [level=3] [ref=e371]:
+                  - generic [ref=e372]:
+                    - text: MEMS-sensors
+                    - generic [ref=e373]: 
+                - paragraph [ref=e374]: Micro-Electro-Mechanical Systems
+            - link "Electrification" [ref=e376] [cursor=pointer]:
+              - /url: /stories/topics/electrification/
+              - figure [ref=e378]:
+                - img "A woman charges an electric vehicle Xiaomi SU7 at a charging station" [ref=e380]
+              - generic [ref=e381]:
+                - heading "Electrification " [level=3] [ref=e383]:
+                  - generic [ref=e384]:
+                    - text: Electrification
+                    - generic [ref=e385]: 
+                - paragraph [ref=e386]: Electricity drives us
+          - navigation "page-indicator-default" [ref=e389]:
+            - generic [ref=e394]:
+              - button "Previous" [ref=e395] [cursor=pointer]: 
+              - button "Next" [ref=e396] [cursor=pointer]: 
+    - region "Bosch on social media" [ref=e397]:
+      - generic [ref=e401]:
+        - generic [ref=e402]:
+          - heading "Bosch on social media" [level=2] [ref=e403]
+          - generic [ref=e404]:
+            - paragraph [ref=e408]: Follow us for the latest information about the company.
+            - generic [ref=e411]:
+              - link "Visit us on Linkedin opens external site" [ref=e412] [cursor=pointer]:
+                - /url: https://www.linkedin.com/company/bosch/
+                - generic [ref=e413]: 
+              - link "Visit us on YouTube opens external site" [ref=e414] [cursor=pointer]:
+                - /url: https://www.youtube.com/BoschGlobal
+                - generic [ref=e415]: 
+              - link "Visit us on Facebook opens external site" [ref=e416] [cursor=pointer]:
+                - /url: https://www.facebook.com/BoschGlobal
+                - generic [ref=e417]: 
+              - link "Visit us on Instagram opens external site" [ref=e418] [cursor=pointer]:
+                - /url: https://www.instagram.com/boschglobal/
+                - generic [ref=e419]: 
+        - generic [ref=e420]:
+          - heading "Bosch customer service" [level=2] [ref=e421]
+          - generic [ref=e422]:
+            - generic [ref=e425]: You need service or support? Our customer support is here for you whenever you need it.
+            - link "To contact overview" [ref=e429] [cursor=pointer]:
+              - /url: /contact/
+              - text: To contact
+              - generic [ref=e430]:
+                - text: overview
+                - generic [ref=e431]: 
+    - region "StrategicTeaser" [ref=e432]:
+      - generic [ref=e434]:
+        - link "Work LikeABosch — Apply now. Bosch Global Careers opens external site" [ref=e437] [cursor=pointer]:
+          - /url: https://jobs.bosch.com/en/
+          - generic [ref=e438]:
+            - generic [ref=e439]: Work LikeABosch — Apply now.
+            - text: Bosch Global
+            - generic [ref=e440]:
+              - text: Careers
+              - generic [ref=e441]: 
+        - link "Become a business partner. Purchasing and logistics" [ref=e444] [cursor=pointer]:
+          - /url: /company/supply-chain/
+          - generic [ref=e445]:
+            - generic [ref=e446]: Become a business partner.
+            - text: Purchasing and
+            - generic [ref=e447]:
+              - text: logistics
+              - generic [ref=e448]: 
+  - contentinfo "Footer" [ref=e449]:
+    - generic [ref=e450]:
+      - generic [ref=e451]:
+        - generic [ref=e452]: Invented for life
+        - list [ref=e453]:
+          - listitem [ref=e454]:
+            - link "General contact info" [ref=e456] [cursor=pointer]:
+              - /url: /contact/
+          - listitem [ref=e457]:
+            - link "Questions and answers" [ref=e459] [cursor=pointer]:
+              - /url: /faq/
+          - listitem [ref=e460]:
+            - link "Product security (PSIRT) opens external site" [ref=e462] [cursor=pointer]:
+              - /url: https://psirt.bosch.com/
+              - text: Product security
+              - generic [ref=e463]:
+                - text: (PSIRT)
+                - generic [ref=e464]: 
+          - listitem [ref=e465]:
+            - link "Innovations, patents, and licenses" [ref=e467] [cursor=pointer]:
+              - /url: /licenses-and-patents/
+          - listitem [ref=e468]:
+            - link "Purchasing and logistics" [ref=e470] [cursor=pointer]:
+              - /url: /company/supply-chain/
+        - generic [ref=e473]:
+          - link "Visit us on Linkedin opens external site" [ref=e474] [cursor=pointer]:
+            - /url: https://www.linkedin.com/company/bosch/
+            - generic [ref=e475]: 
+          - link "Visit us on YouTube opens external site" [ref=e476] [cursor=pointer]:
+            - /url: https://www.youtube.com/BoschGlobal
+            - generic [ref=e477]: 
+          - link "Visit us on Facebook opens external site" [ref=e478] [cursor=pointer]:
+            - /url: https://www.facebook.com/BoschGlobal
+            - generic [ref=e479]: 
+          - link "Visit us on Instagram opens external site" [ref=e480] [cursor=pointer]:
+            - /url: https://www.instagram.com/boschglobal/
+            - generic [ref=e481]: 
+      - separator [ref=e482]
+      - generic [ref=e483]:
+        - list [ref=e484]:
+          - listitem [ref=e485]:
+            - link "Corporate information" [ref=e487] [cursor=pointer]:
+              - /url: /corporate-information/?prevent-auto-open-privacy-settings=1
+          - listitem [ref=e488]:
+            - link "Legal notice" [ref=e490] [cursor=pointer]:
+              - /url: /legal-notice/?prevent-auto-open-privacy-settings=1
+          - listitem [ref=e491]:
+            - link "Data protection notice (Privacy Policy)" [ref=e493] [cursor=pointer]:
+              - /url: /data-protection-notice/?prevent-auto-open-privacy-settings=1
+          - listitem [ref=e494]:
+            - link "Accessibility" [ref=e496] [cursor=pointer]:
+              - /url: /accessibility-information/?prevent-auto-open-privacy-settings=1
+          - listitem [ref=e497]:
+            - link "Privacy settings" [ref=e499] [cursor=pointer]:
+              - /url: "#"
+        - generic [ref=e500]: © Robert Bosch GmbH 2026, all rights reserved
+        - button "back to top" [ref=e501] [cursor=pointer]:
+          - generic [ref=e502]: 

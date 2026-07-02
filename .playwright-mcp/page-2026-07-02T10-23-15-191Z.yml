@@ -1,0 +1,560 @@
+- generic [active] [ref=e1]:
+  - generic:
+    - banner:
+      - generic:
+        - generic:
+          - link "SanFreight Logistics":
+            - /url: /en/
+            - img "SanFreight Logistics"
+            - img
+        - generic:
+          - list:
+            - listitem:
+              - button "Our group " [ref=e2] [cursor=pointer]:
+                - generic [ref=e3]: Our group
+                - generic [ref=e4]: 
+            - listitem:
+              - link "Expertises" [ref=e5] [cursor=pointer]:
+                - /url: /en/expertises-en/
+                - generic [ref=e6]: Expertises
+            - listitem:
+              - link "ESG" [ref=e7] [cursor=pointer]:
+                - /url: /en/esg/
+                - generic [ref=e8]: ESG
+            - listitem:
+              - link "Newsroom" [ref=e9] [cursor=pointer]:
+                - /url: /en/references/
+                - generic [ref=e10]: Newsroom
+            - listitem:
+              - button "Our solutions " [ref=e11] [cursor=pointer]:
+                - generic [ref=e12]: Our solutions
+                - generic [ref=e13]: 
+      - text:                    
+    - text:               
+    - img "Sanfreight" [ref=e22]
+    - text:   
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e26]:
+          - generic [ref=e27]:
+            - generic [ref=e29]:
+              - generic:
+                - img
+              - generic [ref=e30]:
+                - generic [ref=e34]: "000"
+                - generic [ref=e38]:
+                  - generic [ref=e40]: SANFREIGHT
+                  - generic [ref=e43]: Scroll
+              - generic [ref=e50]:
+                - generic [ref=e51]: Ocean Freight Solutions
+                - generic [ref=e52]: A mixed-use complex with a unique "Hotel & Office" concept in Luxembourg
+              - generic [ref=e59]:
+                - generic [ref=e60]: Air Freight Services
+                - generic [ref=e61]: A modern residence of over 90 units perfectly located in Luxembourg-City
+              - generic [ref=e68]:
+                - generic [ref=e69]: Customs & Warehousing
+                - generic [ref=e70]: 20 building lots representing a total of between 69 and 117 housing units.
+            - generic:
+              - generic:
+                - generic:
+                  - generic: Discover
+                  - generic: Back
+            - button "" [ref=e72] [cursor=pointer]:
+              - generic [ref=e75]: 
+          - generic [ref=e76]:
+            - heading "About Sanfreight" [level=3] [ref=e77]
+            - generic [ref=e78]: Invest, Structure, Unlock Value.
+          - generic [ref=e80]:
+            - generic [ref=e81]: A Trusted Partner in Global Logistics & Supply Chain Solutions
+            - generic [ref=e82]:
+              - generic [ref=e83]:
+                - paragraph [ref=e84]: SanFreight Logistics is a global partner providing integrated freight forwarding and supply chain solutions.
+                - paragraph [ref=e85]: With expertise in ocean and air freight, customs, warehousing, and project logistics, we ensure cargo moves with precision and efficiency. Leveraging industry experience and global partnerships, our team creates tailored strategies to simplify complex supply chains while maintaining high reliability.
+                - paragraph [ref=e86]: Every solution is designed for unique client needs, providing visibility and value from routine to specialized shipments.
+                - paragraph [ref=e87]: We remain committed to delivering smart, sustainable logistics that support business growth worldwide.
+              - link "Read more  " [ref=e89] [cursor=pointer]:
+                - /url: /page-a-propos/
+                - generic [ref=e91]:
+                  - paragraph [ref=e92]: Read more
+                  - generic [ref=e93]:
+                    - generic [ref=e94]: 
+                    - generic [ref=e95]: 
+          - generic [ref=e97]:
+            - paragraph [ref=e102]: We move businesses across borders.
+            - paragraph [ref=e107]: With precision in every journey.
+            - paragraph [ref=e112]: So opportunities can move further.
+          - generic [ref=e119]:
+            - heading "Key figures" [level=3] [ref=e120]
+            - generic [ref=e121]:
+              - generic [ref=e122]:
+                - generic [ref=e124]: 12+
+                - generic [ref=e125]: Years of industry experience delivering reliable logistics solutions backed by operational excellence and trusted global partnerships.
+              - generic [ref=e126]:
+                - generic [ref=e128]: 5,000+
+                - generic [ref=e129]: Successful shipments managed across international markets with precision, efficiency, and dependable execution.
+              - generic [ref=e130]:
+                - generic [ref=e132]: 150+
+                - generic [ref=e133]: Experienced logistics professionals dedicated to simplifying complex supply chains and ensuring seamless cargo movement.
+              - generic [ref=e134]:
+                - generic [ref=e136]: "4"
+                - generic [ref=e137]: Strategically located international offices providing stronger global connectivity and responsive support across key markets.
+            - generic [ref=e138]: Consolidated figures for the Group and its subsidiaries
+          - generic [ref=e143]:
+            - generic [ref=e144]:
+              - generic [ref=e145]: Powering Global Trade with Precision and Reliability.
+              - generic [ref=e146]: Integrated freight forwarding, customs clearance, transportation, and warehousing—delivered with precision from origin to destination.
+              - link "Our Capabilities  " [ref=e148] [cursor=pointer]:
+                - /url: /en/expertises-en/
+                - generic [ref=e150]:
+                  - paragraph [ref=e151]: Our Capabilities
+                  - generic [ref=e152]:
+                    - generic [ref=e153]: 
+                    - generic [ref=e154]: 
+            - generic [ref=e156]: A Trusted Partner in Global Logistics
+          - generic [ref=e161]:
+            - generic [ref=e165]:
+              - generic [ref=e166]: Our services
+              - heading "Comprehensive logistics solutions for every need" [level=2] [ref=e167]
+            - generic [ref=e172]:
+              - generic [ref=e173]:
+                - generic [ref=e174]:
+                  - text: "01"
+                  - heading "Ocean Freight That Connects Global Trade." [level=2] [ref=e175]
+                  - paragraph [ref=e176]: Reliable ocean freight solutions built to move your cargo seamlessly across international markets. With a strong global carrier network and decades of logistics expertise, we ensure dependable shipping performance from origin to destination.
+                - list [ref=e177]:
+                  - listitem [ref=e178]:
+                    - generic [ref=e179]: Reliable FCL and LCL services across major global trade routes, supported by trusted partnerships with leading international ocean carriers.
+                  - listitem [ref=e180]:
+                    - generic [ref=e181]: Flexible shipping solutions tailored to your cargo, delivery schedules, and business objectives, ensuring efficiency without compromising reliability.
+                  - listitem [ref=e182]:
+                    - generic [ref=e183]: Complete shipment coordination including documentation, customs support, cargo tracking, and seamless delivery from origin to final destination.
+              - img "Ocean Freight That Connects Global Trade." [ref=e186]
+            - generic [ref=e188]:
+              - generic [ref=e189]:
+                - generic [ref=e190]:
+                  - text: "02"
+                  - heading "Air Freight When Time Matters Most." [level=2] [ref=e191]
+                  - paragraph [ref=e192]: Our air freight solutions are designed for businesses that demand speed, precision, and reliability. Backed by a global airline network and experienced logistics professionals, we ensure your shipments reach their destination safely, efficiently, and on schedule.
+                - list [ref=e193]:
+                  - listitem [ref=e194]:
+                    - generic [ref=e195]: Fast and dependable air freight services connecting major global destinations with optimized transit times and reliable carrier partnerships.
+                  - listitem [ref=e196]:
+                    - generic [ref=e197]: Specialized handling for urgent, fragile, high-value, and temperature-controlled shipments, ensuring maximum safety and regulatory compliance.
+                  - listitem [ref=e198]:
+                    - generic [ref=e199]: End-to-end shipment coordination with documentation support, customs clearance, real-time cargo tracking, and proactive operational updates.
+              - img "Air Freight When Time Matters Most." [ref=e202]
+            - generic [ref=e204]:
+              - generic [ref=e205]:
+                - generic [ref=e206]:
+                  - text: "03"
+                  - heading "Customs Clearance Without Delays." [level=2] [ref=e207]
+                  - paragraph [ref=e208]: Our customs clearance solutions are designed to simplify international trade while ensuring full regulatory compliance and efficient cargo movement.
+                - list [ref=e209]:
+                  - listitem [ref=e210]:
+                    - generic [ref=e211]: Experienced customs professionals ensuring compliance with evolving international trade regulations and customs requirements.
+                  - listitem [ref=e212]:
+                    - generic [ref=e213]: Accurate documentation, duty processing, and import-export clearance to facilitate faster cargo movement across global markets.
+                  - listitem [ref=e214]:
+                    - generic [ref=e215]: Proactive customs coordination that minimizes delays, reduces compliance risks, and keeps your supply chain operating without disruption.
+              - img "Customs Clearance Without Delays." [ref=e218]
+            - generic [ref=e220]:
+              - generic [ref=e221]:
+                - generic [ref=e222]:
+                  - text: "04"
+                  - heading "Integrated Transportation & Warehousing." [level=2] [ref=e223]
+                  - paragraph [ref=e224]: Our integrated transportation and warehousing solutions are designed to keep your supply chain efficient, connected, and responsive.
+                - list [ref=e225]:
+                  - listitem [ref=e226]:
+                    - generic [ref=e227]: Secure warehousing solutions designed to optimize inventory management, storage efficiency, and order fulfillment.
+                  - listitem [ref=e228]:
+                    - generic [ref=e229]: Reliable transportation services across diverse cargo categories, ensuring safe, timely, and cost-effective deliveries.
+                  - listitem [ref=e230]:
+                    - generic [ref=e231]: Integrated logistics support that seamlessly connects warehousing, transportation, and distribution for end-to-end supply chain efficiency.
+              - img "Integrated Transportation & Warehousing." [ref=e234]
+            - generic [ref=e236]:
+              - generic [ref=e237]:
+                - generic [ref=e238]:
+                  - text: "05"
+                  - heading "Specialized Logistics For Complex Cargo." [level=2] [ref=e239]
+                  - paragraph [ref=e240]: Our specialized logistics solutions are designed for cargo that demands expertise, precision, and meticulous planning.
+                - list [ref=e241]:
+                  - listitem [ref=e242]:
+                    - generic [ref=e243]: Expert management of project cargo, breakbulk, oversized, and heavy-lift shipments with detailed planning and seamless execution.
+                  - listitem [ref=e244]:
+                    - generic [ref=e245]: Specialized handling for hazardous, temperature-controlled, perishable, and sensitive cargo while maintaining strict safety and regulatory compliance.
+                  - listitem [ref=e246]:
+                    - generic [ref=e247]: End-to-end logistics planning and operational coordination, delivering customized solutions backed by experienced professionals and global logistics expertise.
+              - img "Specialized Logistics For Complex Cargo." [ref=e250]
+          - generic [ref=e252]:
+            - generic:
+              - generic:
+                - generic: Direct access to real estate opportunities across Europe
+                - generic: With Sanfreight Platform, you have direct access to Value-Added real estate opportunities across Europe, carefully selected by Sanfreight Group experts.
+              - link "Read more  " [ref=e256] [cursor=pointer]:
+                - /url: /expertises/
+                - generic [ref=e258]:
+                  - paragraph [ref=e259]: Read more
+                  - generic [ref=e260]:
+                    - generic [ref=e261]: 
+                    - generic [ref=e262]: 
+          - generic [ref=e263]:
+            - generic [ref=e264]:
+              - heading "Discover our team" [level=2] [ref=e265]:
+                - text: Discover
+                - text: our team
+              - paragraph [ref=e266]: Our team has developed a comprehensive vision that helps us activate all value-creation levers in European real estate investment markets.
+              - paragraph [ref=e267]: 24 people
+              - link "Our team  " [ref=e268] [cursor=pointer]:
+                - /url: /equipe/
+                - generic [ref=e270]:
+                  - paragraph [ref=e271]: Our team
+                  - generic [ref=e272]:
+                    - generic [ref=e273]: 
+                    - generic [ref=e274]: 
+            - generic [ref=e276]:
+              - generic [ref=e279] [cursor=pointer]:
+                - generic [ref=e282]: Europe
+                - generic [ref=e285]:
+                  - paragraph [ref=e287]: Bernd von Manteuffel
+                  - paragraph [ref=e289]: Founder
+              - generic [ref=e292] [cursor=pointer]:
+                - generic [ref=e295]: Europe
+                - generic [ref=e298]:
+                  - paragraph [ref=e300]: Christophe Nadal
+                  - paragraph [ref=e302]: Founder & CEO
+              - generic [ref=e305] [cursor=pointer]:
+                - generic [ref=e306]:
+                  - generic [ref=e308]: Europe
+                  - img "Quentin Verschoren - Chief Operating Officer" [ref=e311]
+                - generic [ref=e312]:
+                  - paragraph [ref=e314]: Quentin Verschoren
+                  - paragraph [ref=e316]: Chief Operating Officer
+            - text:  
+          - generic [ref=e317]:
+            - paragraph [ref=e318]: Trusted by global leaders
+            - generic [ref=e320]:
+              - img "Client 1"
+              - img "Client 2"
+              - img "Client 3"
+              - img "Client 4"
+              - img "Client 5"
+              - img "Client 6"
+              - img "Client 7"
+              - img "Client 8"
+              - img "Client 9"
+              - img "Client 10"
+              - img "Client 11"
+              - img "Client 12"
+              - img "Client 13"
+              - img "Client 14"
+              - img "Client 15"
+              - img "Client 16"
+              - img "Client 17"
+              - img "Client 18"
+              - img "Client 19"
+              - img "Client 20"
+              - img "Client 21"
+              - img "Client 22"
+              - img "Client 23"
+              - img "Client 24"
+              - img "Client 25"
+              - img "Client 26"
+              - img "Client 27"
+              - img "Client 28"
+              - img "Client 29"
+              - img "Client 30"
+              - img "Client 1"
+              - img "Client 2"
+              - img "Client 3"
+              - img "Client 4"
+              - img "Client 5"
+              - img "Client 6"
+              - img "Client 7"
+              - img "Client 8"
+              - img "Client 9"
+              - img "Client 10"
+              - img "Client 11"
+              - img "Client 12"
+              - img "Client 13"
+              - img "Client 14"
+              - img "Client 15"
+              - img "Client 16"
+              - img "Client 17"
+              - img "Client 18"
+              - img "Client 19"
+              - img "Client 20"
+              - img "Client 21"
+              - img "Client 22"
+              - img "Client 23"
+              - img "Client 24"
+              - img "Client 25"
+              - img "Client 26"
+              - img "Client 27"
+              - img "Client 28"
+              - img "Client 29"
+              - img "Client 30"
+          - generic [ref=e321]:
+            - generic [ref=e322]:
+              - generic [ref=e323]:
+                - heading "Latest news" [level=3] [ref=e325]
+                - link "All our news  " [ref=e327] [cursor=pointer]:
+                  - /url: /actualites/
+                  - generic [ref=e329]:
+                    - paragraph [ref=e330]: All our news
+                    - generic [ref=e331]:
+                      - generic [ref=e332]: 
+                      - generic [ref=e333]: 
+              - generic [ref=e334]:
+                - 'link "The July 15 Countdown: How the India-UK CETA Changes International Shipping 30 Jun 2026 The July 15 Countdown: How the India-UK CETA Changes International Shipping The India-UK CETA goes live July 15, 2026 — cutting tariffs on 99% of goods and opening major new shipping lanes for Indian exporters. ↗ Trade Policy & Market Opportunity" [ref=e336] [cursor=pointer]':
+                  - /url: /en/2026/06/30/india-uk-ceta-changes-international-shipping/
+                  - generic [ref=e337]:
+                    - generic [ref=e338]:
+                      - 'img "The July 15 Countdown: How the India-UK CETA Changes International Shipping" [ref=e341]'
+                      - generic [ref=e345]: 30 Jun 2026
+                    - generic [ref=e346]:
+                      - generic [ref=e347]: "The July 15 Countdown: How the India-UK CETA Changes International Shipping"
+                      - paragraph [ref=e349]: The India-UK CETA goes live July 15, 2026 — cutting tariffs on 99% of goods and opening major new shipping lanes for Indian exporters.
+                      - generic [ref=e350]:
+                        - generic [ref=e352]: ↗
+                        - paragraph [ref=e354]: Trade Policy & Market Opportunity
+                - 'link "Empowering Indian MSMEs: How Small Businesses Can Master Cross-Border E-Commerce 23 Jun 2026 Empowering Indian MSMEs: How Small Businesses Can Master Cross-Border E-Commerce DGFT''s push to double India''s e-commerce exports to $10 billion is driving MSMEs from metro cities into new manufacturing hubs. ↗ Logistics Trends & Growth Markets" [ref=e356] [cursor=pointer]':
+                  - /url: /en/2026/06/23/indian-msmes-cross-border-ecommerce-logistics/
+                  - generic [ref=e357]:
+                    - generic [ref=e358]:
+                      - 'img "Empowering Indian MSMEs: How Small Businesses Can Master Cross-Border E-Commerce" [ref=e361]'
+                      - generic [ref=e365]: 23 Jun 2026
+                    - generic [ref=e366]:
+                      - generic [ref=e367]: "Empowering Indian MSMEs: How Small Businesses Can Master Cross-Border E-Commerce"
+                      - paragraph [ref=e369]: DGFT's push to double India's e-commerce exports to $10 billion is driving MSMEs from metro cities into new manufacturing hubs.
+                      - generic [ref=e370]:
+                        - generic [ref=e372]: ↗
+                        - paragraph [ref=e374]: Logistics Trends & Growth Markets
+                - 'link "Green Shipping: Meeting New Western Environmental Laws for Indian Exports 16 Jun 2026 Green Shipping: Meeting New Western Environmental Laws for Indian Exports ESG regulations across Europe and the UK are making eco-friendly shipping a legal requirement, not just a marketing phrase. ↗ Compliance & Risk Management" [ref=e376] [cursor=pointer]':
+                  - /url: /en/2026/06/16/green-shipping-environmental-laws-indian-exports/
+                  - generic [ref=e377]:
+                    - generic [ref=e378]:
+                      - 'img "Green Shipping: Meeting New Western Environmental Laws for Indian Exports" [ref=e381]'
+                      - generic [ref=e385]: 16 Jun 2026
+                    - generic [ref=e386]:
+                      - generic [ref=e387]: "Green Shipping: Meeting New Western Environmental Laws for Indian Exports"
+                      - paragraph [ref=e389]: ESG regulations across Europe and the UK are making eco-friendly shipping a legal requirement, not just a marketing phrase.
+                      - generic [ref=e390]:
+                        - generic [ref=e392]: ↗
+                        - paragraph [ref=e394]: Compliance & Risk Management
+                - 'link "The Rise of Logistics Control Towers: Building Smart Networks for Unpredictable Global Trade 09 Jun 2026 The Rise of Logistics Control Towers: Building Smart Networks for Unpredictable Global Trade Smart manufacturers are replacing multi-vendor setups with unified, tech-driven logistics control towers for real-time visibility. ↗ Technology & Operations" [ref=e396] [cursor=pointer]':
+                  - /url: /en/2026/06/09/logistics-control-towers-smart-networks-global-trade/
+                  - generic [ref=e397]:
+                    - generic [ref=e398]:
+                      - 'img "The Rise of Logistics Control Towers: Building Smart Networks for Unpredictable Global Trade" [ref=e401]'
+                      - generic [ref=e405]: 09 Jun 2026
+                    - generic [ref=e406]:
+                      - generic [ref=e407]: "The Rise of Logistics Control Towers: Building Smart Networks for Unpredictable Global Trade"
+                      - paragraph [ref=e409]: Smart manufacturers are replacing multi-vendor setups with unified, tech-driven logistics control towers for real-time visibility.
+                      - generic [ref=e410]:
+                        - generic [ref=e412]: ↗
+                        - paragraph [ref=e414]: Technology & Operations
+            - link "All our news  " [ref=e418] [cursor=pointer]:
+              - /url: /actualites/
+              - generic [ref=e420]:
+                - paragraph [ref=e421]: All our news
+                - generic [ref=e422]:
+                  - generic [ref=e423]: 
+                  - generic [ref=e424]: 
+        - generic [ref=e425]:
+          - heading "Featured Logistics Projects" [level=2] [ref=e426]:
+            - generic [ref=e427]: Featured Logistics Projects
+          - generic [ref=e428]:
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: Project Logistics
+                  - generic:
+                    - generic: "2025"
+                - generic:
+                  - heading "Afghanistan Inland Logistics" [level=3]
+              - generic:
+                - paragraph: Successfully coordinated the seamless movement of commercial cargo through complex inland routes, ensuring secure, timely, and reliable delivery across Afghanistan’s challenging logistics network.
+                - button "Learn more  ":
+                  - generic:
+                    - generic:
+                      - paragraph: Learn more
+                      - generic:
+                        - generic: 
+                        - generic: 
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: Perishable Cargo
+                  - generic:
+                    - generic: "2024"
+                - generic:
+                  - heading "Global Cold Chain Solutions" [level=3]
+              - generic:
+                - paragraph: Managed temperature-controlled shipments for perishable products with precision, maintaining product integrity through every stage of transportation and handling.
+                - button "Learn more  ":
+                  - generic:
+                    - generic:
+                      - paragraph: Learn more
+                      - generic:
+                        - generic: 
+                        - generic: 
+            - generic:
+              - generic:
+                - generic:
+                  - generic:
+                    - generic: Breakbulk & Heavy Lift
+                  - generic:
+                    - generic: "2024"
+                - generic:
+                  - heading "Industrial Project Cargo" [level=3]
+              - generic:
+                - paragraph: Delivered end-to-end logistics for oversized industrial equipment, combining specialized handling, strategic planning, and seamless multimodal transportation.
+                - button "Learn more  ":
+                  - generic:
+                    - generic:
+                      - paragraph: Learn more
+                      - generic:
+                        - generic: 
+                        - generic: 
+          - link "All our references  " [ref=e430] [cursor=pointer]:
+            - /url: /en/reference/
+            - generic [ref=e432]:
+              - paragraph [ref=e433]: All our references
+              - generic [ref=e434]:
+                - generic [ref=e435]: 
+                - generic [ref=e436]: 
+      - generic [ref=e437]:
+        - generic [ref=e438]:
+          - img "footer background image" [ref=e441]
+          - generic [ref=e442]:
+            - generic [ref=e444]: We're ready to listen
+            - button "Let's talk   Contact form" [ref=e446] [cursor=pointer]:
+              - generic [ref=e447]:
+                - generic [ref=e448]:
+                  - paragraph [ref=e449]: Let's talk
+                  - generic [ref=e450]:
+                    - generic [ref=e451]: 
+                    - generic [ref=e452]: 
+                - paragraph [ref=e453]: Contact form
+        - contentinfo [ref=e454]:
+          - generic [ref=e455]:
+            - generic [ref=e456]:
+              - generic [ref=e457]:
+                - generic [ref=e458]: Our group
+                - list [ref=e459]:
+                  - listitem [ref=e460]:
+                    - link "About" [ref=e461] [cursor=pointer]:
+                      - /url: /en/about/
+                  - listitem [ref=e462]:
+                    - link "Our team" [ref=e463] [cursor=pointer]:
+                      - /url: /en/team/
+                  - listitem [ref=e464]:
+                    - link "Career" [ref=e465] [cursor=pointer]:
+                      - /url: /en/career/
+              - generic [ref=e466]:
+                - generic [ref=e467]: Our solutions
+                - list [ref=e468]:
+                  - listitem [ref=e469]:
+                    - link "Club Deals" [ref=e470] [cursor=pointer]:
+                      - /url: https://www.mimco-platform.com/
+                  - listitem [ref=e471]:
+                    - link "Ocean Freight" [ref=e472] [cursor=pointer]:
+                      - /url: /en/investement-solution/ocity-ii/
+                  - listitem [ref=e473]:
+                    - link "Air Freight" [ref=e474] [cursor=pointer]:
+                      - /url: /en/investement-solution/ocity/
+                  - listitem [ref=e475]:
+                    - link "Customs Clearance" [ref=e476] [cursor=pointer]:
+                      - /url: /en/investement-solution/mercureim-ef1/
+                  - listitem [ref=e477]:
+                    - link "Sanfreight AM Funds" [ref=e478] [cursor=pointer]:
+                      - /url: https://www.mimco-am.fr/
+            - generic [ref=e480]:
+              - generic [ref=e481]: Sanfreight Ecosystem
+              - list [ref=e482]:
+                - listitem [ref=e483]:
+                  - link "Sanfreight Platform" [ref=e484] [cursor=pointer]:
+                    - /url: http://www.mimco-platform.com
+                    - generic [ref=e485]:
+                      - text: Sanfreight
+                      - text: Platform
+          - generic [ref=e487]:
+            - generic [ref=e488]: Site by Immersive Garden
+            - generic [ref=e490]:
+              - link "Expertises" [ref=e491] [cursor=pointer]:
+                - /url: /en/expertises-en/
+              - link "ESG" [ref=e492] [cursor=pointer]:
+                - /url: /en/esg/
+              - link "Newsroom" [ref=e493] [cursor=pointer]:
+                - /url: /en/references/
+              - link "News" [ref=e494] [cursor=pointer]:
+                - /url: /en/news/
+              - link "Career" [ref=e495] [cursor=pointer]:
+                - /url: /en/career/
+          - generic [ref=e500]:
+            - generic [ref=e501]:
+              - generic [ref=e502]: India
+              - generic [ref=e503]: India Head Office
+              - generic [ref=e504]:
+                - generic [ref=e505]:
+                  - text: "International InfoTech Park, Tower No.3, Office no: E-215, 2nd Floor,"
+                  - text: Vashi, New Mumbai – 400 705, India.
+                - link "+91 (022) 2781 0011" [ref=e506] [cursor=pointer]:
+                  - /url: tel:+912227810011
+                - link "admin@sanfreightintl.com" [ref=e507] [cursor=pointer]:
+                  - /url: mailto:admin@sanfreightintl.com
+                - link "sales@sanfreightintl.com" [ref=e508] [cursor=pointer]:
+                  - /url: mailto:sales@sanfreightintl.com
+            - generic [ref=e509]:
+              - generic [ref=e510]: China
+              - generic [ref=e511]: China Office
+              - generic [ref=e512]:
+                - generic [ref=e513]: Floor 12 'A', Lvyuan Tower No 588, Changhai Road, Ningbo City China
+                - generic [ref=e514]: "CTC: Mr. Cash Zhang"
+                - link "ningbo@sanfreightintl.com" [ref=e515] [cursor=pointer]:
+                  - /url: mailto:ningbo@sanfreightintl.com
+            - generic [ref=e516]:
+              - generic [ref=e517]: UK
+              - generic [ref=e518]: UK Office
+              - generic [ref=e519]:
+                - generic [ref=e520]: 84 Alcock Crescent, Crayford DA1 4FR, Dartford
+                - link "00447515155742" [ref=e521] [cursor=pointer]:
+                  - /url: tel:00447515155742
+                - link "europe@sanfreightintl.com" [ref=e522] [cursor=pointer]:
+                  - /url: mailto:europe@sanfreightintl.com
+            - generic [ref=e523]:
+              - generic [ref=e524]: Dubai
+              - generic [ref=e525]: Dubai Office
+              - generic [ref=e526]:
+                - generic [ref=e527]: "Flat No: 01 Al kaber, Bur Dubai, P.O. Box: 45214, Dubai, U.A.E."
+                - link "dubai@sanfreightintl.com" [ref=e528] [cursor=pointer]:
+                  - /url: mailto:dubai@sanfreightintl.com
+            - generic [ref=e529]:
+              - generic [ref=e530]: Afghanistan
+              - generic [ref=e531]: Afghanistan Office
+              - generic [ref=e532]:
+                - generic [ref=e533]: Lane Two Haji Yaqoub Squire, Shahr-e-Naw Kabul Afghanistan.
+                - link "+93744311616" [ref=e534] [cursor=pointer]:
+                  - /url: tel:+93744311616
+                - link "kabul@sanfreightintl.com" [ref=e535] [cursor=pointer]:
+                  - /url: mailto:kabul@sanfreightintl.com
+          - generic [ref=e536]:
+            - generic [ref=e537]:
+              - button "Back to top" [ref=e538] [cursor=pointer]:
+                - generic [ref=e539]: Back to top
+              - list [ref=e540]:
+                - listitem [ref=e541]:
+                  - link "LinkedIn" [ref=e542] [cursor=pointer]:
+                    - /url: https://fr.linkedin.com/company/sanfreight-capital
+                - listitem [ref=e543]:
+                  - link "X (Twitter)" [ref=e544] [cursor=pointer]:
+                    - /url: https://twitter.com/SanfreightCapital
+            - generic [ref=e546]:
+              - link "Legals" [ref=e547] [cursor=pointer]:
+                - /url: /en/legal-en/
+              - paragraph [ref=e548]: © 2026 Sanfreight
+  - button "Open Next.js Dev Tools" [ref=e554] [cursor=pointer]:
+    - img [ref=e555]
+  - alert [ref=e558]

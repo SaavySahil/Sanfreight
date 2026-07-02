@@ -1,0 +1,76 @@
+[    8679ms] [ERROR] Failed to load resource: the server responded with a status of 500 (Internal Server Error) @ http://localhost:3000/:0
+[    9044ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ webpack-internal:///./node_modules/react-dom/cjs/react-dom-client.development.js:28004
+[    9128ms] Error: An error occurred in `next/font`.
+
+Error: Cannot find module 'autoprefixer'
+Require stack:
+- C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js
+- C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\index.js
+- C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\index.js
+- C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack-config.js
+- C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\server\dev\hot-reloader-webpack.js
+- C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1456:15)
+    at C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\server\require-hook.js:55:36
+    at require.resolve (node:internal/modules/helpers:163:19)
+    at loadPlugin (C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:49:32)
+    at C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:157:56
+    at Array.map (<anonymous>)
+    at getPostCssPlugins (C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:157:47)
+    at async C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\index.js:124:36
+    at async C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\loaders\next-font-loader\index.js:86:33
+    at async Span.traceAsyncFn (C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\trace\trace.js:153:20)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1456:15)
+    at C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\server\require-hook.js:55:36
+    at require.resolve (node:internal/modules/helpers:163:19)
+    at loadPlugin (C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:49:32)
+    at C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:157:56
+    at Array.map (<anonymous>)
+    at getPostCssPlugins (C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:157:47)
+    at async C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\index.js:124:36
+    at async C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\loaders\next-font-loader\index.js:86:33
+    at async Span.traceAsyncFn (C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\trace\trace.js:153:20)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1456:15)
+    at <unknown> (file://C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\server\require-hook.js:55:36)
+    at require.resolve (node:internal/modules/helpers:163:19)
+    at loadPlugin (file://C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:49:32)
+    at <unknown> (file://C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:157:56)
+    at Array.map (<anonymous>)
+    at getPostCssPlugins (file://C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:157:47)
+    at async (file://C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\index.js:124:36)
+    at async (file://C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\loaders\next-font-loader\index.js:86:33)
+    at async Span.traceAsyncFn (file://C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\trace\trace.js:153:20)
+    at getNextFontError (file://C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\plugins\wellknown-errors-plugin\parseNextFontError.js:26:20)
+    at getModuleBuildError (file://C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\plugins\wellknown-errors-plugin\webpackModuleError.js:128:63)
+    at processTicksAndRejections (node:internal/process/task_queues:104:5)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at process.processImmediate (node:internal/timers:472:9)
+    at async (file://C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\plugins\wellknown-errors-plugin\index.js:29:49)
+    at async (file://C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\plugins\wellknown-errors-plugin\index.js:27:21)
+[    9121ms] [LOG] [HMR] connected @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/websocket.js:41
+[    9125ms] [ERROR] src\app\layout.tsx
+An error occurred in `next/font`.
+
+Error: Cannot find module 'autoprefixer'
+Require stack:
+- C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js
+- C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\index.js
+- C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\index.js
+- C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack-config.js
+- C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\server\dev\hot-reloader-webpack.js
+- C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\server\lib\router-utils\setup-dev-bundler.js
+- C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\server\lib\router-server.js
+- C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\server\lib\start-server.js
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1456:15)
+    at C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\server\require-hook.js:55:36
+    at require.resolve (node:internal/modules/helpers:163:19)
+    at loadPlugin (C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:49:32)
+    at C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:157:56
+    at Array.map (<anonymous>)
+    at getPostCssPlugins (C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\plugins.js:157:47)
+    at async C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\config\blocks\css\index.js:124:36
+    at async C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\build\webpack\loaders\next-font-loader\index.js:86:33
+    at async Span.traceAsyncFn (C:\Users\Shabbir Shaikh\Downloads\13fold\services\dashboard\node_modules\next\dist\trace\trace.js:153:20) @ webpack-internal:///./node_modules/next/dist/client/components/react-dev-overlay/pages/client.js:84
+[    9147ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:3000/favicon.ico:0

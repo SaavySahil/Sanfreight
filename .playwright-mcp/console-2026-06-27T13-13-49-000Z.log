@@ -1,0 +1,385 @@
+[     121ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[     125ms] [LOG] [Fast Refresh] done in 108ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[     619ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[     658ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[     836ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[     874ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[    1188ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[    1189ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[    1198ms] [LOG] [Fast Refresh] done in 242ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[    1551ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[    1953ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1624765ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 1624854ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1624934ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1624958ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 1626705ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1626751ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 1627048ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1731840ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1732082ms] [LOG] [Fast Refresh] done in 345ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1732195ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1732371ms] [LOG] [Fast Refresh] done in 288ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1732475ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1732710ms] [LOG] [Fast Refresh] done in 338ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1742961ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1743057ms] [LOG] [Fast Refresh] done in 198ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 2477662ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 2477847ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 2477985ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 2477987ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 2479585ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 2479712ms] [LOG] [Fast Refresh] done in 230ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 2479724ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 2480058ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 2480428ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 2673204ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 2673284ms] [LOG] [Fast Refresh] done in 181ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 2674391ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 2674681ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 2674995ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 2675054ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 2675911ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 2676191ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 2676687ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3277791ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3277807ms] [LOG] [Fast Refresh] done in 118ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3279258ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3279288ms] [LOG] [Fast Refresh] done in 136ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3279927ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 3280325ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3280434ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 3280488ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3282874ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3283326ms] [LOG] [Fast Refresh] done in 553ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3283351ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 3283659ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3284024ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3338490ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3338777ms] [LOG] [Fast Refresh] done in 398ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3338885ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3339012ms] [LOG] [Fast Refresh] done in 233ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3424748ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3424799ms] [LOG] [Fast Refresh] done in 156ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3424968ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3425089ms] [LOG] [Fast Refresh] done in 225ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3425279ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3425348ms] [LOG] [Fast Refresh] done in 174ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3426009ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3426136ms] [LOG] [Fast Refresh] done in 249ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4192835ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4192897ms] [LOG] [Fast Refresh] done in 165ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4193693ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 4193889ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4194034ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 4194051ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4194892ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4195056ms] [LOG] [Fast Refresh] done in 305ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4195067ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 4195541ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4196033ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4197665ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4197666ms] [LOG] [Fast Refresh] done in 219ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4197805ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4197863ms] [LOG] [Fast Refresh] done in 167ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4198167ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4198266ms] [LOG] [Fast Refresh] done in 200ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4199051ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4199168ms] [LOG] [Fast Refresh] done in 229ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4883032ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4883595ms] [LOG] [Fast Refresh] done in 629ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4927899ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4927929ms] [LOG] [Fast Refresh] done in 136ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4928603ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 4928853ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4929017ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 4929032ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4929803ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4929929ms] [LOG] [Fast Refresh] done in 231ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4929939ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 4930185ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4930547ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6044380ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6044427ms] [LOG] [Fast Refresh] done in 147ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6045099ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 6045292ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6045439ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6045499ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 6049776ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 6050129ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6050625ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6751289ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6751294ms] [LOG] [Fast Refresh] done in 105ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6997400ms] [WARNING] GSAP target null not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6999851ms] [WARNING] GSAP target null not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7852944ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7852947ms] [LOG] [Fast Refresh] done in 107ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7940411ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7940435ms] [LOG] [Fast Refresh] done in 124ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7940908ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7940938ms] [LOG] [Fast Refresh] done in 135ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7941195ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7941340ms] [LOG] [Fast Refresh] done in 245ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 8142625ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 8142663ms] [LOG] [Fast Refresh] done in 141ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 8143308ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 8143485ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 8143642ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 8143670ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 8150596ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 8151122ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 8151559ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 8889741ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 8889828ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 8889900ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 8889920ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 8892380ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 8892397ms] [LOG] [Fast Refresh] done in 120ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 8892399ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 8892557ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 8892908ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9220979ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9221784ms] [LOG] [Fast Refresh] done in 865ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9759612ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 9759704ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9759786ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9759808ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 9765575ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9765725ms] [LOG] [Fast Refresh] done in 274ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9765733ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 9766392ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9767039ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9776858ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9777021ms] [LOG] [Fast Refresh] done in 265ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9778172ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 9778965ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9779049ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 9779063ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9791374ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 9791524ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9792000ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10033008ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10033047ms] [LOG] [Fast Refresh] done in 356ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10469675ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[10469741ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10469794ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[10469814ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10471097ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10471128ms] [LOG] [Fast Refresh] done in 132ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10471133ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[10471424ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10471812ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10472381ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10472471ms] [LOG] [Fast Refresh] done in 196ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11282148ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[11282164ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11282206ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[11282218ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11282377ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11282403ms] [LOG] [Fast Refresh] done in 140ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11282417ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[11282617ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11282893ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11767730ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[11767819ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11767911ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11767930ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[11768699ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11768714ms] [LOG] [Fast Refresh] done in 122ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11768727ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[11768979ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11769324ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12790008ms] [WARNING] GSAP target null not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12790926ms] [WARNING] GSAP target null not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12817319ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12817527ms] [LOG] [Fast Refresh] done in 312ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12817636ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12817668ms] [LOG] [Fast Refresh] done in 140ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12830074ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12830126ms] [LOG] [Fast Refresh] done in 159ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12866194ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12866258ms] [LOG] [Fast Refresh] done in 168ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12871266ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12871833ms] [LOG] [Fast Refresh] done in 670ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12874773ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12875112ms] [LOG] [Fast Refresh] done in 450ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12877108ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[12878303ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12878523ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[12878542ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12880923ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12881111ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12881601ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12881741ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[12881821ms] [LOG] [Fast Refresh] done in 1003ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12915535ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[12915620ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12915703ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12915718ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[12917102ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12917165ms] [LOG] [Fast Refresh] done in 169ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12917169ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[12917284ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12917520ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12949837ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12949945ms] [LOG] [Fast Refresh] done in 210ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12953208ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12953225ms] [LOG] [Fast Refresh] done in 118ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12953602ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/images/homepage-banner.png:0
+[12953921ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[12954027ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12954074ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12954200ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12954294ms] [LOG] [Fast Refresh] done in 206ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12954332ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[12955485ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12955554ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12955953ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12956190ms] [LOG] [Fast Refresh] done in 811ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12956203ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[12963470ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12963660ms] [LOG] [Fast Refresh] done in 293ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12964437ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/images/homepage-banner.png:0
+[12964695ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[12964907ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12965245ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12965344ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[12966462ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12966509ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12967060ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12967166ms] [LOG] [Fast Refresh] done in 811ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12967167ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[12978335ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12978694ms] [LOG] [Fast Refresh] done in 471ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12980659ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12980682ms] [LOG] [Fast Refresh] done in 124ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12981584ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[12982115ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12982609ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12982672ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[12983587ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12983822ms] [LOG] [Fast Refresh] done in 341ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12983832ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[12983991ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12984485ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13024295ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13024376ms] [LOG] [Fast Refresh] done in 186ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13031992ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13032026ms] [LOG] [Fast Refresh] done in 139ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13033742ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[13033992ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13034320ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13034584ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[13055584ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13055592ms] [LOG] [Fast Refresh] done in 111ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13055597ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[13055647ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13055950ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13084027ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13084028ms] [LOG] [Fast Refresh] done in 107ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13252654ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[13252743ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13252819ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13252838ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[13257512ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13257705ms] [LOG] [Fast Refresh] done in 295ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13257722ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[13257900ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13258221ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13482582ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13482654ms] [LOG] [Fast Refresh] done in 181ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13482756ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13482808ms] [LOG] [Fast Refresh] done in 152ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13482919ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13483091ms] [LOG] [Fast Refresh] done in 283ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13596521ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13596546ms] [LOG] [Fast Refresh] done in 125ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16956686ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[16956770ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16956855ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16956856ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[16960961ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16961376ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16961393ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[17024237ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17024256ms] [LOG] [Fast Refresh] done in 129ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17549405ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17549563ms] [LOG] [Fast Refresh] done in 260ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17549670ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17549703ms] [LOG] [Fast Refresh] done in 139ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17581073ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17581161ms] [LOG] [Fast Refresh] done in 198ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17581264ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17581307ms] [LOG] [Fast Refresh] done in 146ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17725803ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17725904ms] [LOG] [Fast Refresh] done in 210ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17726020ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17726054ms] [LOG] [Fast Refresh] done in 149ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17756936ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17757010ms] [LOG] [Fast Refresh] done in 178ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17758566ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17758700ms] [LOG] [Fast Refresh] done in 237ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17776615ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17777485ms] [LOG] [Fast Refresh] done in 979ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17790699ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17791022ms] [LOG] [Fast Refresh] done in 424ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17792495ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[17793167ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17793233ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[17793253ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17795555ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17795898ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[17795966ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[18004706ms] [WARNING] GSAP target null not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18006851ms] [WARNING] GSAP target null not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18015324ms] [WARNING] GSAP target null not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18023348ms] [WARNING] GSAP target null not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18189561ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[18189655ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18189734ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18189750ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[18191609ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18191616ms] [LOG] [Fast Refresh] done in 116ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18191621ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[18191725ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18192024ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18206910ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18207294ms] [LOG] [Fast Refresh] done in 490ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18207811ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18208073ms] [LOG] [Fast Refresh] done in 377ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18208701ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18209117ms] [LOG] [Fast Refresh] done in 518ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18217963ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18218039ms] [LOG] [Fast Refresh] done in 182ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18218142ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18218151ms] [LOG] [Fast Refresh] done in 110ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18314472ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18315672ms] [LOG] [Fast Refresh] done in 1249ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18324373ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18324518ms] [LOG] [Fast Refresh] done in 249ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18324803ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18325424ms] [LOG] [Fast Refresh] done in 724ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18325772ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18325961ms] [LOG] [Fast Refresh] done in 292ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18326706ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18327038ms] [LOG] [Fast Refresh] done in 437ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18331299ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18331451ms] [LOG] [Fast Refresh] done in 255ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18515216ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18515256ms] [LOG] [Fast Refresh] done in 141ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18532517ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18532527ms] [LOG] [Fast Refresh] done in 112ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18534467ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18534478ms] [LOG] [Fast Refresh] done in 114ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18550433ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18551104ms] [LOG] [Fast Refresh] done in 777ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18551515ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18552012ms] [LOG] [Fast Refresh] done in 606ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18552449ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18552825ms] [LOG] [Fast Refresh] done in 484ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18553916ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18554270ms] [LOG] [Fast Refresh] done in 458ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18685818ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18686060ms] [LOG] [Fast Refresh] done in 235ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18855008ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18855021ms] [LOG] [Fast Refresh] done in 125ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477

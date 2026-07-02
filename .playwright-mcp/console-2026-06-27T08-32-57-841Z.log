@@ -1,0 +1,430 @@
+[    1443ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[    1503ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[    1622ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[    1654ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[    3265ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/en/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[    3302ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[    3468ms] TypeError: Cannot set properties of null (setting 'innerHTML')
+    at _P.checkSite (http://localhost:7878/js/app-16e2282a.js:1474:108647)
+    at _P.selectCurrentRoute (http://localhost:7878/js/app-16e2282a.js:1474:107705)
+    at SE.<anonymous> (http://localhost:7878/js/app-16e2282a.js:1474:107637)
+    at Y.emitAsync (http://localhost:7878/js/app-16e2282a.js:111:13727)
+    at SE.computeResize (http://localhost:7878/js/app-16e2282a.js:156:6006)
+    at async SE.resize (http://localhost:7878/js/app-16e2282a.js:156:5015)
+    at async qh.after (http://localhost:7878/js/app-16e2282a.js:156:7595)
+    at async $P.run (http://localhost:7878/js/app-16e2282a.js:156:30987)
+    at async http://localhost:7878/js/app-16e2282a.js:1474:147025
+[   11799ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[   12815ms] [LOG] [Fast Refresh] done in 1117ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[   15848ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[   16677ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[   16731ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[   17176ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[   17718ms] [LOG] [Fast Refresh] done in 648ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[   18115ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[   19944ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/en/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[   20047ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[   20242ms] TypeError: Cannot set properties of null (setting 'innerHTML')
+    at _P.checkSite (http://localhost:7878/js/app-16e2282a.js:1474:108647)
+    at _P.selectCurrentRoute (http://localhost:7878/js/app-16e2282a.js:1474:107705)
+    at SE.<anonymous> (http://localhost:7878/js/app-16e2282a.js:1474:107637)
+    at Y.emitAsync (http://localhost:7878/js/app-16e2282a.js:111:13727)
+    at SE.computeResize (http://localhost:7878/js/app-16e2282a.js:156:6006)
+    at async SE.resize (http://localhost:7878/js/app-16e2282a.js:156:5015)
+    at async qh.after (http://localhost:7878/js/app-16e2282a.js:156:7595)
+    at async $P.run (http://localhost:7878/js/app-16e2282a.js:156:30987)
+    at async http://localhost:7878/js/app-16e2282a.js:1474:147025
+[   20805ms] [LOG] [Fast Refresh] done in 1059ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[   21124ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[   27193ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[   27221ms] [LOG] [Fast Refresh] done in 136ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[   33709ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[   33796ms] [LOG] [Fast Refresh] done in 188ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[  232359ms] TypeError: Cannot set properties of null (setting 'innerHTML')
+    at _P.checkSite (http://localhost:7878/js/app-16e2282a.js:1474:108647)
+    at _P.selectCurrentRoute (http://localhost:7878/js/app-16e2282a.js:1474:107705)
+    at SE.<anonymous> (http://localhost:7878/js/app-16e2282a.js:1474:107637)
+    at Y.emitAsync (http://localhost:7878/js/app-16e2282a.js:111:13727)
+    at SE.computeResize (http://localhost:7878/js/app-16e2282a.js:156:6006)
+[  630036ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[  630040ms] [LOG] [Fast Refresh] done in 105ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[  630472ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[  630611ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[  630680ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[  630706ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 1210836ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1210857ms] [LOG] [Fast Refresh] done in 134ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3089954ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 3090105ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3090143ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 3090155ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3093660ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/en/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3093694ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3093725ms] [LOG] [Fast Refresh] done in 218ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 3093739ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 3093996ms] TypeError: Cannot set properties of null (setting 'innerHTML')
+    at _P.checkSite (http://localhost:7878/js/app-16e2282a.js:1474:108647)
+    at _P.selectCurrentRoute (http://localhost:7878/js/app-16e2282a.js:1474:107705)
+    at SE.<anonymous> (http://localhost:7878/js/app-16e2282a.js:1474:107637)
+    at Y.emitAsync (http://localhost:7878/js/app-16e2282a.js:111:13727)
+    at SE.computeResize (http://localhost:7878/js/app-16e2282a.js:156:6006)
+    at async SE.resize (http://localhost:7878/js/app-16e2282a.js:156:5015)
+    at async qh.after (http://localhost:7878/js/app-16e2282a.js:156:7595)
+    at async $P.run (http://localhost:7878/js/app-16e2282a.js:156:30987)
+    at async http://localhost:7878/js/app-16e2282a.js:1474:147025
+[ 4067575ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 4067623ms] [LOG] [Fast Refresh] done in 159ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6549463ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 6549665ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6549703ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 6549723ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6552515ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6552543ms] [LOG] [Fast Refresh] done in 135ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6552549ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 6552823ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/en/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6553300ms] [WARNING] GSAP target [object NodeList] not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6553302ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6553306ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6553517ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6553554ms] [LOG] [Fast Refresh] done in 138ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6553579ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6562729ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6562909ms] [LOG] [Fast Refresh] done in 291ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6565328ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 6565514ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6565875ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6565946ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 6569237ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6569451ms] [LOG] [Fast Refresh] done in 324ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6569461ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 6569511ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/en/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6570033ms] [WARNING] GSAP target [object NodeList] not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6570035ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6570039ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6570311ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6587247ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6587552ms] [LOG] [Fast Refresh] done in 407ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6588912ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 6589115ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6589168ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6589339ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6589427ms] [LOG] [Fast Refresh] done in 192ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6589454ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 6595345ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/en/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6595396ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6595967ms] [WARNING] GSAP target [object NodeList] not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6595967ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6595970ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6596001ms] [LOG] [Fast Refresh] done in 705ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6596002ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 6596132ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6599717ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 6599923ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6600449ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6600697ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 6601634ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/en/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6601713ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6602259ms] [WARNING] GSAP target [object NodeList] not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6602260ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6602263ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6602300ms] [LOG] [Fast Refresh] done in 714ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6602301ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 6602443ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6831705ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 6831781ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6831880ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6831901ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 6834043ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6834050ms] [LOG] [Fast Refresh] done in 107ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6834079ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/en/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6834095ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 6834452ms] TypeError: Cannot read properties of null (reading 'offsetHeight')
+    at TM.open (http://localhost:7878/js/app-16e2282a.js:157:83901)
+    at JM.open (http://localhost:7878/js/app-16e2282a.js:1474:77538)
+    at fg.after (http://localhost:7878/js/app-16e2282a.js:156:60387)
+    at $P.run (http://localhost:7878/js/app-16e2282a.js:156:30997)
+    at async http://localhost:7878/js/app-16e2282a.js:1474:147025
+[ 6971117ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 6971167ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6971299ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6971320ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 6973533ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6973805ms] [LOG] [Fast Refresh] done in 378ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6973825ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/en/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6973838ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 6974208ms] TypeError: Cannot read properties of null (reading 'offsetHeight')
+    at TM.open (http://localhost:7878/js/app-16e2282a.js:157:83901)
+    at JM.open (http://localhost:7878/js/app-16e2282a.js:1474:77538)
+    at fg.after (http://localhost:7878/js/app-16e2282a.js:156:60387)
+    at $P.run (http://localhost:7878/js/app-16e2282a.js:156:30997)
+    at async http://localhost:7878/js/app-16e2282a.js:1474:147025
+[ 6987597ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 6988167ms] [LOG] [Fast Refresh] done in 674ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7311178ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 7311301ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7311410ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7311449ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 7312581ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7312586ms] [LOG] [Fast Refresh] done in 112ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7312593ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 7312695ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/en/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7313025ms] [WARNING] GSAP target [object NodeList] not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7313025ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7313027ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7313513ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7313542ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7321994ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7322039ms] [LOG] [Fast Refresh] done in 150ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7714306ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 7714398ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7714467ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7714489ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 7765149ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7765175ms] [LOG] [Fast Refresh] done in 126ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7765494ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 7766492ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 7766547ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7766564ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7766664ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 7770883ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7771197ms] [LOG] [Fast Refresh] done in 421ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7771230ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 7771300ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/en/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7772064ms] [WARNING] GSAP target [object NodeList] not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7772066ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7772071ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7772690ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7790486ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 7790525ms] [LOG] [Fast Refresh] done in 148ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9460692ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9460703ms] [LOG] [Fast Refresh] done in 123ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9471682ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[ 9472016ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9472140ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9472279ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9472415ms] [LOG] [Fast Refresh] done in 243ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9472497ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[ 9472936ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9474454ms] [LOG] [Fast Refresh] done in 1945ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9479083ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9479242ms] [LOG] [Fast Refresh] done in 287ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9479730ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 9492031ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/en/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9496507ms] [WARNING] GSAP target [object NodeList] not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9496522ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9496538ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 9515427ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10299138ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10299694ms] [LOG] [Fast Refresh] done in 633ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10422955ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10422976ms] [LOG] [Fast Refresh] done in 129ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10423119ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10423152ms] [LOG] [Fast Refresh] done in 145ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10426629ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[10426740ms] [LOG] [Fast Refresh] done in 221ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11382476ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11382555ms] [LOG] [Fast Refresh] done in 153ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11722403ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11722500ms] [LOG] [Fast Refresh] done in 170ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11863768ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11863792ms] [LOG] [Fast Refresh] done in 139ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11865602ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[11865609ms] [LOG] [Fast Refresh] done in 117ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12049864ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12049877ms] [LOG] [Fast Refresh] done in 119ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12051515ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12051537ms] [LOG] [Fast Refresh] done in 127ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12054851ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12054880ms] [LOG] [Fast Refresh] done in 134ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12301697ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12302135ms] [LOG] [Fast Refresh] done in 505ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12379719ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12379872ms] [LOG] [Fast Refresh] done in 212ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12624265ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12624305ms] [LOG] [Fast Refresh] done in 152ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12624457ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12624457ms] [LOG] [Fast Refresh] done in 102ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12626222ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12626281ms] [LOG] [Fast Refresh] done in 165ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12998820ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[12998827ms] [LOG] [Fast Refresh] done in 110ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13001914ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13001941ms] [LOG] [Fast Refresh] done in 149ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13059799ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13059979ms] [LOG] [Fast Refresh] done in 227ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13406985ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13406992ms] [LOG] [Fast Refresh] done in 108ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13407134ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13407142ms] [LOG] [Fast Refresh] done in 109ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13407297ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13407299ms] [LOG] [Fast Refresh] done in 110ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13412786ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[13412852ms] [LOG] [Fast Refresh] done in 173ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[14426819ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[14426855ms] [LOG] [Fast Refresh] done in 137ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[14427005ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[14427017ms] [LOG] [Fast Refresh] done in 111ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[14439414ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[14439434ms] [LOG] [Fast Refresh] done in 121ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15124685ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15124701ms] [LOG] [Fast Refresh] done in 127ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15126667ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15126684ms] [LOG] [Fast Refresh] done in 118ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15335914ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15335915ms] [LOG] [Fast Refresh] done in 104ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15337165ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15337185ms] [LOG] [Fast Refresh] done in 122ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15396079ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15396092ms] [LOG] [Fast Refresh] done in 114ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15396239ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15396255ms] [LOG] [Fast Refresh] done in 118ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15398402ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15398422ms] [LOG] [Fast Refresh] done in 122ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15675101ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15675109ms] [LOG] [Fast Refresh] done in 108ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15676817ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15676833ms] [LOG] [Fast Refresh] done in 117ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15727227ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[15727305ms] [LOG] [Fast Refresh] done in 185ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16532847ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16532848ms] [LOG] [Fast Refresh] done in 107ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16532993ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16532999ms] [LOG] [Fast Refresh] done in 107ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16534163ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16534170ms] [LOG] [Fast Refresh] done in 108ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16851281ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16851284ms] [LOG] [Fast Refresh] done in 109ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16851412ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16851471ms] [LOG] [Fast Refresh] done in 165ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16851639ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16851711ms] [LOG] [Fast Refresh] done in 185ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16851958ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16851991ms] [LOG] [Fast Refresh] done in 141ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16852184ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16852285ms] [LOG] [Fast Refresh] done in 205ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16979525ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[16979528ms] [LOG] [Fast Refresh] done in 115ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18475731ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18475766ms] [LOG] [Fast Refresh] done in 137ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18583208ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18583242ms] [LOG] [Fast Refresh] done in 345ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18583489ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18583533ms] [LOG] [Fast Refresh] done in 286ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18583803ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18583868ms] [LOG] [Fast Refresh] done in 331ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18594136ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[18594216ms] [LOG] [Fast Refresh] done in 186ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[19328325ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[19328434ms] [LOG] [Fast Refresh] done in 209ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[19328628ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[19328770ms] [LOG] [Fast Refresh] done in 245ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[19329038ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[19329107ms] [LOG] [Fast Refresh] done in 177ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[19330741ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[19330875ms] [LOG] [Fast Refresh] done in 237ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[19524366ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[19524443ms] [LOG] [Fast Refresh] done in 177ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[19524596ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[19524765ms] [LOG] [Fast Refresh] done in 278ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[19525127ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[19525392ms] [LOG] [Fast Refresh] done in 497ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[19525934ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[19526150ms] [LOG] [Fast Refresh] done in 319ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20128964ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20128966ms] [LOG] [Fast Refresh] done in 117ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20130416ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20130447ms] [LOG] [Fast Refresh] done in 136ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20130609ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20130722ms] [LOG] [Fast Refresh] done in 216ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20130891ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20130959ms] [LOG] [Fast Refresh] done in 179ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20131364ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20131431ms] [LOG] [Fast Refresh] done in 174ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20134034ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20134648ms] [LOG] [Fast Refresh] done in 725ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20189755ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20189936ms] [LOG] [Fast Refresh] done in 399ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20190117ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20190171ms] [LOG] [Fast Refresh] done in 233ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20275907ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20275956ms] [LOG] [Fast Refresh] done in 155ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20276554ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[20276869ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20277307ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[20277352ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[21044008ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21044059ms] [LOG] [Fast Refresh] done in 165ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21044258ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21044387ms] [LOG] [Fast Refresh] done in 246ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21044576ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21044677ms] [LOG] [Fast Refresh] done in 207ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21044986ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21045054ms] [LOG] [Fast Refresh] done in 170ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21046007ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21046213ms] [LOG] [Fast Refresh] done in 316ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21048711ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21048743ms] [LOG] [Fast Refresh] done in 137ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21049067ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[21049291ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21049427ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21049488ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[21050209ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21050327ms] [LOG] [Fast Refresh] done in 228ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21050355ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[21050714ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/en/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21051086ms] [WARNING] GSAP target [object NodeList] not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21051086ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21051088ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21051379ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21067702ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21067796ms] [LOG] [Fast Refresh] done in 201ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21734191ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21734755ms] [LOG] [Fast Refresh] done in 623ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21779061ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21779087ms] [LOG] [Fast Refresh] done in 135ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21779258ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21779357ms] [LOG] [Fast Refresh] done in 204ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21779542ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21779665ms] [LOG] [Fast Refresh] done in 223ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21779997ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21780068ms] [LOG] [Fast Refresh] done in 185ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21780957ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[21781087ms] [LOG] [Fast Refresh] done in 231ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[22895542ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[22895585ms] [LOG] [Fast Refresh] done in 147ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[22895745ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[22895861ms] [LOG] [Fast Refresh] done in 219ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[22896047ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[22896145ms] [LOG] [Fast Refresh] done in 203ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[22896485ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[22896588ms] [LOG] [Fast Refresh] done in 206ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[24704103ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[24704105ms] [LOG] [Fast Refresh] done in 104ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[24993791ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[24993822ms] [LOG] [Fast Refresh] done in 141ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[24993999ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[24994105ms] [LOG] [Fast Refresh] done in 217ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[24994289ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[24994373ms] [LOG] [Fast Refresh] done in 196ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[24994711ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[24994789ms] [LOG] [Fast Refresh] done in 185ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[25740743ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[25740756ms] [LOG] [Fast Refresh] done in 123ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[26072143ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[26072943ms] [LOG] [Fast Refresh] done in 865ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[26610552ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[26610568ms] [LOG] [Fast Refresh] done in 125ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[26628095ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[26628181ms] [LOG] [Fast Refresh] done in 236ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[26628432ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[26628717ms] [LOG] [Fast Refresh] done in 392ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[26629002ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[26629451ms] [LOG] [Fast Refresh] done in 590ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[26629938ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[26630076ms] [LOG] [Fast Refresh] done in 252ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[26884169ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[26884206ms] [LOG] [Fast Refresh] done in 354ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[27320588ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[27320604ms] [LOG] [Fast Refresh] done in 118ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[27322259ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[27322287ms] [LOG] [Fast Refresh] done in 133ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477

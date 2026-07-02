@@ -1,0 +1,30 @@
+[     507ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js:0
+[     538ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[     647ms] [LOG] [HMR] connected @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[     830ms] [WARNING] No <base> tag defined, Router may not work properly [computed base: http://localhost:7878/]. @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[     874ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/images/news-blog3.jpg:0
+[     874ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/images/news-blog4.jpg:0
+[     892ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js:0
+[    1279ms] [WARNING] GSAP target  not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[    1290ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[    1292ms] [LOG] [Fast Refresh] done in 378ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[    1297ms] [ERROR] Failed to load resource: the server responded with a status of 404 (Not Found) @ http://localhost:7878/cdn-cgi/rum?:0
+[ 1937641ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1937663ms] [LOG] [Fast Refresh] done in 125ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1937908ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1937984ms] [LOG] [Fast Refresh] done in 180ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1938280ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1938509ms] [LOG] [Fast Refresh] done in 330ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1938652ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1938702ms] [LOG] [Fast Refresh] done in 151ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1938833ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1939023ms] [LOG] [Fast Refresh] done in 290ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1939258ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1939408ms] [LOG] [Fast Refresh] done in 255ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1940269ms] [LOG] [Fast Refresh] rebuilding @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1940275ms] [LOG] [Fast Refresh] done in 107ms @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1958240ms] [WARNING] GSAP target null not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1959033ms] [WARNING] GSAP target null not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1959341ms] [WARNING] GSAP target null not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1959372ms] [WARNING] GSAP target null not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477
+[ 1959747ms] [WARNING] GSAP target null not found. https://greensock.com @ http://localhost:7878/_next/static/chunks/0iu7_next_dist_0sh9w3w._.js:2477

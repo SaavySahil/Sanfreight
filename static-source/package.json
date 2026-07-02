@@ -1,8 +1,0 @@
-{
-  "name": "mimcocapital-com",
-  "version": "1.0.0",
-  "description": "Mimco Capital Website",
-  "scripts": {
-    "dev": "npx -y http-server -p 7878"
-  }
-}
