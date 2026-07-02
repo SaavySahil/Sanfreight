@@ -56,8 +56,8 @@ export default function Home() {
       />
 
       {/* Load core scripts */}
-      <Script src="/js/email-decode.min.js" strategy="beforeInteractive" />
-      <Script src="/js/app-16e2282a.js" strategy="lazyOnload" type="module" />
+      <Script src="/js/email-decode.min.js" strategy="afterInteractive" />
+      <Script src="/js/app-16e2282a.js" strategy="afterInteractive" />
     </>
   );
 }
