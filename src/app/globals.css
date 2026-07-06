@@ -93,11 +93,30 @@ SANFREIGHT CUSTOM BRANDING STYLES
 .mimco-logo {
     width: 500px !important;
     height: 125px !important;
+    max-width: 100%;
     background-image: url('/images/sanfreight-logo-white-new.webp');
     /* artwork is centered with ~33% padding: crop it by scaling bg to 3.1x and offsetting */
     background-size: 1553px 388px;
     background-position: -531px -127px;
     background-repeat: no-repeat;
+}
+/* Scale the logo box (and its background) down together so it never overflows/crops on narrow screens */
+@media (max-width: 599px) {
+    .mimco-logo {
+        width: 100% !important;
+        max-width: 320px !important;
+        height: 80px !important;
+        background-size: 993.92px 248.32px;
+        background-position: -339.84px -81.28px;
+    }
+}
+@media (min-width: 600px) and (max-width: 959px) {
+    .mimco-logo {
+        width: 400px !important;
+        height: 100px !important;
+        background-size: 1242.4px 310.4px;
+        background-position: -424.8px -101.6px;
+    }
 }
 
 /* ── Screen loader logos ────────────────────────────── */
@@ -149,6 +168,59 @@ SANFREIGHT CUSTOM BRANDING STYLES
     object-position: left center;
 }
 
+
+/* ── Home hero: load-in reveal (mirrors the site's reveal motion, but
+   fires on load since this content is above the fold — the scroll-
+   triggered reveal-lines/reveal-words engine skips anything already
+   in the viewport on first paint, so it can never run here). ── */
+@keyframes sf-hero-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.sf-hero-animate {
+  opacity: 0;
+  transform: translateY(24px);
+}
+/* Animation only starts once the screen loader has finished fading out
+   (body.sf-revealed is added by PageTransition after window "load"),
+   otherwise it plays out invisibly behind the loader before the user
+   ever sees the page. */
+body.sf-revealed .sf-hero-animate {
+  animation: sf-hero-reveal 0.9s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+.sf-hero-animate-delay {
+  animation-delay: 0.15s;
+}
+
+/* ── Footer contact CTA: keep headline beside the button on mobile ── */
+/* Base rule pins .text-wrapper and .cta-wrapper independently via absolute
+   top/left/bottom/right coordinates with no shared layout, so on narrow
+   screens a long/wrapped headline grows downward into the button. Replace
+   with a real flex row so they never collide, matching the desktop intent. */
+@media (max-width: 959px) {
+  .footer-container .module-footer .footer-contact-foreground {
+    display: flex !important;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px;
+    box-sizing: border-box;
+  }
+  .footer-container .module-footer .footer-contact-foreground .text-wrapper {
+    position: static !important;
+    max-width: 60%;
+  }
+  .footer-container .module-footer .footer-contact-foreground .cta-wrapper {
+    position: static !important;
+    flex-shrink: 0;
+  }
+}
 
 /* ── Team section: stack cards vertically on mobile ── */
 @media (max-width: 959px) {

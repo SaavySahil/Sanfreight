@@ -36,6 +36,7 @@ export default function PageTransition({ bodyClass, teamMembers }: PageTransitio
     // Reveal the page by fading out the screen loader
     const revealPage = () => {
       document.body.style.opacity = "1";
+      document.body.classList.add("sf-revealed");
       const loader = document.getElementById("screen-loader");
       if (loader) {
         loader.style.transition = "opacity 0.5s ease-out";
