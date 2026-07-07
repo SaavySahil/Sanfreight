@@ -301,10 +301,19 @@ body.sf-revealed .sf-hero-animate {
 body.sf-story-page .sf-logo--dark  { opacity: 1; }
 body.sf-story-page .sf-logo--white { opacity: 0; }
 
-/* Our Story timeline sidebar: at exactly 166px the logo (20px margin + 146px
-   width) has zero room and clips against the right edge. Widen the rail so
-   the logo — same size as every other page — sits with breathing room. */
-body.sf-story-page #history .nav {
-  width: 210px;
-  flex: 0 0 210px;
+/* Our Story timeline sidebar: the drag-slideshow's scroll math is hardcoded
+   to a 166px nav width in the site's JS bundle (target/position = slide.x -
+   166), so .nav itself must stay at 166px — widening it desyncs every
+   slide's horizontal position (content renders underneath it). The logo
+   isn't actually inside .nav — it's in the fixed #header, overlaid visually
+   on top of the sidebar — so shrink the logo itself to fit within 166px
+   with clear margin on both sides. */
+body.sf-story-page .sf-logo-link {
+  width: 120px !important;
+  height: 33px !important;
+  margin: 16px 20px !important;
+}
+body.sf-story-page .sf-logo {
+  width: 120px !important;
+  height: 33px !important;
 }
