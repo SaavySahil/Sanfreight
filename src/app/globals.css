@@ -317,3 +317,12 @@ body.sf-story-page .sf-logo {
   width: 120px !important;
   height: 33px !important;
 }
+
+/* Homepage "Our Clients" marquee: tighten the gap between logos on mobile
+   only (desktop spacing set inline via .sf-track img { margin: 0 64px }
+   stays untouched). */
+@media (max-width: 599px) {
+  .sanfreight-logo-marquee .sf-track img {
+    margin: 0 24px !important;
+  }
+}
