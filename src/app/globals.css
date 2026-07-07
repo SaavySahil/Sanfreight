@@ -295,3 +295,8 @@ body.sf-revealed .sf-hero-animate {
 #header[data-theme="light-transparent"] .sf-logo--dark { opacity: 0; }
 #header[data-theme="light"] .sf-logo--white,
 #header[data-theme="light-transparent"] .sf-logo--white { opacity: 1; }
+
+/* Our Story page: light UI throughout (nav sidebar, sections) — always show the
+   dark logo. Scoped to this page only via body class, set in page.json. */
+body.sf-story-page .sf-logo--dark  { opacity: 1; }
+body.sf-story-page .sf-logo--white { opacity: 0; }
