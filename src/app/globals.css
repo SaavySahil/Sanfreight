@@ -300,3 +300,11 @@ body.sf-revealed .sf-hero-animate {
    dark logo. Scoped to this page only via body class, set in page.json. */
 body.sf-story-page .sf-logo--dark  { opacity: 1; }
 body.sf-story-page .sf-logo--white { opacity: 0; }
+
+/* Our Story timeline sidebar: at exactly 166px the logo (20px margin + 146px
+   width) has zero room and clips against the right edge. Widen the rail so
+   the logo — same size as every other page — sits with breathing room. */
+body.sf-story-page #history .nav {
+  width: 210px;
+  flex: 0 0 210px;
+}
