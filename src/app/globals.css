@@ -198,6 +198,30 @@ body.sf-revealed .sf-hero-animate {
   animation-delay: 0.15s;
 }
 
+/* ── Home hero heading: per-word reveal, mirroring the site's
+   reveal-words motion (each word slides up + fades in, staggered)
+   used on About/ESG copy. Same visual language, but load-triggered
+   like sf-hero-animate above since reveal-words itself never fires
+   for above-the-fold content. ── */
+@keyframes sf-hero-word-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(80%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.sf-hero-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(80%);
+}
+body.sf-revealed .sf-hero-word {
+  animation: sf-hero-word-reveal 1s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
 /* ── Footer contact CTA: keep headline beside the button on mobile ── */
 /* Base rule pins .text-wrapper and .cta-wrapper independently via absolute
    top/left/bottom/right coordinates with no shared layout, so on narrow
