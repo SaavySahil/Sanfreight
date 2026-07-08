@@ -326,3 +326,24 @@ body.sf-story-page .sf-logo {
     margin: 0 24px !important;
   }
 }
+
+/* Contact form phone-number row: the prefix <select> now shows full country
+   names (was just "+33"/"+352"), which at narrower breakpoints made it
+   auto-size to ~275px and starve the number input down to ~37px. Cap the
+   prefix to a fixed, sane width (ellipsis if a long name doesn't fit) and
+   let the number input claim the rest of the row via flex. */
+.phone-number .input-w {
+  flex-wrap: nowrap;
+}
+.phone-number select.phone-prefix {
+  flex: 0 0 110px;
+  width: 110px;
+  max-width: 110px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.phone-number input#contact-phoneNumber {
+  flex: 1 1 auto;
+  min-width: 0;
+}
