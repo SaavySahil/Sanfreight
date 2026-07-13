@@ -416,3 +416,51 @@ h3.title.text-black {
     line-height: 4.5rem !important;
   }
 }
+
+/* ── Founder section (module-team-slideshow, single card) ──
+   Heading is longer than the old "Discover our team" so the original
+   460px title cap wrapped it onto 4 lines; and the static single-card
+   row replaced the JS marquee, so it needs its own centering layout. */
+.module-team-slideshow .header-wrapper .title {
+  max-width: 340px;
+}
+@media (min-width: 960px) {
+  .module-team-slideshow .header-wrapper .title {
+    max-width: 900px !important;
+  }
+}
+.module-team-slideshow .team-static-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+.module-team-slideshow .team-static-row .slide {
+  flex: 0 0 400px;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+}
+.module-team-slideshow .team-static-row .card-profile {
+  min-width: 340px !important;
+  max-width: 400px;
+  width: 100%;
+}
+@media (max-width: 959px) {
+  .module-team-slideshow .team-static-row .slide {
+    flex-basis: 340px;
+    width: 340px;
+  }
+  .module-team-slideshow .team-static-row .card-profile {
+    min-width: 0 !important;
+    width: 85vw;
+    max-width: 340px;
+  }
+}
+
+/* ── Latest news CTA: the generic .cta-custom desktop rule hides it;
+   the old hide-mobile variant had its own show rule. Keep the single
+   CTA visible on every breakpoint. ── */
+.module-news .container .cta-wrapper .cta-custom {
+  display: block !important;
+}
