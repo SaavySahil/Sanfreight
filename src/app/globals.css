@@ -97,8 +97,8 @@ SANFREIGHT CUSTOM BRANDING STYLES
     display: none;
 }
 .mimco-logo {
-    width: 200px !important;
-    height: 50px !important;
+    width: 500px !important;
+    height: 125px !important;
     max-width: 100%;
     background-image: url('/images/sanfreight-logo-white-new.webp');
     background-size: contain;
@@ -109,14 +109,14 @@ SANFREIGHT CUSTOM BRANDING STYLES
 @media (max-width: 599px) {
     .mimco-logo {
         width: 100% !important;
-        max-width: 160px !important;
-        height: 40px !important;
+        max-width: 320px !important;
+        height: 80px !important;
     }
 }
 @media (min-width: 600px) and (max-width: 959px) {
     .mimco-logo {
-        width: 180px !important;
-        height: 45px !important;
+        width: 400px !important;
+        height: 100px !important;
     }
 }
 
