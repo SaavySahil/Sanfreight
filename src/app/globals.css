@@ -86,36 +86,37 @@ SANFREIGHT CUSTOM BRANDING STYLES
 }
 
 /* ── Footer / contact logos ─────────────────────────── */
-/* Hide the img, show logo via background on the parent .mimco-logo instead */
+/* Hide the img, show logo via background on the parent .mimco-logo instead.
+   The current logo webp is a tight crop with no padding around the artwork
+   (unlike the old asset this was originally tuned for), so a plain
+   background-size: contain reproduces it correctly at any box size without
+   the old hand-tuned scale/offset hack. Also shrunk from 500x125 to 200x50:
+   the old size rendered oversized/cut off in the footer and "Let's talk"
+   panel. */
 .mimco-logo img.sanfreight-logo-img-footer {
     display: none;
 }
 .mimco-logo {
-    width: 500px !important;
-    height: 125px !important;
+    width: 200px !important;
+    height: 50px !important;
     max-width: 100%;
     background-image: url('/images/sanfreight-logo-white-new.webp');
-    /* artwork is centered with ~33% padding: crop it by scaling bg to 3.1x and offsetting */
-    background-size: 1553px 388px;
-    background-position: -531px -127px;
+    background-size: contain;
+    background-position: left center;
     background-repeat: no-repeat;
 }
-/* Scale the logo box (and its background) down together so it never overflows/crops on narrow screens */
+/* Scale the logo box down together so it never overflows/crops on narrow screens */
 @media (max-width: 599px) {
     .mimco-logo {
         width: 100% !important;
-        max-width: 320px !important;
-        height: 80px !important;
-        background-size: 993.92px 248.32px;
-        background-position: -339.84px -81.28px;
+        max-width: 160px !important;
+        height: 40px !important;
     }
 }
 @media (min-width: 600px) and (max-width: 959px) {
     .mimco-logo {
-        width: 400px !important;
-        height: 100px !important;
-        background-size: 1242.4px 310.4px;
-        background-position: -424.8px -101.6px;
+        width: 180px !important;
+        height: 45px !important;
     }
 }
 
@@ -370,4 +371,48 @@ body.sf-story-page .sf-logo {
 .phone-number input#contact-phoneNumber {
   flex: 1 1 auto;
   min-width: 0;
+}
+
+/* ── "Let's talk" side panel: address section background blue -> black ── */
+.contacts.contact-capital {
+  background-color: #000 !important;
+}
+
+/* ── Homepage team section: single static founder card ──
+   Previously a 24-person infinite-scroll carousel driven by the legacy
+   app bundle's slideshow JS. Reduced to one card (Ankush Salunkhe); the
+   slideshow JS is no longer attached (dropped data-component="TeamSlideshow"
+   and renamed .infinite-slideshow -> .team-static-row) since it crashed
+   trying to run its marquee-cloning logic against a single slide. This
+   just centers the one remaining card. */
+.module-team-slideshow .team-static-row {
+  display: flex;
+  justify-content: center;
+}
+.module-team-slideshow .team-static-row .slide {
+  width: 100%;
+}
+.module-team-slideshow .card-profile {
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+/* ── Section titles: match the ESG page's subtitle size on desktop ──
+   "Latest news", "Featured Projects" and similar real section headings use
+   .title.text-black (with or without .ts-xl), which stayed flat at 2rem
+   with no desktop bump — much smaller than the equivalent large text on
+   the ESG page (which grows to 4.5rem at 960px+). Scoped to .text-black so
+   this doesn't touch the small "Our solutions" service-card titles, which
+   share .ts-xl but aren't .text-black. */
+h2.title.text-black,
+h3.title.text-black {
+  font-size: 2rem !important;
+  line-height: 2.25rem !important;
+}
+@media (min-width: 960px) {
+  h2.title.text-black,
+  h3.title.text-black {
+    font-size: 4.5rem !important;
+    line-height: 4.5rem !important;
+  }
 }

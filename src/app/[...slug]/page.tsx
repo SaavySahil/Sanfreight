@@ -16,9 +16,34 @@ interface PageProps {
   params: Promise<{ slug: string[] }>;
 }
 
+// Routes still holding old Mimco Capital (real-estate/investment) content that
+// hasn't been rebranded for Sanfreight. Not ready for the client — gated here
+// instead of deleting the underlying page.json files, so the content stays
+// recoverable and easy to re-enable once each page is actually rebranded.
+const DISABLED_ROUTE_PREFIXES = [
+  "en/investement-solution/",
+  "en/investor/",
+  "en/reference/",
+  "en/references",
+  "en/mimco-real-estate",
+  "en/job-offers/corporate-legal-officer",
+  "en/job-offers/senior-fund-manager",
+];
+
+function isDisabledRoute(decodedSlug: string[]): boolean {
+  // The entire non-English tree (bare /YYYY/MM/DD/slug routes, no /en/ prefix)
+  // is old Mimco press content mirrored in French — never rebranded either.
+  if (/^\d{4}$/.test(decodedSlug[0] ?? "")) return true;
+  const joined = decodedSlug.join("/");
+  return DISABLED_ROUTE_PREFIXES.some((prefix) => joined.startsWith(prefix));
+}
+
 function getPageData(slug: string[]): PageData {
   try {
     const decodedSlug = slug.map((seg) => decodeURIComponent(seg));
+    if (isDisabledRoute(decodedSlug)) {
+      notFound();
+    }
     const filePath = path.join(
       process.cwd(),
       "src",
