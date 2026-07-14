@@ -446,6 +446,12 @@ h3.title.text-black {
   max-width: 400px;
   width: 100%;
 }
+.module-team-slideshow .team-static-row .slide {
+  padding-bottom: 0 !important;
+}
+.module-team-slideshow .team-slideshow-container {
+  margin-bottom: 60px;
+}
 @media (max-width: 959px) {
   .module-team-slideshow .team-static-row .slide {
     flex-basis: 340px;
