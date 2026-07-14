@@ -470,3 +470,10 @@ h3.title.text-black {
 .module-news .container .cta-wrapper .cta-custom {
   display: block !important;
 }
+
+/* Career page "Equality and diversity" slide — .title's base color (#221d3e)
+   reads as near-invisible dark navy on the dark slide's near-black
+   background. Force white for the dark variant specifically. */
+.module-focus-on .slide.dark .content .top .title {
+  color: var(--white);
+}
