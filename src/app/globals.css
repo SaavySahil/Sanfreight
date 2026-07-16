@@ -489,10 +489,11 @@ h3.title.text-black {
   max-width: 800px;
 }
 .module-projects-map .network-globe-heading {
-  font-size: 1.75rem;
+  font-family: Aeonik;
+  font-size: 2rem;
   line-height: 1.2;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  font-weight: 400;
+  letter-spacing: normal;
   color: var(--white);
   max-width: 620px;
 }
@@ -505,7 +506,7 @@ h3.title.text-black {
 }
 @media (min-width: 960px) {
   .module-projects-map .network-globe-heading {
-    font-size: 2.75rem;
+    font-size: 3.25rem;
     line-height: 1.15;
   }
   .module-projects-map .network-globe-lead {
@@ -528,15 +529,26 @@ h3.title.text-black {
   max-width: 420px;
   aspect-ratio: 1 / 1;
 }
+/* Flat instrument-panel plate, not a glow — this site's visual language is
+   sharp and flat throughout (no blurred/ambient-light effects elsewhere),
+   so the globe sits on a plain lighter-navy disc with a thin ring instead
+   of a bokeh backdrop. Still solves the original problem (the dark globe
+   blending into the section background). */
 .module-projects-map .globe-glow {
   position: absolute;
-  inset: -18%;
+  inset: -7%;
   z-index: 0;
   pointer-events: none;
-  background:
-    radial-gradient(closest-side, rgba(255, 204, 0, 0.16), transparent 62%),
-    radial-gradient(closest-side, rgba(93, 110, 255, 0.35), transparent 70%);
-  filter: blur(28px);
+  border-radius: 50%;
+  background: var(--blue-5);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.module-projects-map .globe-glow::before {
+  content: "";
+  position: absolute;
+  inset: -22px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 204, 0, 0.18);
 }
 .module-projects-map .globe-canvas-wrapper canvas {
   position: relative;
