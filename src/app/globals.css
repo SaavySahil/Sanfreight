@@ -477,3 +477,103 @@ h3.title.text-black {
 .module-focus-on .slide.dark .content .top .title {
   color: var(--white);
 }
+
+/* ── Network globe (About page): replaces the old Europe-only real-estate
+   "ProjectsMap" SVG with an interactive WebGL globe (Cobe) showing our 5
+   real offices, mounted client-side onto the #sf-network-globe-canvas
+   element by src/components/NetworkGlobe.tsx. Layout/legend below is
+   plain CSS; .module-projects-map's own background/padding/top-wrapper
+   rules are untouched and still apply to this section. ── */
+.module-projects-map .network-globe-w {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  margin-top: 60px;
+  padding: 0 20px;
+}
+.module-projects-map .globe-canvas-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+}
+.module-projects-map .globe-canvas-wrapper canvas {
+  width: 100%;
+  height: 100%;
+  contain: layout paint size;
+  transition: opacity 1s ease;
+}
+.module-projects-map .globe-hint {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-grey);
+  pointer-events: none;
+}
+.module-projects-map .network-globe-legend {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px 40px;
+  width: 100%;
+  max-width: 620px;
+}
+.module-projects-map .network-globe-legend-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+.module-projects-map .network-globe-legend-item .dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: var(--magic-mint-1);
+  box-shadow: 0 0 8px 1px rgba(255, 204, 0, 0.6);
+}
+.module-projects-map .network-globe-legend-item .legend-country {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.module-projects-map .network-globe-legend-item .legend-tag {
+  font-size: 0.6875rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--blue-1);
+  background: var(--magic-mint-1);
+  padding: 3px 7px;
+  border-radius: 3px;
+}
+.module-projects-map .network-globe-legend-item .legend-city {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: var(--text-grey);
+  margin-top: 2px;
+}
+@media (min-width: 960px) {
+  .module-projects-map .network-globe-w {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin-top: 90px;
+  }
+  .module-projects-map .globe-canvas-wrapper {
+    max-width: 460px;
+    flex: none;
+  }
+  .module-projects-map .network-globe-legend {
+    grid-template-columns: 1fr;
+    max-width: 280px;
+  }
+}
