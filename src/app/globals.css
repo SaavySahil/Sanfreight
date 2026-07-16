@@ -487,6 +487,18 @@ h3.title.text-black {
    used here (superseded by .network-globe-intro below). ── */
 .module-projects-map .network-globe-intro {
   max-width: 800px;
+  /* The fixed header is 108px tall on mobile but this module only has 54px
+     of its own top padding — nowhere near enough clearance, so as the
+     section scrolls into view the header sits directly over the heading.
+     Desktop's header (72px) already fits inside the module's 88px padding,
+     so this only needs adding below the 960px breakpoint. 64px gives
+     54+64=118px total, a comfortable 10px clear of the 108px header. */
+  margin-top: 64px;
+}
+@media (min-width: 960px) {
+  .module-projects-map .network-globe-intro {
+    margin-top: 0;
+  }
 }
 .module-projects-map .network-globe-heading {
   font-family: Aeonik;
