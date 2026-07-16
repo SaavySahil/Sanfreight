@@ -481,9 +481,39 @@ h3.title.text-black {
 /* ── Network globe (About page): replaces the old Europe-only real-estate
    "ProjectsMap" SVG with an interactive WebGL globe (Cobe) showing our 5
    real offices, mounted client-side onto the #sf-network-globe-canvas
-   element by src/components/NetworkGlobe.tsx. Layout/legend below is
-   plain CSS; .module-projects-map's own background/padding/top-wrapper
-   rules are untouched and still apply to this section. ── */
+   element by src/components/NetworkGlobe.tsx. .module-projects-map's own
+   background/padding rules are untouched and still apply to this section;
+   its legacy .top-wrapper/.paragraphs-w split-column rules are no longer
+   used here (superseded by .network-globe-intro below). ── */
+.module-projects-map .network-globe-intro {
+  max-width: 800px;
+}
+.module-projects-map .network-globe-heading {
+  font-size: 1.75rem;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  max-width: 620px;
+}
+.module-projects-map .network-globe-lead {
+  margin-top: 24px;
+  font-size: 1.0625rem;
+  line-height: 1.6875rem;
+  color: rgba(255, 255, 255, 0.72);
+  max-width: 640px;
+}
+@media (min-width: 960px) {
+  .module-projects-map .network-globe-heading {
+    font-size: 2.75rem;
+    line-height: 1.15;
+  }
+  .module-projects-map .network-globe-lead {
+    font-size: 1.1875rem;
+    line-height: 1.875rem;
+  }
+}
+
 .module-projects-map .network-globe-w {
   display: flex;
   flex-direction: column;
@@ -498,7 +528,19 @@ h3.title.text-black {
   max-width: 420px;
   aspect-ratio: 1 / 1;
 }
+.module-projects-map .globe-glow {
+  position: absolute;
+  inset: -18%;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(closest-side, rgba(255, 204, 0, 0.16), transparent 62%),
+    radial-gradient(closest-side, rgba(93, 110, 255, 0.35), transparent 70%);
+  filter: blur(28px);
+}
 .module-projects-map .globe-canvas-wrapper canvas {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   contain: layout paint size;
@@ -506,19 +548,32 @@ h3.title.text-black {
 }
 .module-projects-map .globe-hint {
   position: absolute;
-  bottom: 8px;
+  z-index: 2;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.6875rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--text-grey);
+  color: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  padding: 7px 14px 7px 11px;
   pointer-events: none;
+  backdrop-filter: blur(6px);
+}
+.module-projects-map .globe-hint-icon {
+  flex: none;
+  color: var(--magic-mint-1);
 }
 .module-projects-map .network-globe-legend {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 28px 40px;
+  gap: 10px 16px;
   width: 100%;
   max-width: 620px;
 }
@@ -526,6 +581,23 @@ h3.title.text-black {
   display: flex;
   align-items: flex-start;
   gap: 12px;
+  padding: 10px 12px;
+  margin: 0 -12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.module-projects-map .network-globe-legend-item:hover,
+.module-projects-map .network-globe-legend-item:focus-visible,
+.module-projects-map .network-globe-legend-item.is-active {
+  background: rgba(255, 255, 255, 0.06);
+  outline: none;
+}
+.module-projects-map .network-globe-legend-item:hover .dot,
+.module-projects-map .network-globe-legend-item:focus-visible .dot,
+.module-projects-map .network-globe-legend-item.is-active .dot {
+  box-shadow: 0 0 12px 3px rgba(255, 204, 0, 0.85);
+  transform: scale(1.2);
 }
 .module-projects-map .network-globe-legend-item .dot {
   flex: none;
@@ -535,38 +607,60 @@ h3.title.text-black {
   border-radius: 50%;
   background: var(--magic-mint-1);
   box-shadow: 0 0 8px 1px rgba(255, 204, 0, 0.6);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+.module-projects-map .network-globe-legend-item .legend-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
 }
 .module-projects-map .network-globe-legend-item .legend-country {
   font-size: 1.125rem;
-  line-height: 1.5rem;
+  line-height: 1.375rem;
   color: var(--white);
   display: flex;
   align-items: center;
   gap: 8px;
 }
 .module-projects-map .network-globe-legend-item .legend-tag {
-  font-size: 0.6875rem;
+  font-size: 0.625rem;
   line-height: 1;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  color: var(--blue-1);
-  background: var(--magic-mint-1);
-  padding: 3px 7px;
-  border-radius: 3px;
+  color: var(--magic-mint-1);
+  background: transparent;
+  border: 1px solid rgba(255, 204, 0, 0.5);
+  padding: 5px 9px;
+  border-radius: 999px;
 }
 .module-projects-map .network-globe-legend-item .legend-city {
   font-size: 0.875rem;
-  line-height: 1.25rem;
+  line-height: 1.125rem;
   color: var(--text-grey);
-  margin-top: 2px;
+}
+.module-projects-map .network-globe-legend-item .legend-time {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  color: rgba(255, 255, 255, 0.4);
+  font-variant-numeric: tabular-nums;
+}
+.module-projects-map .network-globe-legend-item .legend-time:not(:empty)::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 6px;
+  border-radius: 50%;
+  background: #3ddc84;
+  vertical-align: middle;
 }
 @media (min-width: 960px) {
   .module-projects-map .network-globe-w {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 80px;
-    margin-top: 90px;
+    gap: 90px;
+    margin-top: 70px;
   }
   .module-projects-map .globe-canvas-wrapper {
     max-width: 460px;
@@ -574,6 +668,7 @@ h3.title.text-black {
   }
   .module-projects-map .network-globe-legend {
     grid-template-columns: 1fr;
-    max-width: 280px;
+    max-width: 300px;
+    gap: 4px;
   }
 }
