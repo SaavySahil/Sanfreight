@@ -37,7 +37,12 @@ function isDisabledRoute(decodedSlug: string[]): boolean {
   // is old Mimco press content mirrored in French — never rebranded either.
   if (/^\d{4}$/.test(decodedSlug[0] ?? "")) return true;
   const joined = decodedSlug.join("/");
-  return DISABLED_ROUTE_PREFIXES.some((prefix) => joined.startsWith(prefix));
+  if (DISABLED_ROUTE_PREFIXES.some((prefix) => joined.startsWith(prefix))) return true;
+  // Dated article routes (en/YYYY/MM/DD/slug) whose slug still names Mimco are
+  // old press releases about the former real-estate business — never adapted
+  // for Sanfreight beyond a superficial title swap.
+  if (/^en\/\d{4}\/\d{2}\/\d{2}\/.*mimco/i.test(joined)) return true;
+  return false;
 }
 
 function getPageData(slug: string[]): PageData {

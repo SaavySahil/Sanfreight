@@ -13,7 +13,7 @@ export default function PageTransition({ bodyClass, teamMembers }: PageTransitio
     if (teamMembers) {
       (window as any).teamMembers = teamMembers;
     }
-    (window as any).ADMIN_AJAX_URL = "https://www.mimcocapital.com/wp-admin/admin-ajax.php";
+    (window as any).ADMIN_AJAX_URL = "/wp-admin/admin-ajax.php";
 
     // Prevent Next.js App Router from intercepting internal <a> clicks —
     // the scraped app's own AJAX router must drive navigation exclusively.
