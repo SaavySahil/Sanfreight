@@ -29,6 +29,7 @@ const DISABLED_ROUTE_PREFIXES = [
   "en/mimco-real-estate",
   "en/job-offers/corporate-legal-officer",
   "en/job-offers/senior-fund-manager",
+  "en/esg",
 ];
 
 function isDisabledRoute(decodedSlug: string[]): boolean {
