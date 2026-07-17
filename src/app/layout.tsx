@@ -1,9 +1,5 @@
-import type { Metadata, Viewport } from "next";
+import type { Metadata } from "next";
 import "./globals.css";
-
-export const viewport: Viewport = {
-  themeColor: "#0e0e11",
-};
 
 export const metadata: Metadata = {
   title: "Homepage - Sanfreight",
@@ -36,7 +32,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-US">
-      <body className="wp-theme-sanfreight">
+      <head>
+        <link rel="preconnect" href="https://www.mimcocapital.com/en/" crossOrigin="" />
+      </head>
+      <body className="wp-theme-mimco">
         {children}
       </body>
     </html>
