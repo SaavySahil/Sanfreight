@@ -32,7 +32,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-US">
-      <body className="wp-theme-sanfreight">
+      <head>
+        <link rel="preconnect" href="https://www.mimcocapital.com/en/" crossOrigin="" />
+      </head>
+      <body className="wp-theme-mimco">
         {children}
       </body>
     </html>
