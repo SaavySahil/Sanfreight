@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Homepage - Sanfreight",
   description:
-    "In this regard, Sanfreight structures, develops, and supports the growth of real estate investment vehicles. Professional investors can access through these vehicles top-tier management and strategies that would typically be beyond their reach.",
+    "In this regard, Sanfreight structures, develops, and supports the growth of logistics investment vehicles. Professional investors can access through these vehicles top-tier management and strategies that would typically be beyond their reach.",
   alternates: {
     canonical: "https://sanfreightnew.vercel.app/",
     languages: {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "Homepage - Sanfreight",
     description:
-      "In this regard, Sanfreight structures, develops, and supports the growth of real estate investment vehicles. Professional investors can access through these vehicles top-tier management and strategies that would typically be beyond their reach.",
+      "In this regard, Sanfreight structures, develops, and supports the growth of logistics investment vehicles. Professional investors can access through these vehicles top-tier management and strategies that would typically be beyond their reach.",
     url: "https://sanfreightnew.vercel.app/en/",
     siteName: "Sanfreight",
   },
