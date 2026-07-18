@@ -27,11 +27,11 @@
     "country": "Europe",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2023/09/Bernd-von-Manteuffel.jpg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
     "job": "Founder & CEO",
-    "description": "Ceci est la description de Christophe Nadal",
+    "description": "",
     "image": 11100,
     "details": {
       "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n"
@@ -42,7 +42,7 @@
     "country": "Europe",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2023/09/Christophe-Nadal-photo-2025.png"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
     "description": "",
@@ -57,10 +57,10 @@
     "country": "Europe",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2025/06/Quentin-verschoren-MIMCO.png"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
-    "description": "Jorge Cunha is an expert in structured finance and logistics with more than twenty years of experience in the international banking and financial sector.\r\n\r\nAfter beginning his career in private banking at Dresdner Bank, he was promoted to Vice President of Banco Popolare in 2006. In 2012, he joined Banque Internationale à Luxembourg to lead the development of the Iberian and South American markets. In 2015, he co-founded Sigma Trust, where he led logistics transactions and served as a board member for several investment funds and single family offices.\r\n\r\nHe is currently Managing Director and Head of Business Development at MIMCO, a major player in logistics revitalization in Europe, with more than €2 billion in assets under management.",
+    "description": "",
     "job": "Managing Director - Head of Business Development",
     "image": 12738,
     "linkedin_profile": "",
@@ -72,10 +72,10 @@
     "country": "Europe",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2026/05/Vignette-Jorge.png"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
-    "description": "With over 15 years’ experience in investment, asset management and financing strategies, Paul-Eric Perchaud is a renowned expert in the property sector.\r\n\r\nPrior to joining MIMCO Asset Management, he worked in France and internationally for major players in the asset management and logistics crowdfunding sector, including Unibail-Rodamco-Westfield and ClubFunding Group, where he held senior positions and was responsible for managing and acquiring large-scale logistics portfolios.\r\n\r\nPaul-Eric is a graduate of ESCP Business School – MSc General Management and Strategy from the Grandes Ecoles programme.\r\n\r\nAt MIMCO Asset Management, Paul-Eric Perchaud will be responsible for the logistics private debt investment strategy. He will lead a team of experienced logistics asset management professionals who will seek to identify the most attractive investment opportunities and build a diversified portfolio of logistics loans.",
+    "description": "",
     "job": "Logistics Director, Private Debt",
     "image": 1628,
     "linkedin_profile": "",
@@ -87,10 +87,10 @@
     "country": "France",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2023/08/Paul-eric-perchaud-scaled.jpeg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
-    "description": "Director, Member of the Executive Board",
+    "description": "",
     "job": "Director, Member of the Executive Board",
     "image": 752,
     "linkedin_profile": "",
@@ -102,11 +102,11 @@
     "country": "Germany",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2023/08/louisemilsje.jpg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
     "job": "Executive Director",
-    "description": "Ceci est la description de John Doe",
+    "description": "",
     "image": 11929,
     "details": {
       "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n"
@@ -117,10 +117,10 @@
     "country": "Europe",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2025/12/Alexandra-Nadal-scaled.jpg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
-    "description": "Head of Legal",
+    "description": "",
     "job": "Head of Legal",
     "image": 8236,
     "linkedin_profile": "",
@@ -132,7 +132,7 @@
     "country": "Europe",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2024/06/Vignette-Céline-1-scaled.jpg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
     "description": "",
@@ -147,10 +147,10 @@
     "country": "Luxembourg",
     "countryMobile": "LU",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2026/02/Olivier-Guilloteaux.png"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
-    "description": "A graduate of Audencia, a leading business school, Romain Hoppenot brings solid expertise in logistics investment and asset management, acquired through a rich career within top-tier institutions.\r\n\r\nHe began his career at Archon Group in France and Germany before joining LaSalle Investment Management in Munich as a Portfolio Manager.\r\n\r\nUpon returning to France, he continued his path in Asset Management at Primonial REIM and Left Bank, before joining Zaka Investments as Director of Investments and Asset Management, where he was notably responsible for the development of high value-added commercial assets.\r\nBuilding on this experience, he is now joining MIMCO Asset Management to lead the management and value enhancement of the group's assets.",
+    "description": "",
     "job": "Head of Asset Management",
     "image": 9809,
     "linkedin_profile": "",
@@ -162,10 +162,10 @@
     "country": "France",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2025/03/Romain-2.png"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
-    "description": "test",
+    "description": "",
     "job": "Finance Director",
     "image": 1689,
     "linkedin_profile": "",
@@ -177,10 +177,10 @@
     "country": "Europe",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2023/09/Christophe-Bever.jpg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
-    "description": "Business Development Director",
+    "description": "",
     "job": "Business Development Director",
     "image": 1636,
     "linkedin_profile": "",
@@ -192,7 +192,7 @@
     "country": "France",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2023/08/Christophe-coutteau.jpg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
     "description": "",
@@ -207,10 +207,10 @@
     "country": "France",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2023/08/Charlotte-Habib.jpg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
-    "description": "test",
+    "description": "",
     "job": "Talent Acquisition & Human Resources Director",
     "image": 1691,
     "linkedin_profile": "",
@@ -222,10 +222,10 @@
     "country": "Europe",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2023/09/Hari-Tsitsigos.jpg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
-    "description": "test",
+    "description": "",
     "job": "Head of Marketing & Digital",
     "image": 1651,
     "linkedin_profile": "",
@@ -237,10 +237,10 @@
     "country": "Luxembourg",
     "countryMobile": "LU",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2023/09/Guillaume-Dolle.jpg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
-    "description": "Active in the logistics sector since 2009, Elodie Gesquiere-Rouyer has developed solid expertise in the sale of new-build property projects.\r\n\r\nSince 2021, she has been responsible for designing spaces and marketing new residential developments in Luxembourg for the MIMCO Group. Aspiring to advance her career, Elodie earned an MBA with distinction from the University of Cumbria in England in 2023.\r\n\r\nStrengthened by this new qualification, she is now in charge of implementing and monitoring fundraising activities for MIMCO’s Funds and club deals within the Compliance & Middle Office department. In this role, she works closely with the sales teams as well as with the Group’s financial adviser partners (CGP/CIF).",
+    "description": "",
     "job": "Administrative & Compliance Director",
     "image": 12000,
     "linkedin_profile": "",
@@ -252,10 +252,10 @@
     "country": "Europe",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2023/09/Elodie-Gesquiere-1-scaled.jpg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
-    "description": "Business Development Director",
+    "description": "",
     "job": "Business Development Director",
     "image": 1604,
     "linkedin_profile": "",
@@ -267,7 +267,7 @@
     "country": "Luxembourg",
     "countryMobile": "LU",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2023/08/Jean-Christophe-Cheung-scaled.jpeg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
     "description": "",
@@ -282,10 +282,10 @@
     "country": "France",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2025/09/Benjamin-Boidin.png"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
-    "description": "With 24 years of consolidated experience in wealth management and wealth engineering consulting activities, followed by investment and tax-exempt logistics, Jean-Philippe Guénier has also built up proven expertise in logistics development with key accounts and CGPI partners.\r\n\r\nAlso, after refining his skills within renowned companies such as AGF Assurfinance and BNP Paribas, Jean-Philippe took over the regional management of logistics development for the Primonial group.\r\n\r\nHolder of a diploma in territorial planning and development, he is also certified CGPC (Certified Wealth Management Consultant).\r\n\r\nBy joining MIMCO Capital, Jean-Philippe is contributing to the development of its B2B distribution and animation in France.",
+    "description": "",
     "job": "Investor Relations Manager - South-East and East",
     "image": 1707,
     "linkedin_profile": "",
@@ -297,11 +297,11 @@
     "country": "France",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2023/09/Jean-philippe-Guenier-MIMCO.jpg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
     "job": "Investor Relations Manager - Western France",
-    "description": "Maximilien Lemme has a highly developed sense of interpersonal skills and has been building his career in finance for over 10 years, with a strong expertise in logistics asset management and in supporting wealth advisors throughout France.\r\n\r\nHis last 4 years at the logistics management company Perial AM, initially as an Account Manager and later as Head of CGP Partnerships, have solidified his understanding of the financial sector and refined his skills in partnership management. Maximilien began his career in wealth management at BNP Paribas, where he successively held the positions of Wealth Advisor and Business-to-Business Account Manager. He also contributed to the growth of Foncia Pierre Gestion as an Account Manager for CGPI Partners and Client Relations.\r\n\r\nMaximilien’s academic journey started with a diploma in Retail Unit Management. Furthermore, he serves as a lecturer at INSEEC, teaching in support of Master’s programs in Wealth Management and Logistics Markets to pass on his logistics expertise.\r\n\r\nAt MIMCO Asset Management, Maximilien is responsible for developing and nurturing a network of B-to-B partners in the French market, primarily in the Western region",
+    "description": "",
     "image": 1627,
     "details": {
       "description": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n"
@@ -312,7 +312,7 @@
     "country": "France",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2023/08/Maximilien-LEMME-1-scaled.jpeg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
     "description": "",
@@ -327,10 +327,10 @@
     "country": "France",
     "countryMobile": "",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2023/08/Gabriel-Gomez.jpg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
-    "description": "Jean-Baptiste holds an engineering degree from Polytech Nancy and brings over 10 years of experience in managing large-scale logistics developments in Luxembourg. Renowned for his rigorous approach and his ability to generate sustainable value, he possesses a comprehensive command of the entire development cycle, from land acquisition to commercialization.\r\n\r\nNow a Senior Project Manager at MIMCO, Jean-Baptiste provides a cross-functional perspective on local urban challenges. He previously made a significant impact on the Luxembourg logistics landscape at BESIX RED, where he led the flagship Parc Septfontaines project, serving as the central liaison between public institutions, financial partners, and design and construction teams.\r\n\r\nHis upward career trajectory within industry leaders such as Bouygues, KONE, and Otis enabled him to structure complex engineering departments and head TheLuxLab, a subsidiary dedicated to technical innovation. Jean-Baptiste is multilingual fluent in French, English, and German, and has further enriched his profile with studies in constitutional law at Sciences Po Nancy.",
+    "description": "",
     "job": "Senior Project Manager",
     "image": 12744,
     "linkedin_profile": "",
@@ -342,10 +342,10 @@
     "country": "Luxembourg",
     "countryMobile": "LU",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2026/05/Vignette-Jean-Baptiste.jpg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
-    "description": "Active for more than 13 years in the fiduciary field in Luxembourg, Fanny Picard benefits from solid skills in accounting and financial management.\r\n\r\nDuring her years of work experience, she has evolved within the Ocorian group (formerly MAS Luxembourg), a world leader in corporate and fiduciary services, fund administration and capital markets. At first, Fanny worked in the front office in the accounting management of client companies before joining the back office to develop her skills in managing commercial companies. \r\n\r\nShe graduated from the Paul Verlaine University in Metz (France) with a professional degree in organizational management.\r\n\r\nAs a Finance Manager, Fanny is responsible for the financial and administrative management of the Luxembourg companies of the MIMCO Capital group, as well as the organization of automation processes.",
+    "description": "",
     "job": "Finance Manager",
     "image": 1701,
     "linkedin_profile": "",
@@ -357,10 +357,10 @@
     "country": "Luxembourg",
     "countryMobile": "LU",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2023/09/Fanny-Picard.jpg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   },
   {
-    "description": "With almost 10 years of experience in fiduciary companies in Luxembourg, Hoang Cao Minh has acquired solid knowledge in accounting, auditing and taxes. He has also recently developed skills within regulated structures, more particularly in the logistics sector.\r\n\r\nGraduated in accounting and taxation at Hénallux in Belgium, Hoang built his career and sharpened his experience within the Ocorian group, a world leader in corporate and fiduciary services, fund administration and capital markets. In particular, he was in charge of a portfolio of financial holding companies for 7 years and of regulated funds for 3 years.\r\n\r\nToday, Hoang manages the accounting of the logistics assets of the MIMCO Capital Group located in Luxembourg.",
+    "description": "",
     "job": "Finance Manager",
     "image": 7118,
     "linkedin_profile": "",
@@ -372,6 +372,6 @@
     "country": "Luxembourg",
     "countryMobile": "LU",
     "fullDescription": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>\n<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>\n",
-    "imageUrl": "https://www.mimcocapital.com/wp-content/uploads/2024/01/Hoang-Cao-Minh-MIMCO-Capital-scaled.jpg"
+    "imageUrl": "/images/our-story-placeholder.jpg"
   }
 ]
