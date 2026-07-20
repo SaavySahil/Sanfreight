@@ -7,9 +7,11 @@ endpoints of this API server-side.
 
 Ported from an internal Exellar backend and rebranded/rewired for
 Sanfreight; the models, routes, and auth flow are otherwise unchanged
-(Projects/Applications/Content endpoints exist and still work, but nothing
-on the Sanfreight site currently reads from them — Articles and Jobs are
-the two models actually wired up).
+(Applications/Content endpoints exist and still work, but nothing on the
+Sanfreight site currently reads from them — Articles and Jobs are the two
+models actually wired up). The Projects feature (construction-business
+portfolio entries) was removed entirely — it had no relevance to a
+logistics company.
 
 ## Local development
 

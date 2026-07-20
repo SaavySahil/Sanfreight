@@ -3,8 +3,6 @@ import { AuthProvider, useAuth } from './context/AuthContext.jsx'
 import Layout from './components/Layout.jsx'
 import Login from './pages/Login.jsx'
 import Dashboard from './pages/Dashboard.jsx'
-import Projects from './pages/Projects.jsx'
-import ProjectForm from './pages/ProjectForm.jsx'
 import Jobs from './pages/Jobs.jsx'
 import JobForm from './pages/JobForm.jsx'
 import Applications from './pages/Applications.jsx'
@@ -32,9 +30,6 @@ export default function App() {
           >
             <Route index element={<Navigate to="/dashboard" replace />} />
             <Route path="dashboard" element={<Dashboard />} />
-            <Route path="projects" element={<Projects />} />
-            <Route path="projects/new" element={<ProjectForm />} />
-            <Route path="projects/:id/edit" element={<ProjectForm />} />
             <Route path="jobs" element={<Jobs />} />
             <Route path="jobs/new" element={<JobForm />} />
             <Route path="jobs/:id/edit" element={<JobForm />} />

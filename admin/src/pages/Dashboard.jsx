@@ -12,7 +12,6 @@ function useCount(url) {
 }
 
 const CARD_DEFS = [
-  { label: 'Projects',     url: '/api/admin/projects',     to: '/projects'     },
   { label: 'Job Listings', url: '/api/admin/jobs',         to: '/jobs'         },
   { label: 'Articles',     url: '/api/admin/articles',     to: '/articles'     },
   { label: 'Applications', url: '/api/admin/applications', to: '/applications' },
@@ -29,12 +28,11 @@ function StatCard({ label, to, value, isLoading }) {
 }
 
 export default function Dashboard() {
-  const projects     = useCount('/api/admin/projects')
   const jobs         = useCount('/api/admin/jobs')
   const articles     = useCount('/api/admin/articles')
   const applications = useCount('/api/admin/applications')
 
-  const results = [projects, jobs, articles, applications]
+  const results = [jobs, articles, applications]
 
   return (
     <div>
@@ -54,7 +52,6 @@ export default function Dashboard() {
       <div className={styles.links}>
         <h2 className={styles.sub}>Quick Actions</h2>
         <div className={styles.btnRow}>
-          <Link to="/projects/new" className={styles.action}>+ New Project</Link>
           <Link to="/jobs/new"     className={styles.action}>+ New Job</Link>
           <Link to="/articles/new" className={styles.action}>+ New Article</Link>
         </div>
