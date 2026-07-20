@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+## Admin panel & backend
+
+The News (`/en/news`) and Careers (`/en/job-offers`) sections are backed by
+a real admin panel + API, not static files — see [`/admin`](./admin) and
+[`/server`](./server) for setup and deployment instructions.
+
 ## Getting Started
 
 First, run the development server:

@@ -32,6 +32,9 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+!*/.env.example
+!admin/.env.production
 
 # vercel
 .vercel
@@ -45,4 +48,19 @@ next-env.d.ts
 
 # docx extracts
 .docx_extract/
+
+# admin panel (Vite/React)
+/admin/node_modules
+/admin/dist
+/admin/.vite
+
+# backend (Flask/Python)
+/server/__pycache__
+/server/**/__pycache__
+/server/venv
+/server/.venv
+/server/*.db
+/server/instance/
+/server/uploads
+/server/*.log
 
