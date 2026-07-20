@@ -35,7 +35,7 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://www.mimcocapital.com/en/" crossOrigin="" />
       </head>
-      <body className="wp-theme-mimco" suppressHydrationWarning={true}>
+      <body className="wp-theme-mimco">
         {children}
       </body>
     </html>
