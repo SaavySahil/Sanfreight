@@ -1,11 +1,11 @@
 import fs from "fs";
 import path from "path";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import Script from "next/script";
-import { getJobBySlug } from "@/lib/api";
+import { getJobBySlug, type Job } from "@/lib/api";
 import PageTransition from "@/components/PageTransition";
 import teamMembers from "@/app/teamMembers.json";
+import { escapeHtml, splitBullets } from "@/lib/legacyRender";
 
 export const revalidate = 60;
 
@@ -49,6 +49,96 @@ function getLegacyJobPage(slug: string): LegacyPageData | null {
   }
 }
 
+// Reference template: one of the real migrated jobs. Every job detail page
+// shares the exact same site markup/CSS (hero, description, requirements
+// list) — only these dynamic fields differ per job.
+function getReferenceTemplate(): LegacyPageData {
+  const filePath = path.join(
+    process.cwd(),
+    "src",
+    "content",
+    "pages",
+    "en",
+    "job-offers",
+    "administrative-sales-support",
+    "page.json"
+  );
+  return JSON.parse(fs.readFileSync(filePath, "utf-8"));
+}
+
+const OLD_TITLE = "Administrative &amp; Sales Support";
+const OLD_DESC_MARKER = '<div class="description" data-animation="reveal-lines">\n                <p>';
+const LISTS_INNER_MARKER = '<div class="module module-lists"';
+const SECTION_END_MARKER = "</div></section>";
+
+function renderBullet(text: string): string {
+  return `<div class="options-texts">
+                                                        ${escapeHtml(text)}                                                    </div>
+
+<div class="separator"></div>`;
+}
+
+function renderRequirementsCard(bullets: string[]): string {
+  if (bullets.length === 0) return "";
+  return `
+                                    <div class="information-card-wrapper">
+                    <div class="information-card">
+
+                        <div class="left">
+                                                            <div class="title-w">
+                                    <div class="title">
+                                        Requirements                                    </div>
+                                </div>
+                                                    </div>
+                        <div class="right">
+
+                                                                                                <div class="options-title-w">
+                                                                            </div>
+
+                                                                            <div class="options-texts-w">
+                                                                                                                                                ${bullets.map(renderBullet).join("")}
+                                    </div>
+
+                        </div>
+                    </div>
+
+<div class="separator"></div></div>`;
+}
+
+function renderJobHtml(job: Job, base: LegacyPageData): string {
+  let html = base.bodyHtml;
+
+  const newTitle = job.title.replace(/&/g, "&amp;");
+  html = html.split(OLD_TITLE).join(newTitle);
+
+  const descStart = html.indexOf(OLD_DESC_MARKER);
+  if (descStart !== -1) {
+    const pStart = descStart + OLD_DESC_MARKER.length;
+    const pEnd = html.indexOf("</p>", pStart);
+    if (pEnd !== -1) {
+      html =
+        html.slice(0, pStart) +
+        escapeHtml(job.description || "") +
+        html.slice(pEnd);
+    }
+  }
+
+  const listsIdx = html.indexOf(LISTS_INNER_MARKER);
+  if (listsIdx !== -1) {
+    const innerMarker = '<div class="inner">';
+    const innerIdx = html.indexOf(innerMarker, listsIdx);
+    const innerStart = innerIdx + innerMarker.length;
+    const sectionEndIdx = html.indexOf(SECTION_END_MARKER, innerStart);
+    if (innerIdx !== -1 && sectionEndIdx !== -1) {
+      const bullets = splitBullets(job.requirements);
+      html =
+        html.slice(0, innerStart) + renderRequirementsCard(bullets) + html.slice(sectionEndIdx);
+    }
+  }
+
+  return html;
+}
+
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params;
   const job = await getJobBySlug(slug);
@@ -68,42 +158,15 @@ export default async function JobDetailPage({ params }: PageProps) {
   const job = await getJobBySlug(slug);
 
   if (job) {
+    const base = getReferenceTemplate();
+    const finalHtml = renderJobHtml(job, base);
     return (
-      <div className="min-h-screen bg-black text-white">
-        <header className="border-b border-white/10 px-6 py-6 md:px-12">
-          <Link
-            href="/en/job-offers"
-            className="text-sm text-white/60 hover:text-white transition-colors"
-          >
-            &larr; Back to Careers
-          </Link>
-        </header>
-
-        <main className="mx-auto max-w-3xl px-6 py-16 md:px-12">
-          <h1 className="text-3xl font-semibold leading-tight md:text-4xl">{job.title}</h1>
-          <p className="mt-4 text-sm text-white/50">
-            {[job.department, job.location, job.type].filter(Boolean).join(" · ")}
-          </p>
-
-          {job.description && (
-            <div className="mt-8">
-              <h2 className="text-lg font-medium">Description</h2>
-              <div className="mt-2 whitespace-pre-line text-white/80 leading-relaxed">
-                {job.description}
-              </div>
-            </div>
-          )}
-
-          {job.requirements && (
-            <div className="mt-8">
-              <h2 className="text-lg font-medium">Requirements</h2>
-              <div className="mt-2 whitespace-pre-line text-white/80 leading-relaxed">
-                {job.requirements}
-              </div>
-            </div>
-          )}
-        </main>
-      </div>
+      <>
+        <PageTransition bodyClass={base.bodyClass} teamMembers={teamMembers} />
+        <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: finalHtml }} />
+        <Script src="/js/email-decode.min.js" strategy="afterInteractive" />
+        <Script src="/js/app-16e2282a.js" strategy="afterInteractive" />
+      </>
     );
   }
 
