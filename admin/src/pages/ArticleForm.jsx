@@ -15,7 +15,26 @@ const INITIAL = {
   is_published: false,
 }
 
-const CATEGORIES = ['Construction', 'Innovation', 'Sustainability', 'Safety', 'Company News', 'Projects']
+const CATEGORIES = [
+  'Trade Policy & Market Opportunity',
+  'Logistics Trends & Growth Markets',
+  'Compliance & Risk Management',
+  'Technology & Operations',
+]
+
+// The main Sanfreight site's public site — used only to resolve legacy
+// root-relative thumbnail paths (e.g. "/images/news-blog1.webp") for preview
+// here in the admin panel. New uploads always store a full absolute URL
+// already, so this only matters for articles migrated before the upload
+// endpoint existed.
+const MAIN_SITE_ORIGIN = 'https://sanfreightnew.vercel.app'
+
+function resolveThumbnailPreviewUrl(thumbnail) {
+  if (!thumbnail) return null
+  if (/^https?:\/\//i.test(thumbnail)) return thumbnail
+  if (thumbnail.startsWith('/')) return `${MAIN_SITE_ORIGIN}${thumbnail}`
+  return `${API_BASE}/api/uploads/images/${thumbnail}`
+}
 
 export default function ArticleForm() {
   const { id } = useParams()
@@ -64,7 +83,7 @@ export default function ArticleForm() {
       const fd = new FormData()
       fd.append('image', file)
       const res = await client.post('/api/admin/upload', fd)
-      set('thumbnail', res.data.filename)
+      set('thumbnail', res.data.url)
     } catch { addToast('Upload failed', 'error') }
     finally { setUploading(false) }
   }
@@ -113,12 +132,21 @@ export default function ArticleForm() {
         <input type="file" accept="image/*" onChange={handleThumbnailChange} className={styles.input} />
         {uploading && <p className={styles.hint}>Uploading…</p>}
         {form.thumbnail && (
-          <img
-            src={`${API_BASE}/api/uploads/images/${form.thumbnail}`}
-
-            alt="thumbnail preview"
-            style={{ maxWidth: 220, marginTop: 8, borderRadius: 6 }}
-          />
+          <div style={{ marginTop: 8 }}>
+            <img
+              src={resolveThumbnailPreviewUrl(form.thumbnail)}
+              alt="thumbnail preview"
+              style={{ maxWidth: 220, borderRadius: 6, display: 'block' }}
+            />
+            <button
+              type="button"
+              onClick={() => set('thumbnail', '')}
+              className={styles.cancel}
+              style={{ marginTop: 6, padding: '4px 10px', fontSize: 13 }}
+            >
+              Remove thumbnail
+            </button>
+          </div>
         )}
 
         <label className={styles.label} style={{ display: 'flex', alignItems: 'center', gap: 10, cursor: 'pointer' }}>

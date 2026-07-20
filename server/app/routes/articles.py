@@ -29,6 +29,21 @@ def get_article(slug):
 
 # ── ADMIN ────────────────────────────────────────────────────────────────────
 
+@articles_bp.route('/admin/upload', methods=['POST'])
+@token_required
+def admin_upload_image(current_user):
+    if 'image' not in request.files:
+        return jsonify({'error': 'No image file provided'}), 400
+    try:
+        filename = save_image(request.files['image'])
+    except ValueError as e:
+        return jsonify({'error': str(e)}), 400
+    if not filename:
+        return jsonify({'error': 'No image file provided'}), 400
+    url = f"{request.host_url.rstrip('/')}/api/uploads/images/{filename}"
+    return jsonify({'filename': filename, 'url': url}), 201
+
+
 @articles_bp.route('/admin/articles', methods=['GET'])
 @token_required
 def admin_list_articles(current_user):

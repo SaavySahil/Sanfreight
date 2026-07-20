@@ -1,8 +1,6 @@
 import styles from './StatusBadge.module.css'
 
 const MAP = {
-  ongoing:   { label: 'Ongoing',   cls: styles.ongoing },
-  completed: { label: 'Completed', cls: styles.completed },
   'full-time':  { label: 'Full-Time',  cls: styles.fulltime },
   'part-time':  { label: 'Part-Time',  cls: styles.parttime },
   contract:  { label: 'Contract',  cls: styles.contract },
