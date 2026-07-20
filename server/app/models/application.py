@@ -14,9 +14,16 @@ class JobApplication(db.Model):
     phone = db.Column(db.String(20))
     resume_path = db.Column(db.String(500))
     cover_note = db.Column(db.Text)
+    status = db.Column(
+        db.Enum('new', 'reviewed', 'shortlisted', 'rejected', name='application_status', native_enum=False),
+        default='new', nullable=False,
+    )
     applied_at = db.Column(db.DateTime, default=datetime.utcnow)
 
     def to_dict(self):
+        resume_ext = None
+        if self.resume_path and '.' in self.resume_path:
+            resume_ext = self.resume_path.rsplit('.', 1)[1].lower()
         return {
             'id': self.id,
             'job_id': self.job_id,
@@ -25,6 +32,8 @@ class JobApplication(db.Model):
             'email': self.email,
             'phone': self.phone,
             'cover_note': self.cover_note,
+            'status': self.status,
             'applied_at': self.applied_at.isoformat(),
             'has_resume': bool(self.resume_path),
+            'resume_ext': resume_ext,
         }
