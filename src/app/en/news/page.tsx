@@ -1,5 +1,10 @@
-import Link from "next/link";
-import { getArticles } from "@/lib/api";
+import fs from "fs";
+import path from "path";
+import Script from "next/script";
+import PageTransition from "@/components/PageTransition";
+import teamMembers from "../../teamMembers.json";
+import { getArticles, type Article } from "@/lib/api";
+import { escapeHtml, formatDotDate } from "@/lib/legacyRender";
 
 export const metadata = {
   title: "News - Sanfreight",
@@ -9,72 +14,93 @@ export const metadata = {
 
 export const revalidate = 60;
 
-function formatDate(dateStr: string | null) {
-  if (!dateStr) return "";
-  return new Date(dateStr).toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+const CARDS_START_MARKER = "<!-- Put content here  -->";
+const CARD_END_MARKER = '<div class="separator"></div></a>';
+
+interface LegacyPageData {
+  bodyClass: string;
+  bodyHtml: string;
+}
+
+function getBaseTemplate(): LegacyPageData {
+  const filePath = path.join(
+    process.cwd(),
+    "src",
+    "content",
+    "pages",
+    "en",
+    "news",
+    "page.json"
+  );
+  return JSON.parse(fs.readFileSync(filePath, "utf-8"));
+}
+
+function renderCard(article: Article): string {
+  const href = `/en/news/${encodeURIComponent(article.slug)}`;
+  const img = article.thumbnail || "";
+  const dateLabel = formatDotDate(article.published_at);
+  const category = article.category || "";
+  return `
+<a href="${href}" class="component-new new-container " data-component="NewOrJob" data-filterable data-filter="${escapeHtml(category)}" >
+    <div class="dflex">
+
+        <div class="left-container">
+            <div class="image-wrapper">
+                <div class="image-content">
+                                            <picture ><source srcset="${escapeHtml(img)}" media="(min-width: 960px)" /><img src="${escapeHtml(img)}" loading="lazy" data-src="" alt="" class="picture" draggable="false" /></picture>                                    </div>
+            </div>
+                            <div class="date-wrapper">
+                    <div class="date">
+                            <div class="tag green">
+            <span class="text-chinese-black-1">${dateLabel}</span>
+            </div>
+                    </div>
+                </div>
+
+        </div>
+        <div class="right-container">
+                            <div class="new-title-wrapper">
+                    <span data-animation="reveal-lines">${escapeHtml(article.title)}</span>
+                </div>
+
+                            <div class="new-description-wrapper" data-animation="reveal-lines">
+                    <p>${escapeHtml(article.summary || "")}</p>
+                </div>
+
+            <div class="flex">
+                <div class="custom-icon-wrapper">
+                    <div class="custom-icon-arrow"> ↗ </div>
+                </div>
+
+                <div class="new-type-wrapper">
+                                            <p>${escapeHtml(category)}</p>
+                                    </div>
+
+            </div>
+        </div>
+    </div>
+
+<div class="separator"></div></a>`;
 }
 
 export default async function NewsPage() {
   const articles = await getArticles();
+  const base = getBaseTemplate();
+  const html = base.bodyHtml;
+
+  const startIdx = html.indexOf(CARDS_START_MARKER) + CARDS_START_MARKER.length;
+  const lastCardEndIdx = html.lastIndexOf(CARD_END_MARKER) + CARD_END_MARKER.length;
+  const prefix = html.slice(0, startIdx);
+  const suffix = html.slice(lastCardEndIdx);
+  const cardsHtml = articles.map(renderCard).join("");
+  const finalHtml = prefix + cardsHtml + suffix;
 
   return (
-    <div className="min-h-screen bg-black text-white">
-      <header className="border-b border-white/10 px-6 py-6 md:px-12">
-        <Link href="/en" className="text-sm text-white/60 hover:text-white transition-colors">
-          &larr; Back to Sanfreight
-        </Link>
-      </header>
-
-      <main className="mx-auto max-w-5xl px-6 py-16 md:px-12">
-        <h1 className="text-4xl font-semibold tracking-tight md:text-5xl">News</h1>
-        <p className="mt-4 max-w-2xl text-white/60">
-          Insights and updates on logistics, global trade, and supply chain management from the
-          Sanfreight team.
-        </p>
-
-        {articles.length === 0 ? (
-          <p className="mt-16 text-white/40">No articles published yet — check back soon.</p>
-        ) : (
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
-            {articles.map((article) => (
-              <Link
-                key={article.id}
-                href={`/en/news/${article.slug}`}
-                className="group block overflow-hidden rounded-lg border border-white/10 transition-colors hover:border-white/30"
-              >
-                {article.thumbnail && (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    src={article.thumbnail}
-                    alt=""
-                    className="h-48 w-full object-cover"
-                  />
-                )}
-                <div className="p-6">
-                  {article.category && (
-                    <span className="text-xs uppercase tracking-wide text-white/40">
-                      {article.category}
-                    </span>
-                  )}
-                  <h2 className="mt-2 text-xl font-medium leading-snug group-hover:text-white">
-                    {article.title}
-                  </h2>
-                  {article.summary && (
-                    <p className="mt-2 line-clamp-3 text-sm text-white/60">{article.summary}</p>
-                  )}
-                  <p className="mt-4 text-xs text-white/40">
-                    {article.author} &middot; {formatDate(article.published_at)}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        )}
-      </main>
-    </div>
+    <>
+      <PageTransition bodyClass={base.bodyClass} teamMembers={teamMembers} />
+      <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: finalHtml }} />
+      <Script src="/js/email-decode.min.js" strategy="afterInteractive" />
+      <Script src="/js/app-16e2282a.js" strategy="afterInteractive" />
+    </>
   );
 }
