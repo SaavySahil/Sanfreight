@@ -23,7 +23,7 @@ def submit_application():
         return jsonify({'error': 'Name and email are required'}), 400
 
     job = None
-    job_title_snapshot = None
+    job_title_snapshot = 'General Application'
     if job_id:
         job = Job.query.get(job_id)
         if job:
@@ -68,7 +68,21 @@ def download_resume(current_user, app_id):
     path = get_resume_path(record.resume_path)
     if not os.path.exists(path):
         return jsonify({'error': 'Resume file not found'}), 404
-    return send_file(path, as_attachment=True)
+    inline = request.args.get('inline') == '1'
+    return send_file(path, as_attachment=not inline)
+
+
+@applications_bp.route('/admin/applications/<app_id>/status', methods=['PATCH'])
+@token_required
+def update_application_status(current_user, app_id):
+    record = JobApplication.query.get_or_404(app_id)
+    data = request.get_json()
+    status = (data or {}).get('status')
+    if status not in ('new', 'reviewed', 'shortlisted', 'rejected'):
+        return jsonify({'error': 'Invalid status'}), 400
+    record.status = status
+    db.session.commit()
+    return jsonify(record.to_dict())
 
 
 @applications_bp.route('/admin/applications/<app_id>', methods=['DELETE'])

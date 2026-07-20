@@ -17,7 +17,7 @@ export default function Login() {
 
   // Pre-warm the Render backend as soon as the login page mounts
   useEffect(() => {
-    client.get('/api/health').catch(() => {})
+    client.get('/health').catch(() => {})
   }, [])
 
   function startSlowHint() {

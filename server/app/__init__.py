@@ -93,6 +93,7 @@ def create_app(config_name=None):
         for attempt in range(3):
             try:
                 db.create_all()
+                _ensure_application_status_column()
                 _seed_defaults()
                 app.logger.info('DB initialized successfully')
                 return
@@ -106,6 +107,28 @@ def create_app(config_name=None):
         _init_db()
 
     return app
+
+
+def _ensure_application_status_column():
+    """
+    job_application was already deployed (and possibly populated) before the
+    status column existed on this model. db.create_all() only creates
+    missing tables — it never alters existing ones — so this patches
+    already-live databases the same way a migration would, without needing
+    a full Flask-Migrate/Alembic setup for one additive column.
+    """
+    from sqlalchemy import inspect, text
+
+    inspector = inspect(db.engine)
+    if 'job_application' not in inspector.get_table_names():
+        return
+    columns = [c['name'] for c in inspector.get_columns('job_application')]
+    if 'status' in columns:
+        return
+    with db.engine.begin() as conn:
+        conn.execute(text(
+            "ALTER TABLE job_application ADD COLUMN status VARCHAR(20) DEFAULT 'new' NOT NULL"
+        ))
 
 
 def _seed_defaults():
