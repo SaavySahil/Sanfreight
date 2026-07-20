@@ -63,14 +63,12 @@ def create_app(config_name=None):
 
     # Register blueprints
     from .routes.auth import auth_bp
-    from .routes.projects import projects_bp
     from .routes.jobs import jobs_bp
     from .routes.applications import applications_bp
     from .routes.content import content_bp
     from .routes.articles import articles_bp
 
     app.register_blueprint(auth_bp, url_prefix='/api/auth')
-    app.register_blueprint(projects_bp, url_prefix='/api')
     app.register_blueprint(jobs_bp, url_prefix='/api')
     app.register_blueprint(applications_bp, url_prefix='/api')
     app.register_blueprint(content_bp, url_prefix='/api')
@@ -122,7 +120,6 @@ def _seed_defaults():
     default_fields = {
         'home_hero_tagline': 'Connecting Your Business To Opportunities Across Global Markets',
         'about_summary': 'Sanfreight Logistics delivers integrated logistics solutions that simplify global trade — from air and ocean freight to customs clearance and end-to-end supply chain management.',
-        'projects_hero_tagline': 'Our Portfolio of Excellence',
         'careers_hero_tagline': 'Build Your Career With Us',
     }
     for key, value in default_fields.items():

@@ -4,7 +4,6 @@ import styles from './Sidebar.module.css'
 
 const NAV = [
   { to: '/dashboard',    label: 'Dashboard' },
-  { to: '/projects',     label: 'Projects' },
   { to: '/jobs',         label: 'Jobs' },
   { to: '/applications', label: 'Applications' },
   { to: '/articles',     label: 'Blog Articles' },
