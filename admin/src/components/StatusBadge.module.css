@@ -1,0 +1,22 @@
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+}
+
+.ongoing   { background: var(--primary-dim); color: var(--primary); border-color: rgba(35,35,95,0.1); }
+.completed { background: var(--surface2); color: var(--text-muted); border-color: var(--border); }
+
+.fulltime  { background: rgba(35,35,95,0.05); color: var(--primary); border-color: rgba(35,35,95,0.1); }
+.parttime  { background: rgba(180,83,9,0.08); color: var(--warning); border-color: rgba(180,83,9,0.2); }
+.contract  { background: rgba(115,115,123,0.08); color: var(--text-muted); border-color: rgba(115,115,123,0.2); }
+
+.active    { background: rgba(42,125,79,0.08); color: var(--success); border-color: rgba(42,125,79,0.2); }
+.inactive  { background: var(--accent-dim); color: var(--accent); border-color: rgba(198,40,40,0.2); }
+
+.default   { background: var(--surface2); color: var(--text-muted); }

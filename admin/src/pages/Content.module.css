@@ -1,0 +1,114 @@
+.heading {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.sub { color: var(--text-muted); font-size: 13px; margin-bottom: 32px; }
+.muted { color: var(--text-muted); }
+
+.list { display: flex; flex-direction: column; gap: 12px; max-width: 800px; }
+
+.field {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  transition: border-color 0.15s;
+}
+
+.field:hover { border-color: var(--primary-dim); }
+
+.fieldMeta { display: flex; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+
+.fieldLabel {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text);
+}
+
+.fieldKey {
+  font-size: 10px;
+  color: var(--text-muted);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  background: var(--surface2);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+.valueRow { display: flex; align-items: flex-start; gap: 20px; justify-content: space-between; }
+
+.value {
+  font-size: 14px;
+  color: var(--text);
+  flex: 1;
+  line-height: 1.6;
+}
+
+.empty { color: var(--border); font-style: italic; }
+
+.editBtn {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 5px 16px;
+  border-radius: var(--radius);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
+
+.editBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-dim);
+}
+
+.editRow { display: flex; flex-direction: column; gap: 12px; }
+
+.textarea {
+  background: var(--bg);
+  border: 1px solid var(--primary);
+  color: var(--text);
+  padding: 12px 16px;
+  border-radius: var(--radius);
+  width: 100%;
+  outline: none;
+  resize: vertical;
+  font-size: 14px;
+  line-height: 1.6;
+  min-height: 120px;
+}
+
+.editActions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 4px; }
+
+.cancel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 8px 18px;
+  border-radius: var(--radius);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.save {
+  background: var(--primary);
+  border: none;
+  color: #fff;
+  padding: 8px 24px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.save:disabled { opacity: 0.5; cursor: not-allowed; }
