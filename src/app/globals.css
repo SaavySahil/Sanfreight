@@ -696,3 +696,12 @@ h3.title.text-black {
     gap: 4px;
   }
 }
+
+/* Homepage hero: force the drag-triggered project popin permanently hidden.
+   The legacy script opens it by mutating inline styles at runtime, so no
+   markup/data-attribute change can stop it — only an !important rule beats
+   an inline style. Safe to remove this block if the drag panel should ever
+   come back. */
+.popin-homepage-slide {
+  display: none !important;
+}
