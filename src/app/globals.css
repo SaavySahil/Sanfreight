@@ -705,3 +705,16 @@ h3.title.text-black {
 .popin-homepage-slide {
   display: none !important;
 }
+
+/* Homepage hero: the "Ocean Freight Solutions" / "Air Freight Services"
+   panels aren't a hidden popup — they're slides 2 and 3 of the same Embla
+   carousel the hero video belongs to (data-component="HomepageIntro"). The
+   click-and-drag gesture is the carousel's own native drag-to-navigate,
+   handled by the legacy script's mousedown/touch listeners, so it can only
+   be stopped by keeping pointer events from reaching this container at
+   all. Scoped to .module-homepage-intro specifically — .embla is reused by
+   the header's nav dropdowns, which must keep working. Safe to remove this
+   rule if hero drag-navigation should ever come back. */
+.module-homepage-intro .embla {
+  pointer-events: none !important;
+}
