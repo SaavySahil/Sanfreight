@@ -3,7 +3,9 @@ import path from "path";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import PageTransition from "@/components/PageTransition";
-import NetworkGlobe from "@/components/NetworkGlobe";
+import ImageGlobe from "@/components/ImageGlobe";
+import { withAboutGlobeMount } from "@/lib/aboutGlobeMarkup";
+import "./about-image-globe.css";
 import teamMembers from "../teamMembers.json";
 
 interface PageData {
@@ -82,10 +84,12 @@ export default async function DynamicPage({ params }: PageProps) {
   return (
     <>
       <PageTransition bodyClass={data.bodyClass} teamMembers={teamMembers} />
-      <NetworkGlobe />
+      {slug.join("/") === "en/about" && <ImageGlobe />}
       <div
         suppressHydrationWarning={true}
-        dangerouslySetInnerHTML={{ __html: data.bodyHtml }}
+        dangerouslySetInnerHTML={{
+          __html: slug.join("/") === "en/about" ? withAboutGlobeMount(data.bodyHtml) : data.bodyHtml,
+        }}
       />
       <Script src="/js/email-decode.min.js" strategy="afterInteractive" />
       <Script src="/js/app-16e2282a.js" strategy="afterInteractive" />
