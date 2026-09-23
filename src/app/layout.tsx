@@ -7,9 +7,6 @@ export const metadata: Metadata = {
     "In this regard, Sanfreight structures, develops, and supports the growth of logistics investment vehicles. Professional investors can access through these vehicles top-tier management and strategies that would typically be beyond their reach.",
   alternates: {
     canonical: "https://sanfreightnew.vercel.app/",
-    languages: {
-      "en": "https://sanfreightnew.vercel.app/en/",
-    },
   },
   openGraph: {
     locale: "en_US",
@@ -17,7 +14,7 @@ export const metadata: Metadata = {
     title: "Homepage - Sanfreight",
     description:
       "In this regard, Sanfreight structures, develops, and supports the growth of logistics investment vehicles. Professional investors can access through these vehicles top-tier management and strategies that would typically be beyond their reach.",
-    url: "https://sanfreightnew.vercel.app/en/",
+    url: "https://sanfreightnew.vercel.app/",
     siteName: "Sanfreight",
   },
   twitter: {

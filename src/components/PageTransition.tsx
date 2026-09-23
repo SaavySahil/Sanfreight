@@ -15,8 +15,8 @@ export default function PageTransition({ bodyClass, teamMembers }: PageTransitio
     }
     (window as any).ADMIN_AJAX_URL = "https://www.mimcocapital.com/wp-admin/admin-ajax.php";
 
-    // Prevent Next.js App Router from intercepting internal <a> clicks —
-    // the scraped app's own AJAX router must drive navigation exclusively.
+    // Use one fresh page load per internal navigation. The legacy AJAX router
+    // otherwise appends fragments over React pages, duplicating footers/content.
     const clickIntercept = (e: MouseEvent) => {
       const a = (e.target as Element)?.closest?.("a[href]") as HTMLAnchorElement | null;
       if (!a) return;
@@ -24,7 +24,11 @@ export default function PageTransition({ bodyClass, teamMembers }: PageTransitio
       if (!href || href[0] === "#" || href.includes("://") ||
           href.startsWith("mailto:") || href.startsWith("tel:") ||
           a.target === "_blank" || a.getAttribute("download") != null) return;
-      e.stopPropagation();
+      e.preventDefault();
+      e.stopImmediatePropagation();
+      const url = new URL(href, window.location.href);
+      url.pathname = url.pathname.replace(/^\/en(?=\/|$)/, "") || "/";
+      window.location.assign(url.pathname + url.search + url.hash);
     };
     document.addEventListener("click", clickIntercept, true);
 

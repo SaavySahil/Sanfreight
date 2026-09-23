@@ -45,6 +45,7 @@ function isDisabledRoute(decodedSlug: string[]): boolean {
 function getPageData(slug: string[]): PageData {
   try {
     const decodedSlug = slug.map((seg) => decodeURIComponent(seg));
+    if (decodedSlug[0] !== "en" && !/^\d{4}$/.test(decodedSlug[0] ?? "")) decodedSlug.unshift("en");
     if (isDisabledRoute(decodedSlug)) {
       notFound();
     }
@@ -80,15 +81,16 @@ export default async function DynamicPage({ params }: PageProps) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
   const data = getPageData(slug);
+  const isAbout = slug.join("/") === "about" || slug.join("/") === "en/about";
 
   return (
     <>
       <PageTransition bodyClass={data.bodyClass} teamMembers={teamMembers} />
-      {slug.join("/") === "en/about" && <NetworkGlobe />}
+      {isAbout && <NetworkGlobe />}
       <div
         suppressHydrationWarning={true}
         dangerouslySetInnerHTML={{
-          __html: slug.join("/") === "en/about" ? withAboutGlobeMount(data.bodyHtml) : data.bodyHtml,
+          __html: isAbout ? withAboutGlobeMount(data.bodyHtml) : data.bodyHtml,
         }}
       />
       <Script src="/js/email-decode.min.js" strategy="afterInteractive" />
