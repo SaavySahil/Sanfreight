@@ -527,7 +527,7 @@ export default function NetworkGlobe() {
         </aside>
 
         <p className="sf-map-instruction">
-          Drag to explore <span aria-hidden="true">·</span> Select a destination
+          Drag the globe <span aria-hidden="true">·</span> Choose a destination
         </p>
       </section>
     </div>,
