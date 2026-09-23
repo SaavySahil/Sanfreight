@@ -468,16 +468,19 @@
 
 .sf-detail-meta a.sf-office-cta {
   display: flex;
-  min-height: 60px;
+  box-sizing: border-box;
+  width: 176px;
+  height: 48px;
+  min-height: 48px;
   align-items: center;
-  padding: 16px 22px;
+  padding: 12px 16px;
   background: transparent;
   color: var(--ink);
   text-decoration: none;
 }
 .sf-detail-meta a.sf-office-cta:hover::before { transform: none; }
 .sf-detail-meta a.sf-office-cta .cta-custom-wrapper { display:flex;align-items:center;justify-content:space-between;gap:12px; }
-.sf-detail-meta a.sf-office-cta .text { font-size:15px; }
+.sf-detail-meta a.sf-office-cta .text { font-size:14px; }
 
 .sf-detail-meta a:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
 

@@ -6,6 +6,13 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 
 const origin: [number, number] = [19.033, 73.0297];
+const headOffice = {
+  country: "India",
+  city: "Navi Mumbai head office",
+  coordinate: "19.0330° N · 73.0297° E",
+  description: "International InfoTech Park, Tower No. 3, Office E-215, 2nd Floor, Vashi, Navi Mumbai 400705, India.",
+  image: "/images/expertises-intro.webp",
+};
 const offices = [
   {
     country: "China",
@@ -166,6 +173,9 @@ export default function NetworkGlobe() {
       queueMicrotask(() => {
         setDrawer("closed");
       });
+      if (active === -2) {
+        s.timer = window.setTimeout(() => setDrawer("summary"), window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 820);
+      }
     } else {
       const office = offices[active];
       s.targetTheta = clamp(office.location[0] / 180, 0.08, 0.24);
@@ -382,7 +392,7 @@ export default function NetworkGlobe() {
   };
 
   if (!mount) return null;
-  const office = offices[Math.max(0, active)];
+  const office = active === -2 ? headOffice : offices[Math.max(0, active)];
 
   return createPortal(
     <div className={`sf-network-explorer ${drawer !== "closed" ? "drawer-open" : ""}`}>
@@ -497,11 +507,11 @@ export default function NetworkGlobe() {
           <div className="sf-drawer-view sf-drawer-summary-view" aria-hidden={drawer !== "summary"}>
             <div className="sf-drawer-summary">
               <p className="sf-drawer-eyebrow">Selected trade lane</p>
-              <h2><span>1</span> office on this route</h2>
+              <h2>{active === -2 ? "India head office" : <><span>1</span> office on this route</>}</h2>
               <button onClick={() => setDrawer("detail")}>Select the office to learn more</button>
             </div>
             <button className="sf-drawer-office" onClick={() => setDrawer("detail")}>
-              <span>India → {office.country}</span>
+              <span>{active === -2 ? "Network origin" : `India → ${office.country}`}</span>
               <strong>{office.city}</strong>
               <svg viewBox="0 0 24 24" aria-hidden="true">
                 <path d="m9 5 7 7-7 7" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
@@ -515,7 +525,7 @@ export default function NetworkGlobe() {
               <img src={office.image} alt={`${office.country} freight operations`} />
             </figure>
             <div className="sf-detail-copy">
-              <p>{office.country} · {String(active + 1).padStart(2, "0")}</p>
+              <p>{office.country} · {active === -2 ? "Head office" : String(active + 1).padStart(2, "0")}</p>
               <h2>{office.city}</h2>
               <p>{office.description}</p>
             </div>
