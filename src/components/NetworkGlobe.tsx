@@ -531,7 +531,7 @@ export default function NetworkGlobe() {
             </div>
             <div className="sf-detail-meta">
               <span>{office.coordinate}</span>
-              <Link href="/en/#contact" className="cta-custom sf-office-cta" aria-label={`Contact SanFreight about ${office.city}`}>
+              <Link href="#contact" onClick={(event) => { event.preventDefault(); document.querySelector<HTMLButtonElement>(".header-link.anchor-contact")?.click(); }} className="cta-custom sf-office-cta" aria-label={`Contact SanFreight about ${office.city}`}>
                 <span className="cta-custom-content"><span className="cta-custom-wrapper"><span className="text">Explore office</span><span className="cta-custom-arrows-wrapper"><span className="icon icon-arrow-right" /><span className="icon icon-arrow-right absolute" /></span></span></span>
               </Link>
             </div>
