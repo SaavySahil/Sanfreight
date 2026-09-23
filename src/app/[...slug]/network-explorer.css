@@ -84,7 +84,7 @@
   transition: filter .35s ease;
 }
 
-#network-globe {
+.sf-globe-plane canvas {
   display: block;
   width: 100%;
   height: 100%;
@@ -92,7 +92,7 @@
   touch-action: none;
 }
 
-#network-globe:active { cursor: grabbing; }
+.sf-globe-plane canvas:active { cursor: grabbing; }
 
 .sf-location-markers {
   position: absolute;
@@ -564,8 +564,8 @@
 .drawer-open .sf-zoom-controls { bottom: 158px; }
 .drawer-open .sf-map-instruction { opacity: 0; }
 
-.sf-network-explorer:not(.is-visible) .sf-map-stage { opacity: 0; transform: translateY(18px); }
-.sf-network-explorer.is-visible .sf-map-stage { opacity: 1; transform: translateY(0); transition: opacity .75s ease, transform .9s var(--ease-out); }
+#sf-network-explorer-root:not(.is-visible) .sf-map-stage { opacity: 0; transform: translateY(18px); }
+#sf-network-explorer-root.is-visible .sf-map-stage { opacity: 1; transform: translateY(0); transition: opacity .75s ease, transform .9s var(--ease-out); }
 
 @keyframes marker-breathe {
   0%, 100% { opacity: .45; transform: scale(.7); }
