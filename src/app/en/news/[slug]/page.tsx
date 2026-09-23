@@ -3,6 +3,7 @@ import path from "path";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import PageTransition from "@/components/PageTransition";
+import { withSolutionsNav } from "@/lib/solutionsNavMarkup";
 import teamMembers from "../../../teamMembers.json";
 import { getArticleBySlug, type Article } from "@/lib/api";
 import { formatLongDate, formatSlashDate } from "@/lib/legacyRender";
@@ -90,7 +91,7 @@ export default async function ArticleDetailPage({ params }: PageProps) {
   return (
     <>
       <PageTransition bodyClass={base.bodyClass} teamMembers={teamMembers} />
-      <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: finalHtml }} />
+      <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: withSolutionsNav(finalHtml) }} />
       <Script src="/js/email-decode.min.js" strategy="afterInteractive" />
       <Script src="/js/app-16e2282a.js" strategy="afterInteractive" />
     </>

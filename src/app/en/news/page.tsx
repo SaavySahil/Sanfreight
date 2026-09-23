@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import Script from "next/script";
 import PageTransition from "@/components/PageTransition";
+import { withSolutionsNav } from "@/lib/solutionsNavMarkup";
 import teamMembers from "../../teamMembers.json";
 import { getArticles, type Article } from "@/lib/api";
 import { escapeHtml, formatDotDate } from "@/lib/legacyRender";
@@ -98,7 +99,7 @@ export default async function NewsPage() {
   return (
     <>
       <PageTransition bodyClass={base.bodyClass} teamMembers={teamMembers} />
-      <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: finalHtml }} />
+      <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: withSolutionsNav(finalHtml) }} />
       <Script src="/js/email-decode.min.js" strategy="afterInteractive" />
       <Script src="/js/app-16e2282a.js" strategy="afterInteractive" />
     </>

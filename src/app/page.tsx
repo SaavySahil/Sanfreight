@@ -5,6 +5,7 @@ import Script from "next/script";
 import PageTransition from "@/components/PageTransition";
 import KeyFiguresRoll from "@/components/KeyFiguresRoll";
 import { withHomepageServices } from "@/lib/homeServiceMarkup";
+import { withSolutionsNav } from "@/lib/solutionsNavMarkup";
 import "./home-services.css";
 import "./key-figures-roll.css";
 // Script is still used below for the app bundle
@@ -57,7 +58,7 @@ export default function Home() {
       {/* Render the scraped page body content */}
       <div
         suppressHydrationWarning={true}
-        dangerouslySetInnerHTML={{ __html: withHomepageServices(data.bodyHtml) }}
+        dangerouslySetInnerHTML={{ __html: withSolutionsNav(withHomepageServices(data.bodyHtml)) }}
       />
 
       {/* Load core scripts */}

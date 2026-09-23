@@ -5,6 +5,7 @@ import Script from "next/script";
 import PageTransition from "@/components/PageTransition";
 import NetworkGlobe from "@/components/NetworkGlobe";
 import { withAboutGlobeMount } from "@/lib/aboutGlobeMarkup";
+import { withSolutionsNav } from "@/lib/solutionsNavMarkup";
 import "./network-explorer.css";
 import teamMembers from "../teamMembers.json";
 
@@ -90,7 +91,7 @@ export default async function DynamicPage({ params }: PageProps) {
       <div
         suppressHydrationWarning={true}
         dangerouslySetInnerHTML={{
-          __html: isAbout ? withAboutGlobeMount(data.bodyHtml) : data.bodyHtml,
+          __html: withSolutionsNav(isAbout ? withAboutGlobeMount(data.bodyHtml) : data.bodyHtml),
         }}
       />
       <Script src="/js/email-decode.min.js" strategy="afterInteractive" />
