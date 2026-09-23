@@ -1,7 +1,7 @@
 .module-projects-map.network-globe-section{padding:0;margin:0;background:#f5f7ff;color:var(--ink)}
 .sf-network-explorer { --paper:#f5f7ff;--white:#fff;--ink:#0e0e11;--navy:#221d3e;--yellow:#ffcc00;--muted:#898b99;--line:#dadbe0;--ease-out:cubic-bezier(.165,.84,.44,1);--ease-move:cubic-bezier(.645,.045,.355,1);position:relative;isolation:isolate;overflow:hidden;background:var(--paper);color:var(--ink);font-family:Aeonik,sans-serif;
   width: 100%;
-  height: max(900px, 100dvh);
+  height: max(960px, 100dvh);
   padding: 0 30px;
 }
 
@@ -646,5 +646,5 @@
 .sf-network-intro h2{max-width:560px;margin:0;font-size:clamp(32px,4vw,54px);font-weight:300;letter-spacing:-.045em;line-height:.98}
 .sf-network-intro__lead{max-width:430px;margin:6px 0 0;font-size:15px;line-height:1.45}
 .sf-network-explorer .sf-map-stage{position:absolute;inset:225px 30px 85px;width:auto;height:auto}
-.sf-network-explorer .sf-globe-plane{width:min(58vw,580px)}
+.sf-network-explorer .sf-globe-plane{width:min(62vw,640px)}
 @media(max-width:760px){.sf-network-explorer{height:760px;min-height:760px}.sf-network-intro{top:68px;left:20px;right:20px;display:block}.sf-network-intro h2{font-size:34px}.sf-network-intro__lead{margin-top:14px;font-size:12px;max-width:320px}.sf-network-explorer .sf-map-stage{inset:230px 12px 65px}.sf-network-explorer .sf-globe-plane{width:min(94vw,460px)}}
