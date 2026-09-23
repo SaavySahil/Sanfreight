@@ -1,9 +1,8 @@
 "use client";
 
 import createGlobe from "cobe";
-import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import { createPortal } from "react-dom";
+import { createRoot } from "react-dom/client";
 
 const origin: [number, number] = [19.033, 73.0297];
 const headOffice = {
@@ -95,7 +94,17 @@ const shortestRotation = (a: number, b: number) => {
 };
 
 export default function NetworkGlobe() {
-  const [mount, setMount] = useState<HTMLElement | null>(null);
+  useEffect(() => {
+    const mount = document.getElementById("sf-network-explorer-root");
+    if (!mount) return;
+    const root = createRoot(mount);
+    root.render(<NetworkGlobeContent mount={mount} />);
+    return () => root.unmount();
+  }, []);
+  return null;
+}
+
+function NetworkGlobeContent({ mount }: { mount: HTMLElement }) {
   const [active, setActive] = useState(-1);
   const [drawer, setDrawer] = useState<"closed" | "summary" | "detail">("closed");
 
@@ -137,13 +146,6 @@ export default function NetworkGlobe() {
   const setZoomTarget = (target: number) => {
     state.current.targetScale = fitZoom(target);
   };
-
-  useEffect(() => {
-    const el = document.getElementById("sf-network-explorer-root");
-    if (el) {
-      queueMicrotask(() => setMount(el));
-    }
-  }, []);
 
   useEffect(() => {
     if (!mount) return;
@@ -391,10 +393,9 @@ export default function NetworkGlobe() {
     s.pointer = null;
   };
 
-  if (!mount) return null;
   const office = active === -2 ? headOffice : offices[Math.max(0, active)];
 
-  return createPortal(
+  return (
     <div className={`sf-network-explorer ${drawer !== "closed" ? "drawer-open" : ""}`}>
       <header className="sf-network-intro">
         <div>
@@ -531,15 +532,14 @@ export default function NetworkGlobe() {
             </div>
             <div className="sf-detail-meta">
               <span>{office.coordinate}</span>
-              <Link href="#contact" onClick={(event) => { event.preventDefault(); document.querySelector<HTMLButtonElement>(".header-link.anchor-contact")?.click(); }} className="cta-custom sf-office-cta" aria-label={`Contact SanFreight about ${office.city}`}>
+              <button type="button" onClick={(event) => { event.stopPropagation(); document.querySelector<HTMLButtonElement>(".header-link.anchor-contact")?.dispatchEvent(new MouseEvent("click", { bubbles: false })); }} className="cta-custom sf-office-cta" aria-label={`Contact SanFreight about ${office.city}`}>
                 <span className="cta-custom-content"><span className="cta-custom-wrapper"><span className="text">Explore office</span><span className="cta-custom-arrows-wrapper"><span className="icon icon-arrow-right" /><span className="icon icon-arrow-right absolute" /></span></span></span>
-              </Link>
+              </button>
             </div>
           </div>
         </aside>
 
       </section>
-    </div>,
-    mount
+    </div>
   );
 }
