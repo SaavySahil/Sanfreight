@@ -3,9 +3,9 @@ import path from "path";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import PageTransition from "@/components/PageTransition";
-import ImageGlobe from "@/components/ImageGlobe";
+import NetworkGlobe from "@/components/NetworkGlobe";
 import { withAboutGlobeMount } from "@/lib/aboutGlobeMarkup";
-import "./about-image-globe.css";
+import "./network-explorer.css";
 import teamMembers from "../teamMembers.json";
 
 interface PageData {
@@ -84,7 +84,7 @@ export default async function DynamicPage({ params }: PageProps) {
   return (
     <>
       <PageTransition bodyClass={data.bodyClass} teamMembers={teamMembers} />
-      {slug.join("/") === "en/about" && <ImageGlobe />}
+      {slug.join("/") === "en/about" && <NetworkGlobe />}
       <div
         suppressHydrationWarning={true}
         dangerouslySetInnerHTML={{

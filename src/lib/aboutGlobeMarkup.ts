@@ -5,5 +5,5 @@ export function withAboutGlobeMount(bodyHtml: string): string {
 
   const openEnd = bodyHtml.indexOf(">", start) + 1;
   const openingTag = bodyHtml.slice(start, openEnd);
-  return `${bodyHtml.slice(0, start)}${openingTag}<div id="sf-image-globe-root"></div></div>${bodyHtml.slice(next)}`;
+  return `${bodyHtml.slice(0, start)}${openingTag}<div id="sf-network-explorer-root"></div></div>${bodyHtml.slice(next)}`;
 }
