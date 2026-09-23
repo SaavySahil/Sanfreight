@@ -1,0 +1,287 @@
+.page {
+  background: var(--white, #ffffff);
+  color: var(--chinese-black-1, #101014);
+  font-family: Aeonik, sans-serif;
+  min-height: 100vh;
+}
+
+/* Scroll scene container */
+.scrollScene {
+  position: relative;
+  width: 100%;
+}
+
+.stickyViewport {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--white, #ffffff);
+}
+
+.track {
+  display: flex;
+  width: 600vw; /* 1 intro slide + 5 service slides */
+  height: 100%;
+  will-change: transform;
+}
+
+/* Base slide */
+.slide {
+  width: 100vw;
+  height: 100vh;
+  background: var(--white, #ffffff);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.slide:nth-child(even) {
+  background: var(--grey-1, #f2f2f4);
+}
+
+/* Intro slide (Slide 0) matching homepage behavior & layout */
+.introSlide {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  width: 100vw;
+  height: 100vh;
+  background: var(--white, #ffffff);
+}
+
+.introLeft {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: #dcdfe6;
+}
+
+.introLeft img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+.introRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 60px 60px 80px;
+  max-width: 600px;
+}
+
+.introSubtitle {
+  font-size: 16px;
+  color: var(--chinese-black-1, #101014);
+  margin-bottom: 20px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+.introTitle {
+  font-size: clamp(38px, 4.5vw, 64px);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  color: var(--chinese-black-1, #101014);
+  margin: 0;
+}
+
+/* Service slide (Slides 1 to 5) */
+.serviceSlide {
+  display: grid;
+  grid-template-columns: 46% 54%;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Left content container scaled to fit viewport perfectly */
+.leftPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(24px, 4vh, 48px) clamp(32px, 4vw, 56px) clamp(24px, 4vh, 40px) clamp(48px, 6vw, 88px);
+  max-width: 540px;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.topIndex {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(16, 16, 20, 0.45);
+  margin-bottom: clamp(10px, 1.7vh, 18px);
+  letter-spacing: 0.02em;
+}
+
+.mainTitle {
+  font-size: clamp(32px, 3.5vw, 52px);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  color: var(--blue-1, #221d3e);
+  margin: 0 0 clamp(8px, 1.25vh, 12px) 0;
+}
+
+.subtitle {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: rgba(16, 16, 20, 0.48);
+  text-transform: uppercase;
+  margin-bottom: clamp(20px, 3vh, 32px);
+}
+
+.leadText {
+  font-size: clamp(13px, 1.1vw, 15px);
+  line-height: 1.48;
+  color: var(--chinese-black-1, #101014);
+  margin: 0 0 clamp(24px, 3.6vh, 38px) 0;
+  max-width: 420px;
+}
+
+.sectionHeader {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: rgba(16, 16, 20, 0.45);
+  text-transform: uppercase;
+  margin-bottom: clamp(12px, 1.8vh, 18px);
+}
+
+/* Capability badge list */
+.badgeList {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 1.8vh, 16px);
+  margin-bottom: clamp(24px, 3.7vh, 38px);
+}
+
+.badgeRow {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.yellowBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 32px;
+  background: rgba(255, 204, 0, 0.28);
+  color: var(--blue-1, #221d3e);
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.yellowBadge svg {
+  display: block;
+  width: 17px;
+  height: 17px;
+}
+
+.badgeLabel {
+  font-size: clamp(13px, 1.05vw, 14px);
+  font-weight: 400;
+  color: var(--chinese-black-1, #101014);
+  line-height: 1.35;
+}
+
+.footerText {
+  font-size: clamp(12px, 1vw, 13px);
+  line-height: 1.45;
+  color: rgba(16, 16, 20, 0.58);
+  margin: 0 0 clamp(22px, 3.2vh, 34px) 0;
+  max-width: 420px;
+}
+
+/* Button wrapper */
+.btnContainer {
+  margin-top: 4px;
+  position: relative;
+  z-index: 10;
+}
+
+/* Exact button sizing matching user screenshot: compact horizontal rounded box */
+.btnContainer :global(a.cta-custom) {
+  width: 220px !important;
+  min-height: 60px !important;
+  height: 60px !important;
+  padding: 16px 22px !important;
+}
+
+.btnContainer :global(a.cta-custom .cta-custom-content) {
+  height: 100% !important;
+  justify-content: center !important;
+}
+
+.btnContainer :global(a.cta-custom .cta-custom-wrapper) {
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  height: 100% !important;
+  gap: 12px !important;
+}
+
+.btnContainer :global(a.cta-custom .cta-custom-wrapper .text) {
+  margin: 0 !important;
+  font-size: 14px !important;
+  font-weight: 400 !important;
+}
+
+.btnContainer :global(a.cta-custom .cta-custom-arrows-wrapper) {
+  align-self: center !important;
+}
+
+/* Right side media */
+.rightPanel {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  background: #dcdfe6;
+}
+
+.rightPanel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+@media (max-width: 959px) {
+  .track {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .slide,
+  .introSlide,
+  .serviceSlide {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .leftPanel,
+  .introRight {
+    padding: 60px 24px 40px;
+  }
+
+  .rightPanel,
+  .introLeft {
+    height: 300px;
+  }
+
+  .stickyViewport {
+    position: relative;
+    height: auto;
+    overflow: visible;
+  }
+
+  .scrollScene {
+    height: auto !important;
+  }
+}

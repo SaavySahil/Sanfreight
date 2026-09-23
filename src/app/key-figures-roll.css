@@ -1,0 +1,28 @@
+.module-key-numbers .number-wrapper .number {
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.module-key-numbers .sf-figure-digit {
+  display: inline-block;
+  width: .59em;
+  height: 1em;
+  overflow: hidden;
+  vertical-align: top;
+}
+.module-key-numbers .sf-figure-reel {
+  display: block;
+  transform: translateY(0);
+  transition: transform 1.5s cubic-bezier(.18,.74,.2,1);
+}
+.module-key-numbers .sf-figure-reel span {
+  display: block;
+  height: 1em;
+  line-height: 1em;
+  text-align: center;
+}
+.module-key-numbers.sf-figures-rolling .sf-figure-reel {
+  transform: translateY(calc(var(--sf-roll-steps) * -1em));
+}
+@media (prefers-reduced-motion: reduce) {
+  .module-key-numbers .sf-figure-reel { transition: none; }
+}

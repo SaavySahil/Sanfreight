@@ -3,6 +3,10 @@ import path from "path";
 import { notFound } from "next/navigation";
 import Script from "next/script";
 import PageTransition from "@/components/PageTransition";
+import KeyFiguresRoll from "@/components/KeyFiguresRoll";
+import { withHomepageServices } from "@/lib/homeServiceMarkup";
+import "./home-services.css";
+import "./key-figures-roll.css";
 // Script is still used below for the app bundle
 import teamMembers from "./teamMembers.json";
 
@@ -48,11 +52,12 @@ export default function Home() {
     <>
       {/* Dynamic transition controller, click intercept, and globals injection */}
       <PageTransition bodyClass={data.bodyClass} teamMembers={teamMembers} />
+      <KeyFiguresRoll />
 
       {/* Render the scraped page body content */}
       <div
         suppressHydrationWarning={true}
-        dangerouslySetInnerHTML={{ __html: data.bodyHtml }}
+        dangerouslySetInnerHTML={{ __html: withHomepageServices(data.bodyHtml) }}
       />
 
       {/* Load core scripts */}

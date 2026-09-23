@@ -1,296 +1,536 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import createGlobe from "cobe";
+import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
-// SanFreight's 5 real offices (from the footer/contact addresses).
-// India (Navi Mumbai) is the head office and hub for the trade-lane arcs.
-type Office = {
-  id: string;
-  location: [number, number];
-  size: number;
-  timeZone: string;
+const origin: [number, number] = [19.033, 73.0297];
+const offices = [
+  {
+    country: "China",
+    city: "Ningbo office",
+    coordinate: "29.8683° N · 121.5440° E",
+    description: "Floor 12 'A', Lvyuan Tower No 588, Changhai Road, Ningbo City, China.",
+    location: [29.8683, 121.544] as [number, number],
+    image: "/images/expertises-ocean-freight.webp",
+  },
+  {
+    country: "United Kingdom",
+    city: "Dartford office",
+    coordinate: "51.4432° N · 0.1785° E",
+    description: "84 Alcock Crescent, Crayford DA1 4FR, Dartford, United Kingdom.",
+    location: [51.4432, 0.1785] as [number, number],
+    image: "/images/expertises-warehousing.webp",
+  },
+  {
+    country: "UAE",
+    city: "Bur Dubai office",
+    coordinate: "25.2582° N · 55.3047° E",
+    description: "Flat No: 01 Al kaber, Bur Dubai, P.O. Box: 45214, Dubai, U.A.E.",
+    location: [25.2582, 55.3047] as [number, number],
+    image: "/images/expertises-air-freight.webp",
+  },
+  {
+    country: "Afghanistan",
+    city: "Kabul office",
+    coordinate: "34.5553° N · 69.2075° E",
+    description: "Lane Two, Haji Yaqoub Square, Shahr-e-Naw, Kabul, Afghanistan.",
+    location: [34.5553, 69.2075] as [number, number],
+    image: "/images/expertises-specialized.webp",
+  },
+];
+
+const clamp = (n: number, min: number, max: number) => Math.min(max, Math.max(min, n));
+const zoomLimits = () => {
+  const isMobile = typeof window !== "undefined" && window.innerWidth <= 760;
+  return isMobile ? { min: 0.7, max: 0.96 } : { min: 0.78, max: 1.06 };
 };
 
-const HQ_ID = "india";
-const OFFICES: Office[] = [
-  { id: "india", location: [19.033, 73.0297], size: 0.09, timeZone: "Asia/Kolkata" },
-  { id: "china", location: [29.8683, 121.544], size: 0.06, timeZone: "Asia/Shanghai" },
-  { id: "uk", location: [51.4432, 0.1785], size: 0.06, timeZone: "Europe/London" },
-  { id: "dubai", location: [25.2582, 55.3047], size: 0.06, timeZone: "Asia/Dubai" },
-  { id: "afghanistan", location: [34.5553, 69.2075], size: 0.06, timeZone: "Asia/Kabul" },
-];
-const HQ = OFFICES.find((o) => o.id === HQ_ID)!;
+const fitZoom = (target: number) => {
+  const limits = zoomLimits();
+  return clamp(target, limits.min, limits.max);
+};
 
-const BASE_MARKER_COLOR: [number, number, number] = [1, 0.8, 0];
-const ACTIVE_MARKER_COLOR: [number, number, number] = [1, 0.95, 0.5];
-const BASE_ARC_COLOR: [number, number, number] = [0.6, 0.52, 0.22];
-const ACTIVE_ARC_COLOR: [number, number, number] = [1, 0.85, 0.35];
+const overviewZoom = () => (typeof window !== "undefined" && window.innerWidth <= 760 ? 0.74 : 0.86);
+const routeZoom = () => (typeof window !== "undefined" && window.innerWidth <= 760 ? 0.92 : 1.02);
 
-// Cobe's exact object-space projection for a [lat, lng] marker (reverse
-// engineered from its compiled source: the U()/O() functions in
-// node_modules/cobe/dist/index.esm.js). Used to numerically find the phi
-// that centers a given location, and to detect which marker currently
-// faces the camera — Cobe itself exposes neither.
-function toVec3([lat, lng]: [number, number]): [number, number, number] {
+const vector = ([lat, lng]: [number, number]) => {
   const r = (lat * Math.PI) / 180;
   const a = (lng * Math.PI) / 180 - Math.PI;
-  const o = Math.cos(r);
-  return [-o * Math.cos(a), Math.sin(r), o * Math.sin(a)];
-}
-function facing(v: [number, number, number], phi: number, theta: number): number {
-  const r = Math.cos(phi);
-  const a = Math.cos(theta);
-  const o = Math.sin(phi);
-  const i = Math.sin(theta);
-  return -i * r * v[0] + o * v[1] + a * r * v[2];
-}
-function bestPhiFor(targets: [number, number, number][], theta: number): number {
-  let bestPhi = 0;
-  let bestScore = -Infinity;
-  const steps = 360;
-  for (let s = 0; s < steps; s++) {
-    const phi = (s / steps) * Math.PI * 2;
-    let score = 0;
-    for (const v of targets) score += facing(v, phi, theta);
-    if (score > bestScore) {
-      bestScore = score;
-      bestPhi = phi;
+  const c = Math.cos(r);
+  return [-c * Math.cos(a), Math.sin(r), c * Math.sin(a)] as const;
+};
+
+const bestPhi = (location: [number, number], theta: number) => {
+  const p = vector(location);
+  let best = 0;
+  let score = -Infinity;
+  for (let i = 0; i < 720; i++) {
+    const phi = (i / 720) * Math.PI * 2;
+    const next =
+      -Math.sin(phi) * Math.cos(theta) * p[0] +
+      Math.sin(theta) * p[1] +
+      Math.cos(phi) * Math.cos(theta) * p[2];
+    if (next > score) {
+      score = next;
+      best = phi;
     }
   }
-  return bestPhi;
-}
-function shortestDelta(from: number, to: number): number {
-  const twoPi = Math.PI * 2;
-  let d = (to - from) % twoPi;
-  if (d > Math.PI) d -= twoPi;
-  if (d < -Math.PI) d += twoPi;
-  return d;
-}
+  return best;
+};
 
-const THETA = 0.32;
-const officeVecs = new Map(OFFICES.map((o) => [o.id, toVec3(o.location)]));
+const shortestRotation = (a: number, b: number) => {
+  let d = (b - a) % (Math.PI * 2);
+  if (d > Math.PI) d -= Math.PI * 2;
+  if (d < -Math.PI) d += Math.PI * 2;
+  return d;
+};
 
 export default function NetworkGlobe() {
-  const phiRef = useRef(0);
-  const targetPhiRef = useRef<number | null>(null);
-  const widthRef = useRef(0);
-  const pointerInteracting = useRef<number | null>(null);
-  const pointerInteractionMovement = useRef(0);
-  const hoveredIdRef = useRef<string | null>(null);
+  const [mount, setMount] = useState<HTMLElement | null>(null);
+  const [active, setActive] = useState(-1);
+  const [drawer, setDrawer] = useState<"closed" | "summary" | "detail">("closed");
+
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const planeRef = useRef<HTMLDivElement>(null);
+  const stageRef = useRef<HTMLElement>(null);
+  const markerRefs = useRef<(HTMLElement | null)[]>([]);
+  const railRef = useRef<HTMLElement>(null);
+  const activeRef = useRef(active);
+
+  const state = useRef({
+    phi: 0,
+    targetPhi: 0,
+    theta: 0.58,
+    targetTheta: 0.58,
+    scale: 0.86,
+    targetScale: 0.86,
+    velocity: 0,
+    route: 0,
+    pointer: null as null | {
+      id: number;
+      x: number;
+      y: number;
+      time: number;
+      velocity: number;
+      moved: boolean;
+    },
+    timer: 0,
+  });
+
+  const updateRailIndicator = () => {
+    const button = railRef.current?.querySelector<HTMLElement>("button.is-active");
+    if (button && railRef.current) {
+      railRef.current.style.setProperty("--rail-x", `${button.offsetLeft}px`);
+      railRef.current.style.setProperty("--rail-width", `${button.offsetWidth}px`);
+    }
+  };
+
+  const setZoomTarget = (target: number) => {
+    state.current.targetScale = fitZoom(target);
+  };
 
   useEffect(() => {
-    const canvas = document.getElementById(
-      "sf-network-globe-canvas"
-    ) as HTMLCanvasElement | null;
-    if (!canvas) return;
+    const el = document.getElementById("sf-network-explorer-root");
+    if (el) {
+      queueMicrotask(() => setMount(el));
+    }
+  }, []);
 
-    const legendItems = Array.from(
-      document.querySelectorAll<HTMLElement>(".network-globe-legend-item[data-location]")
-    );
-    const legendById = new Map(legendItems.map((el) => [el.dataset.location!, el]));
-
-    // Live local time per office — updates the .legend-time subtext so the
-    // directory reads as a live network status board, not a static list.
-    const timeFormatters = new Map(
-      OFFICES.map((o) => [
-        o.id,
-        new Intl.DateTimeFormat("en-GB", {
-          hour: "2-digit",
-          minute: "2-digit",
-          timeZone: o.timeZone,
-        }),
-      ])
-    );
-    const updateClocks = () => {
-      for (const office of OFFICES) {
-        const el = legendById.get(office.id)?.querySelector(".legend-time");
-        if (el) el.textContent = timeFormatters.get(office.id)!.format(new Date());
-      }
-    };
-    updateClocks();
-    const clockInterval = setInterval(updateClocks, 30000);
-
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-
-    const onResize = () => {
-      widthRef.current = canvas.offsetWidth;
-    };
-    window.addEventListener("resize", onResize);
-    onResize();
-
-    // Only render while the globe is actually on screen — an unthrottled
-    // WebGL loop left running behind other content burns GPU/battery for
-    // nothing, and on slower/software-rendered hardware can make the whole
-    // page janky.
-    let isVisible = false;
+  useEffect(() => {
+    if (!mount) return;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        isVisible = entry.isIntersecting;
+        if (entry.isIntersecting) {
+          mount.classList.add("is-visible");
+          observer.disconnect();
+        }
       },
-      { threshold: 0 }
+      { threshold: 0.08 }
     );
-    observer.observe(canvas);
+    observer.observe(mount);
+    return () => observer.disconnect();
+  }, [mount]);
+
+  useEffect(() => {
+    activeRef.current = active;
+    const s = state.current;
+    clearTimeout(s.timer);
+    s.velocity = 0;
+    s.route = 0;
+    if (active < 0) {
+      s.targetTheta = 0.58;
+      s.targetPhi = bestPhi([32, 66], s.targetTheta);
+      s.targetScale = fitZoom(overviewZoom());
+      queueMicrotask(() => {
+        setDrawer("closed");
+      });
+    } else {
+      const office = offices[active];
+      s.targetTheta = clamp(office.location[0] / 180, 0.08, 0.24);
+      s.targetPhi = bestPhi(
+        [(origin[0] + office.location[0]) / 2, (origin[1] + office.location[1]) / 2],
+        s.targetTheta
+      );
+      s.targetScale = fitZoom(routeZoom());
+      queueMicrotask(() => {
+        setDrawer("closed");
+      });
+      s.timer = window.setTimeout(
+        () => {
+          setDrawer("summary");
+        },
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 820
+      );
+    }
+    requestAnimationFrame(updateRailIndicator);
+    return () => clearTimeout(s.timer);
+  }, [active]);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    const plane = planeRef.current;
+    const stage = stageRef.current;
+    if (!canvas || !plane || !stage) return;
+
+    const s = state.current;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    s.targetPhi = s.phi = bestPhi([32, 66], s.theta);
+
+    let size = Math.max(1, plane.clientWidth);
+    let left = 0;
+    let top = 0;
+    let visible = true;
+    let raf = 0;
+
+    const geometry = () => {
+      size = Math.max(1, plane.clientWidth);
+      s.scale = fitZoom(s.scale);
+      s.targetScale = fitZoom(s.targetScale);
+      const a = stage.getBoundingClientRect();
+      const b = plane.getBoundingClientRect();
+      left = b.left - a.left;
+      top = b.top - a.top;
+      updateRailIndicator();
+    };
+
+    geometry();
 
     const globe = createGlobe(canvas, {
-      devicePixelRatio: 2,
-      width: widthRef.current * 2,
-      height: widthRef.current * 2,
-      phi: 0,
-      theta: THETA,
-      dark: 1,
-      diffuse: 1.2,
-      mapSamples: 16000,
-      mapBrightness: 6,
-      baseColor: [0.4, 0.42, 0.54],
-      markerColor: BASE_MARKER_COLOR,
-      glowColor: [0.18, 0.16, 0.33],
-      arcColor: BASE_ARC_COLOR,
-      arcWidth: 1,
-      arcHeight: 0.25,
-      markers: OFFICES.map((o) => ({ location: o.location, size: o.size })),
-      arcs: OFFICES.filter((o) => o.id !== HQ_ID).map((o) => ({
-        from: HQ.location,
-        to: o.location,
-      })),
+      devicePixelRatio: Math.min(window.devicePixelRatio || 1, 2),
+      width: size,
+      height: size,
+      phi: s.phi,
+      theta: s.theta,
+      scale: s.scale,
+      dark: 0,
+      diffuse: 1.08,
+      mapSamples: 30000,
+      mapBrightness: 2.4,
+      baseColor: [0.13, 0.11, 0.24],
+      markerColor: [1, 0.8, 0],
+      glowColor: [0.93, 0.94, 0.97],
+      arcColor: [1, 0.8, 0],
+      arcWidth: 0.48,
+      arcHeight: 0.14,
+      markerElevation: 0.035,
+      markers: [],
+      arcs: [],
     });
 
-    let lastActiveId: string | null = null;
-    const setActiveLegendItem = (id: string | null) => {
-      if (id === lastActiveId) return;
-      if (lastActiveId) legendById.get(lastActiveId)?.classList.remove("is-active");
-      if (id) legendById.get(id)?.classList.add("is-active");
-      lastActiveId = id;
-    };
+    const resize = new ResizeObserver(geometry);
+    resize.observe(stage);
 
-    // cobe@2 has no onRender callback — it renders once per update() call,
-    // so we drive our own rAF loop, throttled to ~30fps. This also fixes an
-    // otherwise-permanent black globe: the map's texture image loads
-    // asynchronously, and the very first (synchronous) render happens
-    // before it's ready, painting a 1x1 black placeholder that would never
-    // be repainted without a follow-up render.
-    let raf = 0;
-    let lastFrameTime = 0;
-    const frameInterval = 1000 / 30;
-    const render = (now: number) => {
+    const observer = new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+    });
+    observer.observe(stage);
+
+    let previous = performance.now();
+
+    const render = (time: number) => {
       raf = requestAnimationFrame(render);
-      if (!isVisible || now - lastFrameTime < frameInterval) return;
-      lastFrameTime = now;
+      if (!visible) {
+        previous = time;
+        return;
+      }
+      const dt = Math.min(40, time - previous);
+      previous = time;
 
-      const hoveredId = hoveredIdRef.current;
-      const dragging = pointerInteracting.current !== null;
-
-      if (targetPhiRef.current !== null) {
-        // Ease toward a hovered location's centering phi.
-        const delta = shortestDelta(phiRef.current, targetPhiRef.current);
-        phiRef.current += delta * 0.08;
-        if (Math.abs(delta) < 0.002) targetPhiRef.current = null;
-      } else if (!prefersReducedMotion && !dragging && !hoveredId) {
-        phiRef.current += 0.006;
+      if (!s.pointer && Math.abs(s.velocity) > 0.00001) {
+        s.targetPhi += s.velocity * dt;
+        s.velocity *= Math.exp(-dt / 430);
       }
 
-      // Reverse sync: whichever marker currently faces the camera gets
-      // highlighted in the list, whether the globe is auto-rotating or
-      // being dragged by hand.
-      if (!hoveredId) {
-        const currentPhi = phiRef.current + pointerInteractionMovement.current;
-        let bestId: string | null = null;
-        let bestScore = -Infinity;
-        for (const office of OFFICES) {
-          const score = facing(officeVecs.get(office.id)!, currentPhi, THETA);
-          if (score > bestScore) {
-            bestScore = score;
-            bestId = office.id;
-          }
-        }
-        setActiveLegendItem(bestScore > 0.55 ? bestId : null);
+      const currentActive = activeRef.current;
+      if (currentActive >= 0) {
+        s.route = Math.min(1, s.route + dt / 760);
       }
 
-      const activeId = hoveredId ?? lastActiveId;
-      globe.update({
-        phi: phiRef.current + pointerInteractionMovement.current,
-        width: widthRef.current * 2,
-        height: widthRef.current * 2,
-        markers: OFFICES.map((o) => ({
+      if (reduced) {
+        s.phi = s.targetPhi;
+        s.theta = s.targetTheta;
+        s.scale = s.targetScale;
+      } else {
+        const f = 1 - Math.exp(-dt / (s.pointer ? 48 : 245));
+        s.phi += shortestRotation(s.phi, s.targetPhi) * f;
+        s.theta += (s.targetTheta - s.theta) * f;
+        s.scale += (s.targetScale - s.scale) * f;
+      }
+
+      const selected = offices[currentActive];
+      const markers = [
+        { location: origin, size: 0.024, color: [1, 0.8, 0] as [number, number, number] },
+        ...offices.map((o, i) => ({
           location: o.location,
-          size: o.size,
-          color: o.id === activeId ? ACTIVE_MARKER_COLOR : undefined,
+          size: i === currentActive ? 0.025 : 0.011,
+          color: (i === currentActive ? [1, 0.8, 0] : [0.53, 0.52, 0.6]) as [number, number, number],
         })),
-        arcs: OFFICES.filter((o) => o.id !== HQ_ID).map((o) => ({
-          from: HQ.location,
-          to: o.location,
-          color: o.id === activeId ? ACTIVE_ARC_COLOR : BASE_ARC_COLOR,
-        })),
+      ];
+
+      const t = s.route * s.route * (3 - 2 * s.route);
+      const arcs = selected
+        ? [
+            {
+              from: origin,
+              to: [
+                origin[0] + (selected.location[0] - origin[0]) * t,
+                origin[1] + (selected.location[1] - origin[1]) * t,
+              ] as [number, number],
+              color: [1, 0.8, 0] as [number, number, number],
+            },
+          ]
+        : [];
+
+      globe.update({
+        width: size,
+        height: size,
+        phi: s.phi,
+        theta: s.theta,
+        scale: s.scale,
+        markers,
+        arcs,
+      });
+
+      [...offices.map((o) => o.location), origin].forEach((loc, i) => {
+        const el = markerRefs.current[i];
+        if (!el) return;
+        const [x, y, z] = vector(loc);
+        const cp = Math.cos(s.phi);
+        const sp = Math.sin(s.phi);
+        const ct = Math.cos(s.theta);
+        const st = Math.sin(s.theta);
+        const h = cp * x + sp * z;
+        const v = sp * st * x + ct * y - cp * st * z;
+        const d = -sp * ct * x + st * y + cp * ct * z;
+        el.style.transform = `translate3d(${left + ((h * s.scale + 1) / 2) * size}px,${top + ((-v * s.scale + 1) / 2) * size}px,0) translate(-50%,-50%)`;
+        el.classList.toggle("is-behind", d < -0.02);
       });
     };
+
     raf = requestAnimationFrame(render);
-
-    requestAnimationFrame(() => {
-      canvas.style.opacity = "1";
-    });
-
-    const onLegendEnter = (id: string) => {
-      hoveredIdRef.current = id;
-      setActiveLegendItem(id);
-      const targets =
-        id === HQ_ID
-          ? [officeVecs.get(HQ_ID)!]
-          : [officeVecs.get(HQ_ID)!, officeVecs.get(id)!];
-      targetPhiRef.current = bestPhiFor(targets, THETA);
-    };
-    const onLegendLeave = () => {
-      hoveredIdRef.current = null;
-    };
-    const legendHandlers: Array<[HTMLElement, () => void, () => void]> = [];
-    for (const [id, el] of legendById) {
-      const enter = () => onLegendEnter(id);
-      el.addEventListener("mouseenter", enter);
-      el.addEventListener("focus", enter);
-      el.addEventListener("mouseleave", onLegendLeave);
-      el.addEventListener("blur", onLegendLeave);
-      legendHandlers.push([el, enter, onLegendLeave]);
-    }
-
-    const onPointerDown = (e: PointerEvent) => {
-      pointerInteracting.current = e.clientX - pointerInteractionMovement.current * 200;
-      canvas.style.cursor = "grabbing";
-    };
-    const onPointerRelease = () => {
-      pointerInteracting.current = null;
-      canvas.style.cursor = "grab";
-    };
-    const onPointerMove = (e: PointerEvent) => {
-      if (pointerInteracting.current === null) return;
-      const delta = e.clientX - pointerInteracting.current;
-      pointerInteractionMovement.current = delta / 200;
-    };
-
-    canvas.style.cursor = "grab";
-    canvas.addEventListener("pointerdown", onPointerDown);
-    window.addEventListener("pointerup", onPointerRelease);
-    window.addEventListener("pointercancel", onPointerRelease);
-    window.addEventListener("pointermove", onPointerMove);
 
     return () => {
       cancelAnimationFrame(raf);
-      clearInterval(clockInterval);
+      resize.disconnect();
       observer.disconnect();
       globe.destroy();
-      window.removeEventListener("resize", onResize);
-      canvas.removeEventListener("pointerdown", onPointerDown);
-      window.removeEventListener("pointerup", onPointerRelease);
-      window.removeEventListener("pointercancel", onPointerRelease);
-      window.removeEventListener("pointermove", onPointerMove);
-      for (const [el, enter, leave] of legendHandlers) {
-        el.removeEventListener("mouseenter", enter);
-        el.removeEventListener("focus", enter);
-        el.removeEventListener("mouseleave", leave);
-        el.removeEventListener("blur", leave);
-      }
     };
-  }, []);
+  }, [mount]);
 
-  return null;
+  const down = (e: React.PointerEvent) => {
+    if (e.button !== 0) return;
+    const s = state.current;
+    s.velocity = 0;
+    s.pointer = {
+      id: e.pointerId,
+      x: e.clientX,
+      y: e.clientY,
+      time: performance.now(),
+      velocity: 0,
+      moved: false,
+    };
+    e.currentTarget.setPointerCapture(e.pointerId);
+  };
+
+  const move = (e: React.PointerEvent) => {
+    const s = state.current;
+    const p = s.pointer;
+    if (!p || p.id !== e.pointerId) return;
+    const now = performance.now();
+    const dx = e.clientX - p.x;
+    const dy = e.clientY - p.y;
+    if (!p.moved && Math.hypot(dx, dy) > 7) {
+      p.moved = true;
+      setDrawer("closed");
+    }
+    s.targetPhi += dx / 210;
+    s.targetTheta = clamp(s.targetTheta - dy / 540, -0.28, 0.48);
+    p.velocity = dx / 210 / Math.max(8, now - p.time);
+    p.x = e.clientX;
+    p.y = e.clientY;
+    p.time = now;
+  };
+
+  const up = (e: React.PointerEvent) => {
+    const s = state.current;
+    const p = s.pointer;
+    if (!p || p.id !== e.pointerId) return;
+    s.velocity = clamp(p.velocity, -0.006, 0.006);
+    s.pointer = null;
+  };
+
+  if (!mount) return null;
+  const office = offices[Math.max(0, active)];
+
+  return createPortal(
+    <div className={`sf-network-explorer ${drawer !== "closed" ? "is-drawer-open" : ""}`}>
+      <header className="sf-network-intro">
+        <div>
+          <h2>One network.<br />Every handover.</h2>
+        </div>
+        <p className="sf-network-intro__lead">From Navi Mumbai to China, the United Kingdom, the UAE and Afghanistan, local teams keep every critical movement connected.</p>
+      </header>
+      <section className="sf-map-stage" ref={stageRef} aria-label="Interactive SanFreight office network">
+        <div className="sf-globe-plane" ref={planeRef}>
+          <canvas
+            ref={canvasRef}
+            onPointerDown={down}
+            onPointerMove={move}
+            onPointerUp={up}
+            onPointerCancel={up}
+            aria-label="Interactive globe showing SanFreight trade lanes"
+          />
+        </div>
+
+        <div className="sf-location-markers" aria-label="Office locations">
+          {offices.map((o, i) => (
+            <button
+              key={o.country}
+              ref={(el) => {
+                markerRefs.current[i] = el;
+              }}
+              className={`sf-map-marker ${active === i ? "is-active" : ""}`}
+              onClick={() => (active === i ? setDrawer("detail") : setActive(i))}
+              aria-label={`Open ${o.country}, ${o.city}`}
+            >
+              <span>{String(i + 1).padStart(2, "0")}</span>
+            </button>
+          ))}
+          <div
+            ref={(el) => {
+              markerRefs.current[4] = el;
+            }}
+            className="sf-origin-marker"
+            aria-hidden="true"
+          >
+            <span>IN</span>
+            <small>Origin</small>
+          </div>
+        </div>
+
+        <div className="sf-zoom-controls" aria-label="Globe zoom controls">
+          <button
+            onClick={() => setZoomTarget(state.current.targetScale + 0.06)}
+            aria-label="Zoom in"
+          >
+            +
+          </button>
+          <button
+            onClick={() => setZoomTarget(state.current.targetScale - 0.06)}
+            aria-label="Zoom out"
+          >
+            −
+          </button>
+        </div>
+
+        <button
+          className={`sf-detail-close ${drawer === "detail" ? "is-visible" : ""}`}
+          onClick={() => setDrawer("closed")}
+          aria-label="Close office detail"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6 6 18" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="round" />
+          </svg>
+        </button>
+
+        <button
+          className={`sf-drawer-back ${drawer === "detail" ? "is-visible" : ""}`}
+          onClick={() => setDrawer("summary")}
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="m14 6-6 6 6 6" stroke="currentColor" strokeWidth="1.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+          Return to route overview
+        </button>
+
+        <nav ref={railRef} className="sf-destination-rail" role="tablist" aria-label="Choose a destination">
+          <span className="sf-destination-indicator" aria-hidden="true" />
+          {["All", ...offices.map((o) => o.country)].map((label, i) => {
+            const isSelected = active < 0 ? i === 0 : i === active + 1;
+            return (
+              <button
+                key={label}
+                className={isSelected ? "is-active" : ""}
+                role="tab"
+                aria-selected={isSelected}
+                tabIndex={isSelected ? 0 : -1}
+                onClick={() => setActive(i - 1)}
+                onKeyDown={(e) => {
+                  if (["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp"].includes(e.key)) {
+                    e.preventDefault();
+                    const d = e.key === "ArrowRight" || e.key === "ArrowDown" ? 1 : -1;
+                    setActive(((i + d + 5) % 5) - 1);
+                  }
+                }}
+              >
+                {label}
+              </button>
+            );
+          })}
+        </nav>
+
+        <aside className={`sf-information-drawer ${drawer !== "closed" ? "is-open" : ""}`} aria-live="polite" aria-hidden={drawer === "closed"}>
+          <div className="sf-drawer-view sf-drawer-summary-view" aria-hidden={drawer !== "summary"}>
+            <div className="sf-drawer-summary">
+              <p className="sf-drawer-eyebrow">Selected trade lane</p>
+              <h2><span>1</span> office on this route</h2>
+              <button onClick={() => setDrawer("detail")}>Select the office to learn more</button>
+            </div>
+            <button className="sf-drawer-office" onClick={() => setDrawer("detail")}>
+              <span>India → {office.country}</span>
+              <strong>{office.city}</strong>
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m9 5 7 7-7 7" stroke="currentColor" strokeWidth="1.4" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </button>
+          </div>
+
+          <div className="sf-drawer-view sf-drawer-detail-view" aria-hidden={drawer !== "detail"}>
+            <figure>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={office.image} alt={`${office.country} freight operations`} />
+            </figure>
+            <div className="sf-detail-copy">
+              <p>{office.country} · {String(active + 1).padStart(2, "0")}</p>
+              <h2>{office.city}</h2>
+              <p>{office.description}</p>
+            </div>
+            <div className="sf-detail-meta">
+              <span>{office.coordinate}</span>
+              <Link href="/en/#contact" className="sf-office-cta" aria-label={`Contact SanFreight about ${office.city}`}>
+                Explore office <span>→</span>
+              </Link>
+            </div>
+          </div>
+        </aside>
+
+        <p className="sf-map-instruction">
+          Drag to explore <span aria-hidden="true">·</span> Select a destination
+        </p>
+      </section>
+    </div>,
+    mount
+  );
 }
