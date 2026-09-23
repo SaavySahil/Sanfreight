@@ -1,9 +1,9 @@
 const solutions = [
-  ["Ocean Freight", "Reliable FCL and LCL shipping across global trade routes.", "expertises-ocean-freight.webp"],
-  ["Air Freight", "Time-critical air cargo with dependable global reach.", "expertises-air-freight.webp"],
-  ["Customs Clearance", "Compliant import and export clearance without avoidable delays.", "expertises-customs.webp"],
-  ["Warehousing & Logistics", "Secure storage, inland transport and responsive distribution.", "expertises-warehousing.webp"],
-  ["Specialized Logistics", "Expert handling for oversized and complex project cargo.", "expertises-specialized.webp"],
+  ["Ocean Freight", "Reliable FCL and LCL shipping across global trade routes.", "nav-service-1.webp"],
+  ["Air Freight", "Time-critical air cargo with dependable global reach.", "nav-service-7.webp"],
+  ["Customs Clearance", "Compliant import and export clearance without avoidable delays.", "nav-service-6.webp"],
+  ["Warehousing & Logistics", "Secure storage, inland transport and responsive distribution.", "nav-service-3.webp"],
+  ["Specialized Logistics", "Expert handling for oversized and complex project cargo.", "nav-service-4.webp"],
 ] as const;
 
 export function withSolutionsNav(html: string): string {
