@@ -385,7 +385,7 @@ export default function NetworkGlobe() {
   const office = offices[Math.max(0, active)];
 
   return createPortal(
-    <div className={`sf-network-explorer ${drawer !== "closed" ? "is-drawer-open" : ""}`}>
+    <div className={`sf-network-explorer ${drawer !== "closed" ? "drawer-open" : ""}`}>
       <header className="sf-network-intro">
         <div>
           <h2>One network.<br />Every handover.</h2>
