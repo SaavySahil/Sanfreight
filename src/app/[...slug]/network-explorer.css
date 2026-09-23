@@ -239,7 +239,7 @@
   right: 28px;
   bottom: 24px;
   display: grid;
-  grid-template-columns: .7fr 1fr 1.55fr .72fr 1.25fr;
+  grid-template-columns: .7fr .8fr 1fr 1.55fr .72fr 1.25fr;
   width: min(620px, calc(100% - 190px));
   height: 48px;
   overflow: hidden;
@@ -466,21 +466,19 @@
   font-size: 10px;
 }
 
-.sf-detail-meta a {
+.sf-detail-meta a.sf-office-cta {
   display: flex;
-  min-height: 42px;
+  min-height: 60px;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 14px;
-  border-radius: 4px;
-  background: var(--yellow);
+  padding: 16px 22px;
+  background: transparent;
   color: var(--ink);
   text-decoration: none;
 }
+.sf-detail-meta a.sf-office-cta:hover::before { transform: none; }
+.sf-detail-meta a.sf-office-cta .cta-custom-wrapper { display:flex;align-items:center;justify-content:space-between;gap:12px; }
+.sf-detail-meta a.sf-office-cta .text { font-size:15px; }
 
-.sf-detail-meta a span { transition: transform .3s var(--ease-out); }
-.sf-detail-meta a:hover span,
-.sf-detail-meta a:focus-visible span { transform: translateX(4px); }
 .sf-detail-meta a:focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
 
 .sf-detail-close {
@@ -593,7 +591,7 @@
   .sf-map-heading > div { gap: 7px; font-size: 9px; }
   .sf-map-heading strong { display: none; }
   .sf-globe-plane { top: 43%; width: min(172vw, 670px); }
-  .sf-destination-rail { right: 16px; bottom: 16px; left: 16px; width: auto; height: 50px; grid-template-columns: .6fr 1fr .8fr .7fr 1fr; }
+  .sf-destination-rail { right: 16px; bottom: 16px; left: 16px; width: auto; height: 50px; grid-template-columns: .6fr .7fr 1fr .8fr .7fr 1fr; }
   .sf-destination-rail button { padding: 0 5px; font-size: 10px; white-space: normal; }
   .sf-zoom-controls { bottom: 78px; left: 16px; }
   .sf-zoom-controls button { width: 42px; height: 42px; }
@@ -649,6 +647,5 @@
 .sf-network-explorer .sf-drawer-eyebrow,.sf-network-explorer .sf-detail-copy>p:first-child{color:var(--navy);font-size:11px}
 .sf-network-explorer .sf-drawer-office strong{color:var(--navy);font-size:18px}
 .sf-network-explorer .sf-detail-copy>p:last-child{color:var(--navy);font-size:14px;line-height:1.4}
-.sf-network-explorer .sf-map-instruction{color:var(--navy)}
 .sf-network-explorer .sf-globe-plane{width:min(62vw,640px)}
 @media(max-width:760px){.sf-network-explorer{height:760px;min-height:760px}.sf-network-intro{top:68px;left:20px;right:20px;display:block}.sf-network-intro h2{font-size:34px}.sf-network-intro__lead{margin-top:14px;font-size:14px;max-width:320px}.sf-network-explorer .sf-map-stage{inset:240px 12px 65px}.sf-network-explorer .sf-globe-plane{width:min(94vw,460px)}.sf-network-explorer .sf-destination-rail button{font-size:10px}}

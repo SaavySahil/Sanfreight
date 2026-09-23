@@ -160,9 +160,9 @@ export default function NetworkGlobe() {
     s.velocity = 0;
     s.route = 0;
     if (active < 0) {
-      s.targetTheta = 0.58;
-      s.targetPhi = bestPhi([32, 66], s.targetTheta);
-      s.targetScale = fitZoom(overviewZoom());
+      s.targetTheta = active === -2 ? 0.18 : 0.58;
+      s.targetPhi = bestPhi(active === -2 ? origin : [32, 66], s.targetTheta);
+      s.targetScale = fitZoom(active === -2 ? routeZoom() : overviewZoom());
       queueMicrotask(() => {
         setDrawer("closed");
       });
@@ -467,8 +467,9 @@ export default function NetworkGlobe() {
 
         <nav ref={railRef} className="sf-destination-rail" role="tablist" aria-label="Choose a destination">
           <span className="sf-destination-indicator" aria-hidden="true" />
-          {["All", ...offices.map((o) => o.country)].map((label, i) => {
-            const isSelected = active < 0 ? i === 0 : i === active + 1;
+          {["All", "India", ...offices.map((o) => o.country)].map((label, i) => {
+            const tabValue = i === 0 ? -1 : i === 1 ? -2 : i - 2;
+            const isSelected = active === tabValue;
             return (
               <button
                 key={label}
@@ -476,12 +477,13 @@ export default function NetworkGlobe() {
                 role="tab"
                 aria-selected={isSelected}
                 tabIndex={isSelected ? 0 : -1}
-                onClick={() => setActive(i - 1)}
+                onClick={() => setActive(tabValue)}
                 onKeyDown={(e) => {
                   if (["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp"].includes(e.key)) {
                     e.preventDefault();
                     const d = e.key === "ArrowRight" || e.key === "ArrowDown" ? 1 : -1;
-                    setActive(((i + d + 5) % 5) - 1);
+                    const next = (i + d + 6) % 6;
+                    setActive(next === 0 ? -1 : next === 1 ? -2 : next - 2);
                   }
                 }}
               >
@@ -519,16 +521,13 @@ export default function NetworkGlobe() {
             </div>
             <div className="sf-detail-meta">
               <span>{office.coordinate}</span>
-              <Link href="/en/#contact" className="sf-office-cta" aria-label={`Contact SanFreight about ${office.city}`}>
-                Explore office <span>→</span>
+              <Link href="/en/#contact" className="cta-custom sf-office-cta" aria-label={`Contact SanFreight about ${office.city}`}>
+                <span className="cta-custom-content"><span className="cta-custom-wrapper"><span className="text">Explore office</span><span className="cta-custom-arrows-wrapper"><span className="icon icon-arrow-right" /><span className="icon icon-arrow-right absolute" /></span></span></span>
               </Link>
             </div>
           </div>
         </aside>
 
-        <p className="sf-map-instruction">
-          Drag the globe <span aria-hidden="true">·</span> Choose a destination
-        </p>
       </section>
     </div>,
     mount
