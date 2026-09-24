@@ -209,6 +209,7 @@ export default function ImageGlobe() {
   return createPortal(
     <section className="sf-v8-network-map" data-headercolor="light-transparent" aria-labelledby="sf-v8-network-title">
       <header className="sf-v8-network-heading">
+        <p className={revealed ? "is-revealed" : ""}>Global Footprint</p>
         <h2 id="sf-v8-network-title" className={revealed ? "is-revealed" : ""}>Where we operate</h2>
       </header>
 
