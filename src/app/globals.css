@@ -718,3 +718,34 @@ h3.title.text-black {
 .module-homepage-intro .embla {
   pointer-events: none !important;
 }
+
+/* Match the primary nav's stationary-text, animated-underline hover treatment. */
+#menu-desktop .panel-wrapper .panel .right li .subpage-link,
+#menu-desktop .panel-wrapper .panel .right li .subpage-link.active,
+#menu-desktop .panel-wrapper .panel .right li .subpage-link:hover {
+  position: relative;
+  width: max-content;
+  padding-bottom: 7px;
+  overflow: visible;
+  color: var(--white);
+  transition: none;
+}
+
+#menu-desktop .panel-wrapper .panel .right li .subpage-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform .3s ease;
+}
+
+#menu-desktop .panel-wrapper .panel .right li .subpage-link:hover::after,
+#menu-desktop .panel-wrapper .panel .right li .subpage-link:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
