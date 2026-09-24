@@ -723,19 +723,18 @@ h3.title.text-black {
 #menu-desktop .panel-wrapper .panel .right li .subpage-link,
 #menu-desktop .panel-wrapper .panel .right li .subpage-link.active,
 #menu-desktop .panel-wrapper .panel .right li .subpage-link:hover {
-  position: relative;
-  width: max-content;
-  padding-bottom: 7px;
-  overflow: visible;
   color: var(--white);
-  transition: none;
 }
 
-#menu-desktop .panel-wrapper .panel .right li .subpage-link::after {
+#menu-desktop .panel-wrapper .panel .right li {
+  position: relative;
+}
+
+#menu-desktop .panel-wrapper .panel .right li::after {
   content: "";
   position: absolute;
   right: 0;
-  bottom: 0;
+  bottom: -7px;
   left: 0;
   height: 1px;
   background: currentColor;
@@ -744,8 +743,8 @@ h3.title.text-black {
   transition: transform .3s ease;
 }
 
-#menu-desktop .panel-wrapper .panel .right li .subpage-link:hover::after,
-#menu-desktop .panel-wrapper .panel .right li .subpage-link:focus-visible::after {
+#menu-desktop .panel-wrapper .panel .right li:hover::after,
+#menu-desktop .panel-wrapper .panel .right li:focus-within::after {
   transform: scaleX(1);
   transform-origin: left;
 }
