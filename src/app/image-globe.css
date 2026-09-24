@@ -6,7 +6,7 @@
 .sf-v8-network-heading{position:absolute;z-index:5;top:8.5%;right:0;left:0;text-align:center;pointer-events:none}
 .sf-v8-network-heading p{display:flex;align-items:center;justify-content:center;margin:0 0 22px;color:rgba(255,255,255,.78);font-size:1.125rem;font-weight:400;line-height:1;letter-spacing:0;text-transform:none;opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform 1s var(--sf-v8-ease-out)}
 .sf-v8-network-heading p.is-revealed{opacity:1;transform:translateY(0)}
-.sf-v8-network-heading h2{margin:0;font-size:clamp(54px,6vw,94px);font-weight:300;letter-spacing:-.058em;line-height:.86}
+.sf-v8-network-heading h2{margin:0;font-size:2rem;font-weight:300;letter-spacing:-.058em;line-height:2.25rem}
 .sf-v8-globe-stage{position:absolute;z-index:1;inset:0}
 .sf-v8-globe-stage>img{position:absolute;right:50%;bottom:-20%;width:min(118vw,1760px);height:auto;max-width:none;transform:translateX(50%);user-select:none;pointer-events:none}
 .sf-v8-office-marker{position:absolute;z-index:7;left:var(--x);top:var(--y);display:grid;width:44px;height:44px;padding:0;border:0;background:transparent;cursor:pointer;transform:translate(-50%,-50%);place-items:center}
@@ -45,8 +45,9 @@
 .sf-v8-office-card__city{font-size:13px}
 .sf-v8-office-card__copy{font-size:14px;line-height:1.46}
 .sf-v8-office-card__meta{font-size:10px}
-@media(max-width:900px){.sf-v8-network-map{min-height:640px}.sf-v8-network-heading{top:7%}.sf-v8-network-heading h2{font-size:13vw}.sf-v8-globe-stage>img{bottom:calc(40% - 64vw);width:175vw}.sf-v8-office-marker{transform:translate(-50%,-50%) scale(.9)}.sf-v8-office-card{top:auto!important;right:18px;bottom:70px;left:18px!important;width:auto;padding:20px}.sf-v8-network-legend{bottom:28px;left:18px;gap:14px}.sf-v8-network-legend p:nth-child(3){display:none}.sf-v8-network-count{right:18px;bottom:27px}.sf-v8-office-card__copy{min-height:0}}
-@media(min-width:561px) and (max-width:900px){.sf-v8-office-card{top:max(185px,20%)!important;bottom:auto;left:clamp(20px,6vw,60px)!important;right:auto;width:min(360px,calc(100vw - 40px))}.sf-v8-globe-stage>img{bottom:calc(35% - 64vw)}}
+@media(min-width:960px){.sf-v8-network-heading h2{font-size:4.5rem;line-height:4.75rem}}
+@media(max-width:959px){.sf-v8-network-map{min-height:640px}.sf-v8-network-heading{top:7%}.sf-v8-globe-stage>img{bottom:calc(40% - 64vw);width:175vw}.sf-v8-office-marker{transform:translate(-50%,-50%) scale(.9)}.sf-v8-office-card{top:auto!important;right:18px;bottom:70px;left:18px!important;width:auto;padding:20px}.sf-v8-office-card__close{display:none}.sf-v8-network-legend{bottom:28px;left:18px;gap:14px}.sf-v8-network-legend p:nth-child(3){display:none}.sf-v8-network-count{right:18px;bottom:27px}.sf-v8-office-card__copy{min-height:0}}
+@media(min-width:561px) and (max-width:959px){.sf-v8-office-card{top:max(185px,20%)!important;bottom:auto;left:clamp(20px,6vw,60px)!important;right:auto;width:min(360px,calc(100vw - 40px))}.sf-v8-globe-stage>img{bottom:calc(35% - 64vw)}}
 @media(max-width:560px){.sf-v8-network-map{min-height:520px}.sf-v8-network-map::after{height:12%;background:linear-gradient(to bottom,transparent,#08080a)}.sf-v8-network-heading{top:10%}.sf-v8-globe-stage>img{-webkit-mask-image:linear-gradient(to bottom,#000 86%,transparent 100%);mask-image:linear-gradient(to bottom,#000 86%,transparent 100%)}.sf-v8-office-card{top:26%!important;bottom:auto}}
 @media(max-width:300px){.sf-v8-office-card{right:12px;left:12px!important;padding:12px}.sf-v8-office-card__type{margin-bottom:7px;font-size:8px}.sf-v8-office-card h2{font-size:17px}.sf-v8-office-card__city{margin-bottom:8px;font-size:10px}.sf-v8-office-card__copy{padding:8px 0;font-size:10px;line-height:1.3}.sf-v8-office-card__meta{padding-top:8px}.sf-v8-network-legend{bottom:18px;left:12px;gap:8px;font-size:6px}.sf-v8-network-count{right:12px;bottom:17px;font-size:7px}}
 @media(prefers-reduced-motion:reduce){.sf-v8-office-card,.sf-v8-office-marker::before,.sf-v8-office-marker::after,.sf-v8-office-marker i{transition-duration:.01ms!important}.sf-v8-office-marker.is-active b{animation:none}}

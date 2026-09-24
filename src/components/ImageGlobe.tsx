@@ -149,6 +149,7 @@ export default function ImageGlobe() {
   }, [mount]);
 
   const closeOffice = () => {
+    if (window.matchMedia("(max-width: 959px)").matches) return;
     if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
     activeRef.current = null;
     pinnedRef.current = false;
@@ -187,7 +188,7 @@ export default function ImageGlobe() {
   }, [mount]);
 
   useEffect(() => {
-    if (!active || !cardRef.current || !window.matchMedia("(max-width: 900px)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    if (!active || !cardRef.current || !window.matchMedia("(max-width: 959px)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const animation = cardRef.current.animate(
       [{ opacity: 0, transform: "translate3d(0, 14px, 0)" }, { opacity: 1, transform: "translate3d(0, 0, 0)" }],
       { duration: 280, easing: "cubic-bezier(.165,.84,.44,1)" }
