@@ -14,8 +14,8 @@ const offices = {
     count: "01",
     cardX: "63%",
     cardY: "57%",
-    markerX: "60.5%",
-    markerY: "69%",
+    markerX: .575,
+    markerY: .675,
     label: "Show Navi Mumbai head office",
   },
   china: {
@@ -28,8 +28,8 @@ const offices = {
     count: "02",
     cardX: "48%",
     cardY: "54%",
-    markerX: "73.5%",
-    markerY: "59%",
+    markerX: .699,
+    markerY: .489,
     label: "Show Ningbo office",
   },
   uk: {
@@ -42,8 +42,8 @@ const offices = {
     count: "03",
     cardX: "47%",
     cardY: "31%",
-    markerX: "43.5%",
-    markerY: "42.5%",
+    markerX: .29,
+    markerY: .51,
     label: "Show Dartford office",
   },
   uae: {
@@ -56,8 +56,8 @@ const offices = {
     count: "04",
     cardX: "47%",
     cardY: "56%",
-    markerX: "43%",
-    markerY: "63.5%",
+    markerX: .335,
+    markerY: .625,
     label: "Show Bur Dubai office",
   },
   afghanistan: {
@@ -70,8 +70,8 @@ const offices = {
     count: "05",
     cardX: "59%",
     cardY: "39%",
-    markerX: "55.5%",
-    markerY: "51%",
+    markerX: .47,
+    markerY: .545,
     label: "Show Kabul office",
   },
 } as const;
@@ -82,12 +82,15 @@ export default function ImageGlobe() {
   const [mount, setMount] = useState<HTMLElement | null>(null);
   const [active, setActive] = useState<OfficeKey | null>(null);
   const [pinned, setPinned] = useState(false);
-  const [changing, setChanging] = useState(false);
+  const [revealed, setRevealed] = useState(false);
 
   const activeRef = useRef(active);
   const pinnedRef = useRef(pinned);
-  const swapTimerRef = useRef<number | null>(null);
   const closeTimerRef = useRef<number | null>(null);
+  const initialOpenedRef = useRef(false);
+  const stageRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLImageElement>(null);
+  const cardRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     activeRef.current = active;
@@ -104,12 +107,38 @@ export default function ImageGlobe() {
     }
   }, []);
 
+  useEffect(() => {
+    if (!mount || !stageRef.current || !imageRef.current) return;
+    const stage = stageRef.current;
+    const image = imageRef.current;
+    const positionMarkers = () => {
+      const stageRect = stage.getBoundingClientRect();
+      const imageRect = image.getBoundingClientRect();
+      stage.querySelectorAll<HTMLElement>(".sf-v8-office-marker").forEach((marker) => {
+        const office = offices[marker.dataset.office as OfficeKey];
+        if (!office) return;
+        marker.style.setProperty("--x", `${imageRect.left - stageRect.left + imageRect.width * office.markerX}px`);
+        marker.style.setProperty("--y", `${imageRect.top - stageRect.top + imageRect.height * office.markerY}px`);
+      });
+    };
+    const observer = new ResizeObserver(positionMarkers);
+    observer.observe(stage);
+    image.addEventListener("load", positionMarkers);
+    window.addEventListener("resize", positionMarkers);
+    positionMarkers();
+    return () => {
+      observer.disconnect();
+      image.removeEventListener("load", positionMarkers);
+      window.removeEventListener("resize", positionMarkers);
+    };
+  }, [mount]);
+
   const closeOffice = () => {
     if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
-    if (swapTimerRef.current) clearTimeout(swapTimerRef.current);
+    activeRef.current = null;
+    pinnedRef.current = false;
     setActive(null);
     setPinned(false);
-    setChanging(false);
   };
 
   const scheduleClose = () => {
@@ -120,21 +149,35 @@ export default function ImageGlobe() {
   };
 
   const renderOffice = (key: OfficeKey) => {
+    initialOpenedRef.current = true;
     if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
-    const isChanging = activeRef.current !== null && key !== activeRef.current;
-    if (isChanging) {
-      setChanging(true);
-    }
     setActive(key);
-
-    if (swapTimerRef.current) clearTimeout(swapTimerRef.current);
-    swapTimerRef.current = window.setTimeout(
-      () => {
-        setChanging(false);
-      },
-      isChanging ? 180 : 0
-    );
+    activeRef.current = key;
   };
+
+  useEffect(() => {
+    if (!mount) return;
+    const section = mount.querySelector(".sf-v8-network-map");
+    if (!section) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setRevealed(true);
+        if (!initialOpenedRef.current) renderOffice("india");
+        observer.disconnect();
+      }
+    }, { threshold: 0.3 });
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [mount]);
+
+  useEffect(() => {
+    if (!active || !cardRef.current || !window.matchMedia("(max-width: 900px)").matches || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const animation = cardRef.current.animate(
+      [{ opacity: 0, transform: "translate3d(0, 14px, 0)" }, { opacity: 1, transform: "translate3d(0, 0, 0)" }],
+      { duration: 280, easing: "cubic-bezier(.165,.84,.44,1)" }
+    );
+    return () => animation.cancel();
+  }, [active]);
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -148,18 +191,16 @@ export default function ImageGlobe() {
   const activeData = active ? offices[active] : null;
 
   return createPortal(
-    <main className="sf-v8-network-map" aria-labelledby="sf-v8-network-title">
+    <section className="sf-v8-network-map" aria-labelledby="sf-v8-network-title">
       <header className="sf-v8-network-heading">
-        <p>
-          <span /> Global network
-        </p>
-        <h2 id="sf-v8-network-title">Where we operate</h2>
+        <h2 id="sf-v8-network-title" className={revealed ? "is-revealed" : ""}>Where we operate</h2>
       </header>
 
-      <div className="sf-v8-globe-stage" onClick={closeOffice}>
+      <div className="sf-v8-globe-stage" ref={stageRef} onClick={closeOffice}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/images/sanfreight-earth.jpg"
+          ref={imageRef}
           alt="Earth viewed over Asia, the Middle East and Europe"
           draggable={false}
         />
@@ -172,22 +213,26 @@ export default function ImageGlobe() {
               key={key}
               type="button"
               className={`sf-v8-office-marker ${isSelected ? "is-active" : ""}`}
-              style={{ "--x": o.markerX, "--y": o.markerY } as React.CSSProperties}
+              style={{ "--x": "-100px", "--y": "-100px" } as React.CSSProperties}
               data-office={key}
               aria-label={o.label}
               aria-controls="sf-v8-office-card"
               aria-expanded={isSelected}
-              onPointerEnter={() => {
-                if (!pinnedRef.current) renderOffice(key);
+              onPointerEnter={(event) => {
+                if (event.pointerType !== "mouse") return;
+                pinnedRef.current = true;
+                setPinned(true);
+                renderOffice(key);
               }}
               onPointerLeave={scheduleClose}
-              onFocus={() => renderOffice(key)}
+              onFocus={(event) => { if (event.currentTarget.matches(":focus-visible")) renderOffice(key); }}
               onBlur={() => setTimeout(scheduleClose, 0)}
               onClick={(e) => {
                 e.stopPropagation();
                 if (activeRef.current === key && pinnedRef.current) {
                   closeOffice();
                 } else {
+                  pinnedRef.current = true;
                   setPinned(true);
                   renderOffice(key);
                 }
@@ -201,8 +246,9 @@ export default function ImageGlobe() {
 
         {activeData && (
           <article
+            ref={cardRef}
             id="sf-v8-office-card"
-            className={`sf-v8-office-card ${active ? "is-open" : ""} ${changing ? "is-changing" : ""}`}
+            className="sf-v8-office-card is-open"
             style={
               {
                 "--card-x": activeData.cardX,
@@ -238,21 +284,7 @@ export default function ImageGlobe() {
         )}
       </div>
 
-      <footer className="sf-v8-network-legend">
-        <p>
-          <span className="sf-v8-legend-head" /> Head office
-        </p>
-        <p>
-          <span className="sf-v8-legend-office" /> International office
-        </p>
-        <p>
-          <span className="sf-v8-legend-reach" /> Network reach
-        </p>
-      </footer>
-      <p className="sf-v8-network-count">
-        <span>{activeData ? activeData.count : "05"}</span> {activeData ? "/ 05 offices" : "offices"}
-      </p>
-    </main>,
+    </section>,
     mount
   );
 }
