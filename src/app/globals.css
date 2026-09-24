@@ -737,7 +737,7 @@ h3.title.text-black {
   bottom: -7px;
   left: 0;
   height: 1px;
-  background: currentColor;
+  background: var(--white);
   transform: scaleX(0);
   transform-origin: right;
   transition: transform .3s ease;
