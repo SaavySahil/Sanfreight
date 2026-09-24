@@ -724,6 +724,7 @@ h3.title.text-black {
 #menu-desktop .panel-wrapper .panel .right li .subpage-link.active,
 #menu-desktop .panel-wrapper .panel .right li .subpage-link:hover {
   color: var(--white);
+  font-size: 1.875rem;
 }
 
 #menu-desktop .panel-wrapper .panel .right li {
