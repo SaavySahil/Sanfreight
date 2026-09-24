@@ -56,8 +56,8 @@ export default function Home() {
   const previousStart = homepageHtml.indexOf(previousSection);
   const teamStart = homepageHtml.indexOf(teamSection, previousStart);
   const bodyHtml = previousStart >= 0 && teamStart > previousStart
-    ? `${homepageHtml.slice(0, previousStart)}<div id="sf-image-globe-root"></div>${homepageHtml.slice(teamStart)}`
-    : homepageHtml.replace(teamSection, `<div id="sf-image-globe-root"></div>${teamSection}`);
+    ? `${homepageHtml.slice(0, previousStart)}<div id="sf-image-globe-root" data-headercolor="light-transparent"></div>${homepageHtml.slice(teamStart)}`
+    : homepageHtml.replace(teamSection, `<div id="sf-image-globe-root" data-headercolor="light-transparent"></div>${teamSection}`);
 
   return (
     <>

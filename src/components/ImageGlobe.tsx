@@ -83,6 +83,7 @@ export default function ImageGlobe() {
   const [active, setActive] = useState<OfficeKey | null>(null);
   const [pinned, setPinned] = useState(false);
   const [revealed, setRevealed] = useState(false);
+  const [cardPosition, setCardPosition] = useState({ x: "63%", y: "57%" });
 
   const activeRef = useRef(active);
   const pinnedRef = useRef(pinned);
@@ -91,6 +92,19 @@ export default function ImageGlobe() {
   const stageRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const cardRef = useRef<HTMLElement>(null);
+
+  const positionCardBesideMarker = (key: OfficeKey) => {
+    if (!stageRef.current || window.matchMedia("(max-width: 900px)").matches) return;
+    const marker = stageRef.current.querySelector<HTMLElement>(`[data-office="${key}"]`);
+    if (!marker) return;
+    const stageRect = stageRef.current.getBoundingClientRect();
+    const markerRect = marker.getBoundingClientRect();
+    const cardWidth = cardRef.current?.offsetWidth || 328;
+    const cardHeight = cardRef.current?.offsetHeight || 230;
+    const x = Math.min(markerRect.right - stageRect.left + 16, stageRect.width - cardWidth - 24);
+    const y = Math.max(90, Math.min(markerRect.top - stageRect.top + markerRect.height / 2 - cardHeight / 2, stageRect.height - cardHeight - 28));
+    setCardPosition({ x: `${x}px`, y: `${y}px` });
+  };
 
   useEffect(() => {
     activeRef.current = active;
@@ -120,6 +134,7 @@ export default function ImageGlobe() {
         marker.style.setProperty("--x", `${imageRect.left - stageRect.left + imageRect.width * office.markerX}px`);
         marker.style.setProperty("--y", `${imageRect.top - stageRect.top + imageRect.height * office.markerY}px`);
       });
+      if (activeRef.current) requestAnimationFrame(() => positionCardBesideMarker(activeRef.current as OfficeKey));
     };
     const observer = new ResizeObserver(positionMarkers);
     observer.observe(stage);
@@ -153,6 +168,7 @@ export default function ImageGlobe() {
     if (closeTimerRef.current) clearTimeout(closeTimerRef.current);
     setActive(key);
     activeRef.current = key;
+    positionCardBesideMarker(key);
   };
 
   useEffect(() => {
@@ -191,7 +207,7 @@ export default function ImageGlobe() {
   const activeData = active ? offices[active] : null;
 
   return createPortal(
-    <section className="sf-v8-network-map" aria-labelledby="sf-v8-network-title">
+    <section className="sf-v8-network-map" data-headercolor="light-transparent" aria-labelledby="sf-v8-network-title">
       <header className="sf-v8-network-heading">
         <h2 id="sf-v8-network-title" className={revealed ? "is-revealed" : ""}>Where we operate</h2>
       </header>
@@ -251,8 +267,8 @@ export default function ImageGlobe() {
             className="sf-v8-office-card is-open"
             style={
               {
-                "--card-x": activeData.cardX,
-                "--card-y": activeData.cardY,
+                "--card-x": cardPosition.x,
+                "--card-y": cardPosition.y,
               } as React.CSSProperties
             }
             aria-live="polite"
