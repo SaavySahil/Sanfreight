@@ -38,6 +38,16 @@ export function withSolutionsNav(html: string): string {
   // ESG is now a live route: restore its navigation links across desktop,
   // mobile and footer markup imported from the legacy page snapshots.
   let result = html.replaceAll('data-disabled-href="/en/esg/"', 'href="/en/esg/"');
+  result = result.replace(
+    /<a\b([^>]*)>(\s*<span>Expertises<\/span>\s*)<\/a>/g,
+    (_match, attributes: string, label: string) => {
+      const cleanAttributes = attributes
+        .replace(/\sdata-page=""/g, "")
+        .replace(/\sdata-disabled-href="[^"]*"/g, "")
+        .replace(/\s+href="[^"]*"/g, "");
+      return `<a${cleanAttributes} href="/en/expertises-en/">${label}</a>`;
+    }
+  );
   for (const [missing, fallback] of Object.entries(esgImageFallbacks)) {
     result = result.replaceAll(missing, fallback);
   }
@@ -88,6 +98,158 @@ export function withSolutionsNav(html: string): string {
     /The main entity of the Sanfreight Group, which specializes in real estate investment consulting, asset and project management\./g,
     "SanFreight provides integrated freight forwarding and supply-chain solutions across global markets."
   );
+
+  // Keep the scraped Expertises page's original module structure and interactions;
+  // replace only its legacy investment/property content and broken reference targets.
+  const expertisesStart = result.indexOf('<section id="expertises"');
+  const isExpertisesPage = expertisesStart >= 0;
+  if (expertisesStart >= 0) {
+    const sectionTags = /<\/?section\b[^>]*>/gi;
+    sectionTags.lastIndex = result.indexOf(">", expertisesStart) + 1;
+    let depth = 1;
+    let expertisesEnd = -1;
+    let tag: RegExpExecArray | null;
+    while ((tag = sectionTags.exec(result))) {
+      depth += tag[0].startsWith("</") ? -1 : 1;
+      if (depth === 0) {
+        expertisesEnd = sectionTags.lastIndex;
+        break;
+      }
+    }
+    if (expertisesEnd > expertisesStart) {
+      let page = result.slice(expertisesStart, expertisesEnd);
+      page = page
+        .replaceAll('/wp-content/uploads/fly-images/8638/expertise-1920x1080-c.png', '/images/expertises-intro.webp')
+        .replaceAll('/wp-content/uploads/fly-images/8638/expertise-562x1218-c.png', '/images/expertises-intro.webp');
+      page = page.replace(
+        /data-urls="[^"]*"/,
+        'data-urls="%7B%22en%22%3A%22%2Fen%2Fexpertises-en%2F%22%7D"'
+      );
+      const copy: Array<[string, string]> = [
+        ["We demonstrate rigorous selection of our operations through our sharp expertise.", "Integrated logistics solutions, coordinated with care from origin to destination."],
+        ["Discover our expertise", "Explore our capabilities"],
+        ["Our expertise", "Our logistics expertise"],
+        ["Sanfreight brings together in-depth expertise in the field of logistics investment.", "SanFreight connects freight forwarding, customs, warehousing and specialized cargo expertise across a trusted international network."],
+        ["Private Equity funds", "Ocean Freight"],
+        ["Private Equity fund structures enable our investors to pool their capital with limited dilution of their interest in redistributed capital gains.", "Reliable ocean freight for containerized cargo across international routes, coordinated from origin through arrival."],
+        ["This type of fund is ideally suited to professional investors who are accustomed to investing and optimizing their returns.", "Plan FCL and LCL shipments with clear milestones, carrier coordination and shipment visibility."],
+        ["Club-Deals", "Air Freight"],
+        ["Co-investments (i.e. joint ventures), which can be carried out via our dedicated funds or our Club Deals, enable us to collaborate with leading investors and partners.", "Responsive air cargo solutions for urgent shipments, coordinated around critical delivery timelines."],
+        ["The founders of Sanfreight have a long history of bringing together investment partners with common interests to invest in portfolios or single assets.", "Priority handling, capacity planning and proactive updates help keep time-sensitive cargo moving."],
+        ["Capital Investment / Private debt", "Customs Clearance"],
+        ["Private debt investments are transactions carried out outside regulated financial markets.", "Navigate import and export requirements with practical documentation support and customs coordination."],
+        ["We structure transactions involving banks and alternative lenders, combining different capital structures (e.g. mezzanine debt, senior debt, whole loan, preferred equity, etc.).", "Our team helps align declarations, classification and shipment paperwork so cargo can move across borders with fewer avoidable delays."],
+        ["Our expertise by profile", "Connected logistics services"],
+        ["Sanfreight Group strengthens its pan-European position as a logistics operator and manager of private equity investment solutions.", "From warehouse operations to complex project cargo, our teams coordinate the people, processes and partners behind dependable logistics."],
+        ["Investors", "Warehousing & Logistics"],
+        ["Logistics operators", "Specialized Logistics"],
+        ["Latest references", "Logistics across every stage"],
+        ["15 Fénelon", "Ocean Freight"],
+        ["91 Champs&#8209Élysées", "Air Freight"],
+        ["Mageva 360", "Customs Clearance"],
+        ["ho Hospitality", "GLOBAL NETWORK"],
+        ["mi Mixed Use", "TIME-CRITICAL CARGO"],
+        ["ho Hospitality fr France", "CROSS-BORDER SUPPORT"],
+        ["Transformation of an office building into a high&#8209end serviced residence located in the heart of Paris’s 10th arrondissement, in a lively and rapidly evolving neighborhood.", "Dependable ocean freight coordination for containerized cargo across major international routes, with shipment visibility from origin to destination."],
+        ["Acquisition of a mixed&#8209use building at 91 Champs&#8209Élysées in Paris, located on the most central stretch of the avenue. This exceptional 4,200 m² property enjoys unmatched visibility on the world’s most iconic thoroughfare, in the heart of the Golden Triangle, just steps away from the leading international luxury brands.", "Time-sensitive air freight planned around critical delivery windows, with coordinated handling and clear updates throughout the journey."],
+        ["Mageva 360 project is based on the acquisition of a historic chalet designed in 1961 by French architect Henry&#8209Jacques Le Même, formerly a holiday center. The project aims to transform this iconic building into a unique high&#8209end hotel complex.", "Customs clearance support helps align shipment documentation and border requirements for smooth, compliant international cargo movement."],
+      ];
+      for (const [from, to] of copy) page = page.replaceAll(from, to);
+      page = page.replaceAll("Our logistics expertise by profile", "Connected logistics services");
+
+      const textModuleStart = page.indexOf('module-text-and-caption split-text');
+      const cardsModuleStart = page.indexOf('module-expertises-cards');
+      if (textModuleStart >= 0 && cardsModuleStart > textModuleStart) {
+        let intro = page.slice(textModuleStart, cardsModuleStart);
+        intro = intro.replace(
+          /(<div class="content" data-animation="reveal-words">)[\s\S]*?(<\/div>)/,
+          "$1Our teams coordinate freight, customs, storage and specialized cargo to make complex supply chains more dependable.$2"
+        );
+        intro = intro.replace(
+          /<p data-animation="reveal-lines">[\s\S]*?<\/p>/,
+          "<p data-animation=\"reveal-lines\">Across ocean and air freight, customs clearance, warehousing and project logistics, we focus on clear communication, careful handling and reliable execution. Our teams work with customers and trusted partners to coordinate each shipment around its route, timing and cargo requirements.</p>"
+        );
+        page = page.slice(0, textModuleStart) + intro + page.slice(cardsModuleStart);
+      }
+
+      const profilesStart = page.indexOf('module-expertises-profiles');
+      const referencesStart = page.indexOf('module-references', profilesStart);
+      if (profilesStart >= 0 && referencesStart > profilesStart) {
+        let profiles = page.slice(profilesStart, referencesStart);
+        const profileServices = [
+          { title: "Ocean Freight", copy: "Coordinate FCL and LCL ocean freight across international routes with carrier planning, clear milestones and cargo visibility from origin to destination.", tabs: [["FCL & LCL shipping", "Full-container and shared-container options"], ["Carrier coordination", "Capacity and sailing schedules aligned to cargo needs"], ["Route planning", "International routing coordinated from origin"], ["Shipment visibility", "Milestone updates through arrival"]] },
+          { title: "Air Freight", copy: "Move urgent and time-sensitive cargo with responsive air freight planning, dependable handling and shipment updates aligned to delivery deadlines.", tabs: [["Priority cargo", "Express and time-critical air freight options"], ["Capacity planning", "Space coordinated around delivery deadlines"], ["Cargo handling", "Handling matched to shipment requirements"], ["Documentation", "Air waybill and shipment information coordinated"], ["Transit coordination", "Updates across origin, transit and arrival"], ["Delivery handover", "Arrival coordinated with destination partners"]] },
+          { title: "Customs Clearance", copy: "Support compliant import and export cargo movement with practical documentation, declaration and customs coordination across borders.", tabs: [["Import & export declarations", "Clearance coordinated for cross-border cargo"], ["Document review", "Shipment paperwork checked for completeness"], ["Classification support", "Goods information aligned with customs requirements"], ["Duty coordination", "Applicable duty details reviewed with the shipment"], ["Border coordination", "Requirements addressed before dispatch"], ["Cargo release updates", "Clear communication through clearance"]] },
+          { title: "Warehousing & Logistics", copy: "Keep goods organized and moving with secure warehousing, inventory processes and coordinated inland transport, fulfilment and distribution.", tabs: [["Secure storage", "Goods stored to suit operational requirements"], ["Inventory management", "Stock handling and records kept organized"], ["Goods receiving", "Inbound cargo coordinated at the facility"], ["Order fulfilment", "Orders prepared for onward movement"], ["Inland transport", "Dispatch coordinated between locations"], ["Final distribution", "Delivery handovers planned to destination"]] },
+          { title: "Specialized Logistics", copy: "Plan oversized and non-standard cargo movements around route, equipment and site requirements, with experienced coordination from preparation through delivery.", tabs: [["Cargo assessment", "Shipment dimensions and handling needs reviewed"], ["Route & site planning", "Access and route constraints checked early"], ["Equipment selection", "Specialist equipment matched to the cargo"], ["Carrier coordination", "Experienced project partners aligned to the plan"], ["On-site handling", "Handover and lift activity coordinated safely"], ["Delivery oversight", "Progress monitored through final delivery"]] },
+        ] as const;
+        const addedSlides = profileServices.map((service, index) => {
+          const slideClass = index === 0 ? "odd first" : index % 2 ? "even" : "odd";
+          const tabs = service.tabs.map(([title, ...details], tabIndex) => `
+            <div class="tabs">
+              <div class="tabs-number-w text-container">${String(tabIndex + 1).padStart(2, "0")}</div>
+              <div class="tabs-title-w text-container"><div class="tabs-title">${title}</div></div>
+              <div class="tabs-desc-w text-container">${details.map((detail) => `<div class="tab-desc-w"><div class="item-desc-w">${detail}</div></div>`).join("")}</div>
+              <div class="separator"></div>
+            </div>`).join("");
+          return `
+            <div id="expertise-profile-slide-${index}"></div>
+            <div class="slide ${slideClass}">
+              <div class="inner"><div class="content"><div class="angle"></div>
+                <div class="title-w">${service.title}</div><div class="separator"></div>
+                <div class="dflex"><div class="left"></div><div class="right"><div class="wrapper">
+                  <div class="description-w text-container"><div class="description"><p>${service.copy}</p></div></div>
+                  <div class="separator hide-tablet hide-desktop mb"></div>${tabs}
+                </div></div>
+                <div class="cta-w" data-follow-link><button class="cta-small transparent"><div class="cta-small-content"><div class="cta-small-wrapper"><p class="text"><span>Learn more</span></p><div class="cta-small-arrows-wrapper"><div class="icon icon-arrow-right"></div><div class="icon icon-arrow-right absolute"></div></div></div></div></button><a class="hidden-link" href="mailto:sales@sanfreightintl.com">Learn more about this service</a></div>
+                </div>
+              </div>
+              </div>
+            </div>`;
+        }).join("");
+        const expertisesWrapper = profiles.indexOf('<div class="expertises-w">');
+        const selectorWrapper = profiles.indexOf('<div class="expertises-profiles-selector-w"');
+        if (expertisesWrapper >= 0 && selectorWrapper > expertisesWrapper) {
+          const wrapperContentStart = profiles.indexOf(">", expertisesWrapper) + 1;
+          const moduleContentClose = profiles.lastIndexOf("</div>", selectorWrapper);
+          const expertisesClose = profiles.lastIndexOf("</div>", moduleContentClose - 1);
+          profiles = profiles.slice(0, wrapperContentStart) + addedSlides + profiles.slice(expertisesClose, selectorWrapper) + profiles.slice(selectorWrapper);
+          const updatedSelectorWrapper = profiles.indexOf('<div class="expertises-profiles-selector-w"');
+          const selectorLine = profiles.indexOf('<div class="expertises-profiles-selector-line"></div>', updatedSelectorWrapper);
+          const selectors = profileServices
+            .map((service, index) => `<div class="expertises-profiles-selector" data-index="${index}">${service.title}</div>`)
+            .join("");
+          const selectorContentStart = profiles.indexOf(">", updatedSelectorWrapper) + 1;
+          profiles = profiles.slice(0, selectorContentStart) + selectors + profiles.slice(selectorLine);
+        }
+        page = page.slice(0, profilesStart) + profiles + page.slice(referencesStart);
+      }
+
+      const refsStart = page.indexOf('module-references');
+      if (refsStart >= 0) {
+        const moduleStart = page.lastIndexOf('<div class="module-full module-references', refsStart);
+        const moduleEnd = page.indexOf('</section>', moduleStart);
+        if (moduleStart >= 0 && moduleEnd > moduleStart) {
+          page = page.slice(0, moduleStart) + page.slice(moduleEnd);
+        }
+      }
+      result = result.slice(0, expertisesStart) + page + result.slice(expertisesEnd);
+    }
+  }
+
+  if (isExpertisesPage) {
+    result = result
+      .replaceAll(
+        "The main entity of the Sanfreight Group, which specializes in logistics investment consulting, asset and project management.",
+        "SanFreight Logistics provides integrated freight forwarding, customs, warehousing and specialized cargo services across international markets."
+      )
+      .replaceAll(
+        "Our digital platform that enables our customers to subscribe and invest in our products",
+        "Our logistics network connects customers and trusted partners throughout the shipment journey"
+      )
+      .replaceAll("Sanfreight Platform", "SanFreight Logistics");
+  }
+
   result = result.replace(
     /(<p class="disclaimer-(?:am|platform|capital)">)[\s\S]*?(<\/p>)/g,
     "$1SanFreight Logistics provides integrated freight forwarding, customs, warehousing and specialized cargo services through a trusted international network.$2"

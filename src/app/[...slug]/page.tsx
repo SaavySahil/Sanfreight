@@ -78,6 +78,12 @@ export async function generateMetadata({ params }: PageProps) {
       description: "Discover how SanFreight integrates responsible operations, people, compliance and continuous improvement across its global logistics network.",
     };
   }
+  if (normalizedSlug === "en/expertises-en") {
+    return {
+      title: "Logistics Expertise | SanFreight",
+      description: "Explore SanFreight's ocean freight, air freight, customs clearance, warehousing and specialized logistics capabilities.",
+    };
+  }
   return {
     title: data.title,
     description: data.description,
