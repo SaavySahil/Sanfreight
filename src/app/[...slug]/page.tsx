@@ -71,6 +71,13 @@ export async function generateMetadata({ params }: PageProps) {
   const resolvedParams = await params;
   const slug = resolvedParams.slug;
   const data = getPageData(slug);
+  const normalizedSlug = slug[0] === "en" ? slug.join("/") : `en/${slug.join("/")}`;
+  if (normalizedSlug === "en/esg") {
+    return {
+      title: "ESG | SanFreight Logistics",
+      description: "Discover how SanFreight integrates responsible operations, people, compliance and continuous improvement across its global logistics network.",
+    };
+  }
   return {
     title: data.title,
     description: data.description,

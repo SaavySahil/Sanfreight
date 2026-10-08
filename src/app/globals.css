@@ -749,3 +749,39 @@ h3.title.text-black {
   transform: scaleX(1);
   transform-origin: left;
 }
+
+/* Desktop typography density: equivalent to the text sizing seen at 80%
+   browser zoom, without scaling layouts, media, viewport units, or controls. */
+@media (min-width: 1160px) {
+  html {
+    font-size: 12.8px;
+    --sixtyfps-fontsize: 12.8px;
+  }
+
+  .sf-logo-link {
+    width: 117px !important;
+    height: 32px !important;
+    margin: 13px 16px !important;
+  }
+
+  .sf-logo {
+    width: 117px;
+    height: 32px;
+  }
+
+  .cta-custom,
+  button.cta-custom {
+    width: 192px;
+    min-height: 100px;
+    padding: 19px 21px;
+  }
+
+  .module-image-mask {
+    min-height: 720px;
+  }
+
+  .module-image-mask .image-mask-foreground .image-mask-content {
+    padding-top: max(208px, 25vh);
+    height: calc(100% - max(208px, 25vh));
+  }
+}
