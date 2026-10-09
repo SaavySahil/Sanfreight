@@ -73,13 +73,17 @@ export function withSolutionsNav(html: string): string {
     result = result.replaceAll(missing, fallback);
   }
   if (result.includes('/images/certificates/1.png')) {
-    const logoImages = certificateLogos
-      .map(([src, crop]) => `<img src="${src}" alt="" aria-hidden="true" loading="lazy" decoding="async" style="object-view-box:${crop};"/>`)
-      .join("");
-    const logos = `<div class="sf-certificate-logo-group">${logoImages}</div><div class="sf-certificate-logo-group" aria-hidden="true">${logoImages}</div>`;
+    const renderLane = (logos: readonly (typeof certificateLogos)[number][], laneClass: string) => {
+      const logoImages = logos
+        .map(([src, crop]) => `<img src="${src}" alt="" aria-hidden="true" loading="eager" decoding="async" style="object-view-box:${crop};"/>`)
+        .join("");
+      const loop = `<div class="sf-certificate-logo-group">${logoImages}</div><div class="sf-certificate-logo-group" aria-hidden="true">${logoImages}</div>`;
+      return `<div class="sf-certificate-logo-lane ${laneClass}"><div class="sf-certificate-logo-track">${loop}</div></div>`;
+    };
+    const lanes = `${renderLane(certificateLogos.slice(0, 5), "sf-certificate-logo-lane--forward")}${renderLane(certificateLogos.slice(5), "sf-certificate-logo-lane--reverse")}`;
     result = result.replace(
       /<div class="listImage"([^>]*)>[\s\S]*?<\/div>/,
-      (_match, attributes: string) => `<div class="listImage sf-certificate-logo-list"${attributes} role="group" aria-label="Certifications and logistics memberships"><div class="sf-certificate-logo-track">${logos}</div></div>`,
+      (_match, attributes: string) => `<div class="listImage sf-certificate-logo-list"${attributes} role="group" aria-label="Certifications and logistics memberships">${lanes}</div>`,
     );
   }
   const esgCopy: Array<[string, string]> = [
