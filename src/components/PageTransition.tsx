@@ -5,9 +5,10 @@ import { useEffect } from "react";
 interface PageTransitionProps {
   bodyClass: string;
   teamMembers?: unknown;
+  revealImmediately?: boolean;
 }
 
-export default function PageTransition({ bodyClass, teamMembers }: PageTransitionProps) {
+export default function PageTransition({ bodyClass, teamMembers, revealImmediately = false }: PageTransitionProps) {
   useEffect(() => {
     // Inject globals needed by the scraped app bundle
     if (teamMembers) {
@@ -49,7 +50,7 @@ export default function PageTransition({ bodyClass, teamMembers }: PageTransitio
       }
     };
 
-    if (document.readyState === "complete") {
+    if (revealImmediately || document.readyState === "complete") {
       revealPage();
     } else {
       window.addEventListener("load", revealPage);
@@ -60,7 +61,7 @@ export default function PageTransition({ bodyClass, teamMembers }: PageTransitio
     }
 
     return () => { document.removeEventListener("click", clickIntercept, true); };
-  }, [bodyClass, teamMembers]);
+  }, [bodyClass, teamMembers, revealImmediately]);
 
   return null;
 }

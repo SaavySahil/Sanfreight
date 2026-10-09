@@ -9,6 +9,14 @@ const nextConfig: NextConfig = {
   },
   async rewrites() {
     return [
+      {
+        source: "/scraped-preview/wp-content/themes/mimco/resources/assets/images/image.png",
+        destination: "/wp-content/themes/mimco/resources/assets/images/interactive-image-background.png",
+      },
+      {
+        source: "/wp-content/themes/mimco/resources/assets/images/image.png",
+        destination: "/wp-content/themes/mimco/resources/assets/images/interactive-image-background.png",
+      },
       { source: "/career", destination: "/en/career" },
       { source: "/job-offers", destination: "/en/job-offers" },
       { source: "/job-offers/:slug", destination: "/en/job-offers/:slug" },

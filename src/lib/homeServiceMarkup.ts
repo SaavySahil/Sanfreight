@@ -1,6 +1,7 @@
 const services = [
   {
     title: "Ocean Freight",
+    href: "/logistics-platform",
     subtitle: "SEA MOVEMENT",
     lead: "Reliable shipping performance from origin to destination, backed by a strong global carrier network.",
     header: "KEY CAPABILITIES",
@@ -10,6 +11,7 @@ const services = [
   },
   {
     title: "Air Freight",
+    href: "/air-freight",
     subtitle: "TIME CRITICAL",
     lead: "Speed, precision, and reliability for businesses that cannot afford delays across global destinations.",
     header: "SERVICE HIGHLIGHTS",
@@ -19,6 +21,7 @@ const services = [
   },
   {
     title: "Customs Clearance",
+    href: "/customs-clearance",
     subtitle: "CLEARANCE DESK",
     lead: "Simplifying international trade through full regulatory compliance and efficient cargo movement.",
     header: "BORDER COMPLIANCE",
@@ -28,6 +31,7 @@ const services = [
   },
   {
     title: "Warehousing & Logistics",
+    href: "/warehousing-logistics",
     subtitle: "LOCAL CONTROL",
     lead: "Keeping your supply chain efficient, connected, and responsive through end-to-end warehouse support.",
     header: "STORAGE & TRANSPORT",
@@ -37,6 +41,7 @@ const services = [
   },
   {
     title: "Specialized Logistics",
+    href: "/specialized-logistics",
     subtitle: "COMPLEX CARGO",
     lead: "Planning-led freight support for oversized, sensitive, and non-standard project cargo.",
     header: "PROJECT HANDOVER",
@@ -85,7 +90,7 @@ export function withHomepageServices(bodyHtml: string): string {
     const badges = service.badges.map((badge, index) =>
       `<li><span class="sf-service-badge">${capabilityIcon((count - 1) * 3 + index)}</span><span class="sf-service-badge-label">${badge}</span></li>`
     ).join("");
-    return `${opening}<span class="caption">${number}</span><h2 class="title">${service.title}</h2><span class="sf-service-subtitle">${service.subtitle}</span><p class="description">${service.lead}</p></div><span class="sf-service-header">${service.header}</span><ul class="bullet-list">${badges}</ul><p class="sf-service-footer">${service.footer}</p><a href="/en/expertises-en/" class="cta-custom sf-service-cta"><div class="cta-custom-content"><div class="cta-custom-wrapper"><p class="text"><span>${service.action}</span></p><div class="cta-custom-arrows-wrapper"><div class="icon icon-arrow-right"></div><div class="icon icon-arrow-right absolute"></div></div></div></div></a></div>`;
+    return `${opening}<span class="caption">${number}</span><h2 class="title">${service.title}</h2><span class="sf-service-subtitle">${service.subtitle}</span><p class="description">${service.lead}</p></div><span class="sf-service-header">${service.header}</span><ul class="bullet-list">${badges}</ul><p class="sf-service-footer">${service.footer}</p><a href="${service.href}" class="cta-custom sf-service-cta"><div class="cta-custom-content"><div class="cta-custom-wrapper"><p class="text"><span>${service.action}</span></p><div class="cta-custom-arrows-wrapper"><div class="icon icon-arrow-right"></div><div class="icon icon-arrow-right absolute"></div></div></div></div></a></div>`;
   });
 
   return count === services.length

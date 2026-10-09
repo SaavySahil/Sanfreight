@@ -793,3 +793,20 @@ h3.title.text-black {
     height: calc(100% - max(208px, 25vh));
   }
 }
+
+/* Keep dropdown typography on the same desktop rem scale as the page and nav. */
+@media (min-width: 1160px) {
+  #menu-desktop .panel-wrapper .bottom {
+    padding-bottom: 6px;
+  }
+}
+
+@media (min-width: 1160px) and (max-height: 680px) {
+  #menu-desktop {
+    max-height: 100dvh;
+  }
+
+  #menu-desktop .panel-wrapper {
+    max-height: calc(100dvh - 124px) !important;
+  }
+}

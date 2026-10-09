@@ -267,5 +267,14 @@ export function withSolutionsNav(html: string): string {
     result = result.slice(0, start) + opening + slides + result.slice(end);
     from = start + opening.length + slides.length + ending.length;
   }
+
+  // The source header places its controls beside the progress bar. Keep that
+  // structure in both mobile and desktop menu panels so their shared carousel
+  // CSS can align the full track and both arrows together.
+  result = result.replace(
+    /<div class="progress-w"><div class="progress-bars"><div class="progress-bar-active"><\/div><\/div><\/div><div class="controls"><div class="control prev"><i class="icon icon-arrow-left"><\/i><\/div><div class="control next"><i class="icon icon-arrow-right"><\/i><\/div><\/div>/g,
+    '<div class="progress-w"><div class="progress-bars"><div class="progress-bar"></div><div class="progress-bar-active"></div></div><div class="control-w"><div class="control prev"><i class="icon icon-arrow-right"></i></div><div class="control next"><i class="icon icon-arrow-right"></i></div></div></div>'
+  );
+
   return result;
 }
