@@ -1,7 +1,7 @@
 /**
  * Shared scroll-linked text fill animation for legacy page exports.
- * Progress is derived from the current scroll position so the fill rewinds
- * naturally when a visitor scrolls back up.
+ * Progress and color are derived from scroll position so the fill follows the
+ * same path and speed in either direction.
  */
 export const scrollFillTextScript = String.raw`(function () {
   function sourceHtml(element) {
@@ -46,13 +46,11 @@ export const scrollFillTextScript = String.raw`(function () {
   var MUSTARD = [239, 180, 7];
   var BLACK = [21, 21, 21];
   var BAND_CHARS = 3;
-  var SETTLE_SPEED = 3;
   var SCROLL_GRACE_MS = 90;
   var COMPLETE_DISTANCE = 520;
   var records = [];
   var running = false;
   var lastScroll = -1e9;
-  var lastFrame = 0;
 
   function mix(from, to, amount) {
     return [
@@ -98,24 +96,24 @@ export const scrollFillTextScript = String.raw`(function () {
       if (wordObserver) wordObserver.observe(element);
       else element.classList.add('sf-fw-in');
 
+      var rect = element.getBoundingClientRect();
+      var anchor = rect.width && rect.height
+        ? (window.scrollY || window.pageYOffset) + rect.top - window.innerHeight * 0.72
+        : null;
+
       if (previous) {
         previous.last = [];
-        previous.settle = null;
+        if (previous.anchor == null) previous.anchor = anchor;
       }
-      nextRecords.push(previous || { element: element, anchor: null, last: [], settle: null });
+      nextRecords.push(previous || { element: element, anchor: anchor, last: [] });
     }
 
     records = nextRecords;
   }
 
   function frame(now) {
-    var delta = Math.min((now - lastFrame) / 1000, 0.05);
-    lastFrame = now;
-
     var active = now - lastScroll < SCROLL_GRACE_MS;
-    var viewportHeight = window.innerHeight;
     var scrollY = window.scrollY || window.pageYOffset;
-    var busy = false;
 
     for (var recordIndex = 0; recordIndex < records.length; recordIndex++) {
       var record = records[recordIndex];
@@ -124,48 +122,22 @@ export const scrollFillTextScript = String.raw`(function () {
       var characterCount = characters.length;
       if (!characterCount) continue;
 
-      if (!record.settle || record.settle.length !== characterCount) {
-        record.settle = new Float32Array(characterCount);
-        record.last = [];
+      if (record.anchor == null) {
+        var rect = element.getBoundingClientRect();
+        if (!rect.width || !rect.height) continue;
+        record.anchor = scrollY + rect.top - window.innerHeight * 0.72;
       }
 
-      var rect = element.getBoundingClientRect();
-      var startY = viewportHeight * 0.72;
-      if (record.anchor == null && rect.top <= startY && rect.bottom > -200) record.anchor = scrollY;
-
-      // Recompute from current scroll position so the fill reverses on upward scroll.
-      var progress = record.anchor == null
-        ? 0
-        : Math.max(0, Math.min(1, (scrollY - record.anchor) / COMPLETE_DISTANCE));
+      // Scroll position is the sole animation state, so both directions share
+      // the same colors and speed at every point in the reveal.
+      var progress = Math.max(0, Math.min(1, (scrollY - record.anchor) / COMPLETE_DISTANCE));
       var bandDuration = Math.max(0.01, Math.min(0.9, BAND_CHARS / characterCount));
 
       for (var characterIndex = 0; characterIndex < characterCount; characterIndex++) {
         var bandStart = (characterIndex / Math.max(characterCount - 1, 1)) * (1 - bandDuration);
         var reveal = Math.max(0, Math.min(1, (progress - bandStart) / bandDuration));
-        if (reveal <= 0) {
-          var grey = cssColor(GREY);
-          record.settle[characterIndex] = 0;
-          if (record.last[characterIndex] !== grey) {
-            record.last[characterIndex] = grey;
-            characters[characterIndex].style.setProperty('--sfw', grey);
-          }
-          continue;
-        }
-
-        // Fully revealed characters settle to black after scrolling pauses.
-        // As the reveal recedes on upward scroll, this settle value unwinds too.
-        var targetSettle = reveal >= 1 || !active ? 1 : 0;
-        var settle = record.settle[characterIndex];
-        if (settle < targetSettle) {
-          settle = Math.min(targetSettle, settle + SETTLE_SPEED * delta);
-          busy = true;
-        } else if (settle > targetSettle) {
-          settle = Math.max(targetSettle, settle - SETTLE_SPEED * delta);
-          busy = true;
-        }
-        record.settle[characterIndex] = settle;
-
-        var color = cssColor(mix(mix(GREY, MUSTARD, reveal), BLACK, smooth(settle)));
+        var trail = Math.max(0, Math.min(1, (progress - bandStart - bandDuration) / bandDuration));
+        var color = cssColor(mix(mix(GREY, MUSTARD, reveal), BLACK, smooth(trail)));
         if (record.last[characterIndex] !== color) {
           record.last[characterIndex] = color;
           characters[characterIndex].style.setProperty('--sfw', color);
@@ -173,14 +145,13 @@ export const scrollFillTextScript = String.raw`(function () {
       }
     }
 
-    if (active || busy) requestAnimationFrame(frame);
+    if (active) requestAnimationFrame(frame);
     else running = false;
   }
 
   function ensureFrame() {
     if (running) return;
     running = true;
-    lastFrame = performance.now();
     requestAnimationFrame(frame);
   }
 
