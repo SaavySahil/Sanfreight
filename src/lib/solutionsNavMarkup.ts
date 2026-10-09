@@ -28,18 +28,6 @@ const esgImageFallbacks: Record<string, string> = {
   "/wp-content/uploads/fly-images/8488/investissements-responsables-1-640x840-c.png": "/images/career-3.webp",
 };
 
-const certificateLogos = [
-  ["/images/certificates/1.png", "inset(6% 4.25% 10.25% 4.63%)"],
-  ["/images/certificates/2.png", "inset(9.5% 29.88% 9.75% 29.88%)"],
-  ["/images/certificates/3.png", "inset(11% 16% 9.75% 16.25%)"],
-  ["/images/certificates/4.png", "inset(11% 26.63% 10.5% 27.38%)"],
-  ["/images/certificates/5.png", "inset(11.25% 12.13% 9% 13.25%)"],
-  ["/images/certificates/6.png", "inset(10.5% 12.75% 9.25% 12.75%)"],
-  ["/images/certificates/7.png", "inset(21.25% 5.25% 18.75% 5.25%)"],
-  ["/images/certificates/8.png", "inset(10.75% 30.75% 11% 30.38%)"],
-  ["/images/certificates/9.png", "inset(11% 26.75% 11% 26.75%)"],
-] as const;
-
 export function withFinalSanfreightLogo(html: string): string {
   return html
     .replaceAll('/images/sanfreight-logo-dark-cropped.webp', '/images/sanfreight-logo-final-dark.png')
@@ -48,7 +36,7 @@ export function withFinalSanfreightLogo(html: string): string {
     .replaceAll('/images/sanfreight-logo-white-new.webp', '/images/sanfreight-logo-final-light.png');
 }
 
-export function withSolutionsNav(html: string): string {
+export function withSolutionsNav(html: string, isEsgPage = false): string {
   const opening = '<div class="slideshow-wrapper embla__container">';
   const ending = '</div></div><div class="progress-w">';
   const slides = solutions.map(([title, description, image, href]) =>
@@ -72,18 +60,10 @@ export function withSolutionsNav(html: string): string {
   for (const [missing, fallback] of Object.entries(esgImageFallbacks)) {
     result = result.replaceAll(missing, fallback);
   }
-  if (result.includes('/images/certificates/1.png')) {
-    const renderLane = (logos: readonly (typeof certificateLogos)[number][], laneClass: string) => {
-      const logoImages = logos
-        .map(([src, crop]) => `<img src="${src}" alt="" aria-hidden="true" loading="eager" decoding="async" style="object-view-box:${crop};"/>`)
-        .join("");
-      const loop = `<div class="sf-certificate-logo-group">${logoImages}</div><div class="sf-certificate-logo-group" aria-hidden="true">${logoImages}</div>`;
-      return `<div class="sf-certificate-logo-lane ${laneClass}"><div class="sf-certificate-logo-track">${loop}</div></div>`;
-    };
-    const lanes = `${renderLane(certificateLogos.slice(0, 5), "sf-certificate-logo-lane--forward")}${renderLane(certificateLogos.slice(5), "sf-certificate-logo-lane--reverse")}`;
+  if (isEsgPage) {
     result = result.replace(
       /<div class="listImage"([^>]*)>[\s\S]*?<\/div>/,
-      (_match, attributes: string) => `<div class="listImage sf-certificate-logo-list"${attributes} role="group" aria-label="Certifications and logistics memberships">${lanes}</div>`,
+      (_match, attributes: string) => `<div class="listImage sf-certificate-logo-list"${attributes} id="sf-certificate-carousel-root"></div>`,
     );
   }
   const esgCopy: Array<[string, string]> = [

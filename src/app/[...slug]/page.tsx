@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Script from "next/script";
 import PageTransition from "@/components/PageTransition";
 import NetworkGlobe from "@/components/NetworkGlobe";
+import CertificateCarouselPortal from "@/components/CertificateCarouselPortal";
 import { withAboutGlobeMount } from "@/lib/aboutGlobeMarkup";
 import { withSolutionsNav } from "@/lib/solutionsNavMarkup";
 import { extractSanfreightFillScript, removeEmbeddedScripts } from "@/lib/legacyRender";
@@ -96,17 +97,19 @@ export default async function DynamicPage({ params }: PageProps) {
   const slug = resolvedParams.slug;
   const data = getPageData(slug);
   const isAbout = slug.join("/") === "about" || slug.join("/") === "en/about";
+  const isEsg = slug.join("/") === "esg" || slug.join("/") === "en/esg";
   const sfFillScript = extractSanfreightFillScript(data.bodyHtml);
 
   return (
     <>
       <PageTransition bodyClass={data.bodyClass} teamMembers={teamMembers} />
       {isAbout && <NetworkGlobe />}
+      {isEsg && <CertificateCarouselPortal key={slug.join("/")} />}
       <div
         suppressHydrationWarning={true}
         dangerouslySetInnerHTML={{
           __html: removeEmbeddedScripts(
-            withSolutionsNav(isAbout ? withAboutGlobeMount(data.bodyHtml) : data.bodyHtml),
+            withSolutionsNav(isAbout ? withAboutGlobeMount(data.bodyHtml) : data.bodyHtml, isEsg),
           ),
         }}
       />

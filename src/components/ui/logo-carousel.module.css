@@ -1,0 +1,186 @@
+:global(.module-text-and-caption .sf-certificate-logo-list) {
+  display: block !important;
+  width: min(90vw, 1120px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.frame {
+  width: 100%;
+  color: #151515;
+  background: #fff;
+}
+
+.header {
+  display: flex;
+  min-height: 42px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid rgba(17, 17, 17, 0.15);
+  color: #686868;
+  font-family: Aeonik, Arial, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.13em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.heading {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.heading i {
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: #ffcc00;
+}
+
+.total {
+  color: #9b9b9b;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.slots {
+  display: flex;
+  min-height: 172px;
+  align-items: stretch;
+  border-top: 1px solid rgba(17, 17, 17, 0.1);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.15);
+}
+
+.slot {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 172px;
+  flex: 1 1 0;
+  align-items: center;
+  justify-content: center;
+  padding: 24px clamp(12px, 2.4vw, 34px) 18px;
+}
+
+.slot + .slot {
+  border-left: 1px solid rgba(17, 17, 17, 0.1);
+}
+
+.slotMeta {
+  position: absolute;
+  top: 15px;
+  right: clamp(12px, 2.4vw, 34px);
+  left: clamp(12px, 2.4vw, 34px);
+  display: flex;
+  justify-content: space-between;
+  color: #a2a2a2;
+  font-family: Aeonik, Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.11em;
+  line-height: 1;
+}
+
+.slotMeta span:last-child {
+  color: #555;
+}
+
+.logoWindow {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 92px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.logoMotion {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  display: block;
+  width: min(100%, 190px);
+  height: 74px;
+  object-fit: contain;
+  object-position: center;
+}
+
+:global(.module-text-and-caption .sf-certificate-logo-list) .logo {
+  height: 74px;
+}
+
+.dark {
+  filter: brightness(0);
+}
+
+.muted {
+  filter: brightness(0) opacity(0.48);
+}
+
+.light {
+  filter: brightness(0) invert(1);
+}
+
+.slotAccent {
+  position: absolute;
+  bottom: -1px;
+  left: clamp(12px, 2.4vw, 34px);
+  width: 26px;
+  height: 2px;
+  background: #ffcc00;
+  transition: width 320ms ease;
+}
+
+.slot:hover .slotAccent {
+  width: 54px;
+}
+
+@media (max-width: 767px) {
+  .header {
+    min-height: 38px;
+  }
+
+  .slots,
+  .slot {
+    min-height: 148px;
+  }
+
+  .logoWindow {
+    height: 82px;
+  }
+
+  .logo {
+    width: min(100%, 220px);
+    height: 66px;
+  }
+
+  :global(.module-text-and-caption .sf-certificate-logo-list) .logo {
+    height: 66px;
+  }
+}
+
+@media (max-width: 380px) {
+  .header {
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+    gap: 6px;
+    padding-block: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .slotAccent {
+    transition: none;
+  }
+}
