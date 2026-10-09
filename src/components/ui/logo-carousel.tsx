@@ -128,29 +128,20 @@ const variantClass: Record<Variant, string> = {
 function LogoSlot({
   logos,
   slotIndex,
-  totalLogos,
-  slotCount,
   enabled,
   variant,
   reducedMotion,
 }: {
   logos: readonly LogoItem[];
   slotIndex: number;
-  totalLogos: number;
-  slotCount: number;
   enabled: boolean;
   variant: Variant;
   reducedMotion: boolean;
 }) {
   const { logo, step } = useLogoCycle(logos, enabled, slotIndex);
-  const logoIndex = (slotIndex + (step % logos.length) * slotCount) % totalLogos;
 
   return (
     <div className={styles.slot} role="group" aria-label={logo.alt}>
-      <div className={styles.slotMeta} aria-hidden="true">
-        <span>MARK</span>
-        <span>{String(logoIndex + 1).padStart(2, "0")} / {String(totalLogos).padStart(2, "0")}</span>
-      </div>
       <div className={styles.logoWindow}>
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.div
@@ -173,7 +164,6 @@ function LogoSlot({
           </motion.div>
         </AnimatePresence>
       </div>
-      <span className={styles.slotAccent} aria-hidden="true" />
     </div>
   );
 }
@@ -185,7 +175,6 @@ export function LogoCarousel({
   slots,
   variant = "dark",
   label = "SanFreight certificates and memberships",
-  heading = "Certificates & memberships",
 }: {
   logos?: readonly LogoItem[];
   className?: string;
@@ -193,7 +182,6 @@ export function LogoCarousel({
   slots?: number;
   variant?: Variant;
   label?: string;
-  heading?: string;
 }) {
   const prefersReducedMotion = useReducedMotion();
   const logoSources = useMemo(() => logos.map(({ src }) => src), [logos]);
@@ -220,18 +208,12 @@ export function LogoCarousel({
       animate={{ opacity: allLoaded ? 1 : 0.7 }}
       transition={{ duration: 0.4, ease: "easeOut" }}
     >
-      <header className={styles.header}>
-        <span className={styles.heading}><i aria-hidden="true" />{heading}</span>
-        <span className={styles.total}>{String(logos.length).padStart(2, "0")} marks · rotating</span>
-      </header>
       <div className={styles.slots}>
         {slotLogos.map((slot, index) => (
           <LogoSlot
             key={`${slotCount}-${index}`}
             logos={slot}
             slotIndex={index}
-            totalLogos={logos.length}
-            slotCount={slotCount}
             enabled={allLoaded}
             variant={variant}
             reducedMotion={Boolean(prefersReducedMotion)}
