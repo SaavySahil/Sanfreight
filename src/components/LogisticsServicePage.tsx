@@ -299,7 +299,6 @@ export default function LogisticsServicePage({ service }: { service: LogisticsSe
       <Script src="/scraped-preview/js/email-decode.min.js" strategy="afterInteractive" />
       <Script src="/js/app-16e2282a.js" strategy="afterInteractive" />
       <Script src="/scraped-preview/js/app-yqyc1a_n.js" type="module" strategy="afterInteractive" />
-      <Script src="/scraped-preview/js/ca18d951-d92f-41cb-b7e9-2cd0702dc08d.js" strategy="afterInteractive" />
     </>
   );
 }

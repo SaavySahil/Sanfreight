@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import CookieConsentBanner from "@/components/CookieConsentBanner";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -29,11 +30,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-US">
-      <head>
-        <link rel="preconnect" href="https://www.mimcocapital.com/en/" crossOrigin="" />
-      </head>
       <body className="wp-theme-mimco">
         {children}
+        <CookieConsentBanner />
       </body>
     </html>
   );
