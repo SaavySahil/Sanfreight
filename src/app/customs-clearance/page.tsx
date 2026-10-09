@@ -19,5 +19,5 @@ export const metadata: Metadata = {
 export const dynamic = "force-dynamic";
 
 export default function CustomsClearancePage() {
-  return <LogisticsServicePage service={logisticsServiceContent.customs} />;
+  return <LogisticsServicePage service={logisticsServiceContent.customs} showcaseTitleMaxWidth={520} />;
 }

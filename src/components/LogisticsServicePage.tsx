@@ -207,7 +207,13 @@ function preparePage(service: LogisticsServiceContent) {
 
 export const dynamic = "force-dynamic";
 
-export default function LogisticsServicePage({ service }: { service: LogisticsServiceContent }) {
+export default function LogisticsServicePage({
+  service,
+  showcaseTitleMaxWidth,
+}: {
+  service: LogisticsServiceContent;
+  showcaseTitleMaxWidth?: number;
+}) {
   const { body, safeTeamScript } = preparePage(service);
   return (
     <>
@@ -243,9 +249,23 @@ export default function LogisticsServicePage({ service }: { service: LogisticsSe
           font-family: Aeonik !important;
           font-style: normal !important;
         }
+        #logistics-platform-page .module.projects-slideshow .slideshow-container .slide .project-card .project-image {
+          border-radius: clamp(44px, 5vw, 75px) 3px clamp(44px, 5vw, 75px) 3px;
+        }
         #logistics-platform-page .sf-hero-title-break { display: none; }
         @media (min-width: 1160px) {
           #logistics-platform-page .module.hero.centered .main-title { max-width: 1100px !important; }
+          ${showcaseTitleMaxWidth ? `
+            #logistics-platform-page .module.projects-slideshow .header-wrapper .title {
+              max-width: ${showcaseTitleMaxWidth}px !important;
+              position: relative;
+              left: 16px;
+            }
+            #logistics-platform-page .module.projects-slideshow .header-wrapper .subtitle {
+              position: relative;
+              left: -16px;
+            }
+          ` : ""}
           #logistics-platform-page .sf-hero-title-break { display: block; }
         }
         #pagebuilder .canvas-interactive-image { filter: hue-rotate(-90deg) saturate(1.1); }
