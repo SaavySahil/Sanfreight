@@ -124,7 +124,7 @@ SANFREIGHT CUSTOM BRANDING STYLES
     width: 500px !important;
     height: 125px !important;
     max-width: 100%;
-    background-image: url('/images/sanfreight-logo-white-new.webp');
+    background-image: url('/images/sanfreight-logo-final-light.png');
     background-size: contain;
     background-position: left center;
     background-repeat: no-repeat;
@@ -838,4 +838,10 @@ h3.title.text-black {
 
 .header-slideshow.active .sf-solution-card-link {
   pointer-events: auto;
+}
+
+/* Keep the approved final logo artwork proportional in all existing logo slots. */
+img[src^="/images/sanfreight-logo-final-"] {
+  object-fit: contain !important;
+  object-view-box: none !important;
 }

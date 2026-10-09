@@ -1,7 +1,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import Script from "next/script";
-import { withSolutionsNav } from "@/lib/solutionsNavMarkup";
+import { withFinalSanfreightLogo, withSolutionsNav } from "@/lib/solutionsNavMarkup";
 import type { LogisticsServiceContent } from "@/lib/logisticsServiceContent";
 import PageTransition from "@/components/PageTransition";
 
@@ -193,6 +193,7 @@ function preparePage(service: LogisticsServiceContent) {
 
   body = body
     .replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, "");
+  body = withFinalSanfreightLogo(body);
 
   const teamBlock = original.match(/<!-- Team members -->([\s\S]*?)<!-- End Team members -->/i)?.[1] ?? "";
   const teamScript = teamBlock.match(/<script\b[^>]*>([\s\S]*?)<\/script>/i)?.[1] ?? "";

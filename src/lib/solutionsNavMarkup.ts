@@ -28,6 +28,14 @@ const esgImageFallbacks: Record<string, string> = {
   "/wp-content/uploads/fly-images/8488/investissements-responsables-1-640x840-c.png": "/images/career-3.webp",
 };
 
+export function withFinalSanfreightLogo(html: string): string {
+  return html
+    .replaceAll('/images/sanfreight-logo-dark-cropped.webp', '/images/sanfreight-logo-final-dark.png')
+    .replaceAll('/images/sanfreight-logo-dark.webp', '/images/sanfreight-logo-final-dark.png')
+    .replaceAll('/images/sanfreight-logo-white-cropped.webp', '/images/sanfreight-logo-final-light.png')
+    .replaceAll('/images/sanfreight-logo-white-new.webp', '/images/sanfreight-logo-final-light.png');
+}
+
 export function withSolutionsNav(html: string): string {
   const opening = '<div class="slideshow-wrapper embla__container">';
   const ending = '</div></div><div class="progress-w">';
@@ -37,7 +45,8 @@ export function withSolutionsNav(html: string): string {
 
   // ESG is now a live route: restore its navigation links across desktop,
   // mobile and footer markup imported from the legacy page snapshots.
-  let result = html.replaceAll('data-disabled-href="/en/esg/"', 'href="/en/esg/"');
+  let result = withFinalSanfreightLogo(html)
+    .replaceAll('data-disabled-href="/en/esg/"', 'href="/en/esg/"');
   result = result.replace(
     /<a\b([^>]*)>(\s*<span>Expertises<\/span>\s*)<\/a>/g,
     (_match, attributes: string, label: string) => {
