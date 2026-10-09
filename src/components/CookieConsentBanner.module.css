@@ -121,11 +121,31 @@
   font-family: Aeonik, Arial, sans-serif;
   font-size: inherit;
   cursor: pointer;
-  transition: color 160ms ease;
 }
 
-.footerPreference:hover {
-  color: #ffcc00;
+.footerPreference::after {
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  content: "";
+  background-color: #fff;
+  transition: transform 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transform: scale3d(0, 1, 1);
+  transform-origin: right center;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .footerPreference:hover::after {
+    transform: scaleZ(1);
+    transform-origin: left center;
+  }
+}
+
+.footerPreference:focus-visible::after {
+  transform: scaleZ(1);
+  transform-origin: left center;
 }
 
 .dialog {

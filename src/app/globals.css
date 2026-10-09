@@ -94,6 +94,22 @@ SANFREIGHT CUSTOM BRANDING STYLES
 }
 
 /* ── Footer / contact logos ─────────────────────────── */
+/* Keep the five footer navigation labels comfortably readable. */
+.footer-container .middle .right .links > a {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
+}
+
+/* Match the bottom-row controls and links to the copyright's 14px text. */
+.footer-container .bottom .left .scroll-top,
+.footer-container .bottom .left .scroll-top span,
+.footer-container .bottom .left .socials-link a,
+.footer-container .bottom .right .links > a,
+.footer-container .bottom .right .links > button,
+.footer-container .bottom .right .links > .copyright {
+    font-size: 14px !important;
+}
+
 /* Hide the img, show logo via background on the parent .mimco-logo instead.
    The current logo webp is a tight crop with no padding around the artwork
    (unlike the old asset this was originally tuned for), so a plain
@@ -809,4 +825,17 @@ h3.title.text-black {
   #menu-desktop .panel-wrapper {
     max-height: calc(100dvh - 124px) !important;
   }
+}
+
+.sf-solution-card-link:focus-visible {
+  outline: 2px solid var(--magic-mint-1);
+  outline-offset: 3px;
+}
+
+.header-slideshow:not(.active) .sf-solution-card-link {
+  pointer-events: none;
+}
+
+.header-slideshow.active .sf-solution-card-link {
+  pointer-events: auto;
 }
