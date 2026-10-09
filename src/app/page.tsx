@@ -6,6 +6,7 @@ import PageTransition from "@/components/PageTransition";
 import KeyFiguresRoll from "@/components/KeyFiguresRoll";
 import ImageGlobe from "@/components/ImageGlobe";
 import { withHomepageServices } from "@/lib/homeServiceMarkup";
+import { extractSanfreightFillScript } from "@/lib/legacyRender";
 import { withSolutionsNav } from "@/lib/solutionsNavMarkup";
 import "./home-services.css";
 import "./key-figures-roll.css";
@@ -58,9 +59,7 @@ export default function Home() {
   const htmlWithGlobe = previousStart >= 0 && teamStart > previousStart
     ? `${homepageHtml.slice(0, previousStart)}<div id="sf-image-globe-root" data-headercolor="light-transparent"></div>${homepageHtml.slice(teamStart)}`
     : homepageHtml.replace(teamSection, `<div id="sf-image-globe-root" data-headercolor="light-transparent"></div>${teamSection}`);
-  const sfFillScript = htmlWithGlobe.match(
-    /<script\b(?=[^>]*\bid=["']sf-fill-script["'])[^>]*>([\s\S]*?)<\/script\s*>/i,
-  )?.[1] ?? "";
+  const sfFillScript = extractSanfreightFillScript(htmlWithGlobe);
   const bodyHtml = htmlWithGlobe.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, "");
 
   return (

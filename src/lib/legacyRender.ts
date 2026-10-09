@@ -1,3 +1,5 @@
+import { scrollFillTextScript } from "@/lib/scrollFillTextScript";
+
 export function escapeHtml(input: string): string {
   return input
     .replace(/&/g, "&amp;")
@@ -18,11 +20,8 @@ export function removeEmbeddedScripts(html: string): string {
 
 /** Preserve the site's own fill-in markup helper while discarding scraped host scripts. */
 export function extractSanfreightFillScript(html: string): string {
-  return (
-    html.match(
-      /<script\b(?=[^>]*\bid=["']sf-fill-script["'])[^>]*>([\s\S]*?)<\/script\s*>/i,
-    )?.[1] ?? ""
-  );
+  const hasLegacyFillScript = /<script\b(?=[^>]*\bid=["']sf-fill-script["'])[^>]*>[\s\S]*?<\/script\s*>/i.test(html);
+  return hasLegacyFillScript ? scrollFillTextScript : "";
 }
 
 export function formatDotDate(dateStr: string | null): string {
