@@ -1,7 +1,7 @@
 /**
  * Shared scroll-linked text fill animation for legacy page exports.
- * Progress and color are derived from scroll position so the fill follows the
- * same path and speed in either direction.
+ * Progress and color are derived from the element's visual position so the
+ * fill stays synchronized with the site's smoothed scrolling in either direction.
  */
 export const scrollFillTextScript = String.raw`(function () {
   function sourceHtml(element) {
@@ -96,16 +96,11 @@ export const scrollFillTextScript = String.raw`(function () {
       if (wordObserver) wordObserver.observe(element);
       else element.classList.add('sf-fw-in');
 
-      var rect = element.getBoundingClientRect();
-      var anchor = rect.width && rect.height
-        ? (window.scrollY || window.pageYOffset) + rect.top - window.innerHeight * 0.72
-        : null;
-
       if (previous) {
         previous.last = [];
-        if (previous.anchor == null) previous.anchor = anchor;
+        previous.lastTop = null;
       }
-      nextRecords.push(previous || { element: element, anchor: anchor, last: [] });
+      nextRecords.push(previous || { element: element, last: [], lastTop: null });
     }
 
     records = nextRecords;
@@ -113,7 +108,7 @@ export const scrollFillTextScript = String.raw`(function () {
 
   function frame(now) {
     var active = now - lastScroll < SCROLL_GRACE_MS;
-    var scrollY = window.scrollY || window.pageYOffset;
+    var moving = false;
 
     for (var recordIndex = 0; recordIndex < records.length; recordIndex++) {
       var record = records[recordIndex];
@@ -122,19 +117,20 @@ export const scrollFillTextScript = String.raw`(function () {
       var characterCount = characters.length;
       if (!characterCount) continue;
 
-      if (record.anchor == null) {
-        var rect = element.getBoundingClientRect();
-        if (!rect.width || !rect.height) continue;
-        record.anchor = scrollY + rect.top - window.innerHeight * 0.72;
-      }
+      var rect = element.getBoundingClientRect();
+      if (!rect.width || !rect.height) continue;
+      if (record.lastTop != null && Math.abs(rect.top - record.lastTop) > 0.01) moving = true;
+      record.lastTop = rect.top;
 
-      // Scroll position is the sole animation state, so both directions share
-      // the same colors and speed at every point in the reveal.
-      var progress = Math.max(0, Math.min(1, (scrollY - record.anchor) / COMPLETE_DISTANCE));
+      // Measure the rendered element instead of window.scrollY: the legacy page
+      // smooth-scrolls #smooth-content with a transform, so native scroll can
+      // lead the visible content. This keeps the same color at the same visual
+      // position in either direction.
+      var progress = Math.max(0, Math.min(1, (window.innerHeight * 0.72 - rect.top) / COMPLETE_DISTANCE));
       var bandDuration = Math.max(0.01, Math.min(0.9, BAND_CHARS / characterCount));
 
       for (var characterIndex = 0; characterIndex < characterCount; characterIndex++) {
-        var bandStart = (characterIndex / Math.max(characterCount - 1, 1)) * (1 - bandDuration);
+        var bandStart = (characterIndex / Math.max(characterCount - 1, 1)) * Math.max(0, 1 - 2 * bandDuration);
         var reveal = Math.max(0, Math.min(1, (progress - bandStart) / bandDuration));
         var trail = Math.max(0, Math.min(1, (progress - bandStart - bandDuration) / bandDuration));
         var color = cssColor(mix(mix(GREY, MUSTARD, reveal), BLACK, smooth(trail)));
@@ -145,7 +141,9 @@ export const scrollFillTextScript = String.raw`(function () {
       }
     }
 
-    if (active) requestAnimationFrame(frame);
+    // Keep sampling while the smooth-scroll transform is still moving, even
+    // after native scroll events stop firing.
+    if (active || moving) requestAnimationFrame(frame);
     else running = false;
   }
 
