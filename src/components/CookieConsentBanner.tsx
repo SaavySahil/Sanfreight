@@ -1,7 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState, useSyncExternalStore } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
+import Script from "next/script";
 import styles from "./CookieConsentBanner.module.css";
 
 type CookiePreferences = {
@@ -20,6 +21,10 @@ const EMPTY_PREFERENCES: CookiePreferences = {
   analytics: false,
   marketing: false,
 };
+const CLOUDFLARE_WEB_ANALYTICS_TOKEN = "05108d1f8cbd4a5daa7fa31fcb854888";
+const CLOUDFLARE_WEB_ANALYTICS_CONFIG = JSON.stringify({
+  token: CLOUDFLARE_WEB_ANALYTICS_TOKEN,
+});
 
 function subscribeToPreferences(onChange: () => void) {
   window.addEventListener("storage", onChange);
@@ -51,26 +56,12 @@ function getPreferencesSnapshot() {
   return EMPTY_SNAPSHOT;
 }
 
-function getServerPreferencesSnapshot() {
-  return LOADING_SNAPSHOT;
-}
-
-function subscribeToFooter(onChange: () => void) {
-  const observer = new MutationObserver(onChange);
-  observer.observe(document.body, { childList: true, subtree: true });
-  return () => observer.disconnect();
-}
-
 function getFooterTarget() {
   return (
     document.querySelector<HTMLElement>("#footer .bottom .right .links") ??
     document.querySelector<HTMLElement>("#footer .bottom .right") ??
     document.querySelector<HTMLElement>("#footer .bottom")
   );
-}
-
-function getServerFooterTarget() {
-  return null;
 }
 
 function parsePreferences(snapshot: string): CookiePreferences | null {
@@ -108,23 +99,31 @@ function Arrow() {
 }
 
 export default function CookieConsentBanner() {
-  const preferenceSnapshot = useSyncExternalStore(
-    subscribeToPreferences,
-    getPreferencesSnapshot,
-    getServerPreferencesSnapshot,
-  );
-  const footerTarget = useSyncExternalStore(
-    subscribeToFooter,
-    getFooterTarget,
-    getServerFooterTarget,
-  );
+  const [preferenceSnapshot, setPreferenceSnapshot] = useState(LOADING_SNAPSHOT);
+  const [footerTarget, setFooterTarget] = useState<HTMLElement | null>(null);
   const preferences = parsePreferences(preferenceSnapshot) ?? EMPTY_PREFERENCES;
   const ready = preferenceSnapshot !== LOADING_SNAPSHOT;
   const [dismissed, setDismissed] = useState(false);
   const [draft, setDraft] = useState<CookiePreferences>(EMPTY_PREFERENCES);
   const [dialogOpen, setDialogOpen] = useState(false);
   const dialogRef = useRef<HTMLDialogElement>(null);
+  const previousAnalyticsChoice = useRef<boolean | null>(null);
   const bannerVisible = ready && !parsePreferences(preferenceSnapshot) && !dismissed;
+
+  useEffect(() => {
+    const refresh = () => setPreferenceSnapshot(getPreferencesSnapshot());
+    refresh();
+    return subscribeToPreferences(refresh);
+  }, []);
+
+  useEffect(() => {
+    const refreshFooter = () => setFooterTarget(getFooterTarget());
+    refreshFooter();
+
+    const observer = new MutationObserver(refreshFooter);
+    observer.observe(document.body, { childList: true, subtree: true });
+    return () => observer.disconnect();
+  }, []);
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -133,6 +132,17 @@ export default function CookieConsentBanner() {
     if (dialogOpen && !dialog.open) dialog.showModal();
     if (!dialogOpen && dialog.open) dialog.close();
   }, [dialogOpen]);
+
+  useEffect(() => {
+    if (!ready) return;
+
+    const previouslyAllowed = previousAnalyticsChoice.current;
+    previousAnalyticsChoice.current = preferences.analytics;
+
+    // The analytics beacon patches browser navigation APIs after it loads.
+    // Reload after revocation to end that runtime as well as stop future loads.
+    if (previouslyAllowed && !preferences.analytics) window.location.reload();
+  }, [ready, preferences.analytics]);
 
   function saveChoice(choice: CookiePreferences) {
     savePreferences(choice);
@@ -148,6 +158,16 @@ export default function CookieConsentBanner() {
 
   return (
     <>
+      {preferences.analytics ? (
+        <Script
+          id="sanfreight-cloudflare-web-analytics"
+          src="https://static.cloudflareinsights.com/beacon.min.js"
+          type="module"
+          data-cf-beacon={CLOUDFLARE_WEB_ANALYTICS_CONFIG}
+          strategy="afterInteractive"
+        />
+      ) : null}
+
       {bannerVisible ? (
         <section className={styles.banner} aria-label="Cookie preferences">
           <button

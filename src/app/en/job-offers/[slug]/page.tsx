@@ -6,7 +6,7 @@ import { getJobBySlug, type Job } from "@/lib/api";
 import PageTransition from "@/components/PageTransition";
 import { withSolutionsNav } from "@/lib/solutionsNavMarkup";
 import teamMembers from "@/app/teamMembers.json";
-import { escapeHtml, splitBullets } from "@/lib/legacyRender";
+import { escapeHtml, removeEmbeddedScripts, splitBullets } from "@/lib/legacyRender";
 
 export const revalidate = 60;
 
@@ -164,7 +164,7 @@ export default async function JobDetailPage({ params }: PageProps) {
     return (
       <>
         <PageTransition bodyClass={base.bodyClass} teamMembers={teamMembers} />
-        <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: withSolutionsNav(finalHtml) }} />
+        <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: removeEmbeddedScripts(withSolutionsNav(finalHtml)) }} />
         <Script src="/js/email-decode.min.js" strategy="afterInteractive" />
         <Script src="/js/app-16e2282a.js" strategy="afterInteractive" />
       </>
@@ -180,7 +180,7 @@ export default async function JobDetailPage({ params }: PageProps) {
       <PageTransition bodyClass={legacy.bodyClass} teamMembers={teamMembers} />
       <div
         suppressHydrationWarning={true}
-        dangerouslySetInnerHTML={{ __html: withSolutionsNav(legacy.bodyHtml) }}
+        dangerouslySetInnerHTML={{ __html: removeEmbeddedScripts(withSolutionsNav(legacy.bodyHtml)) }}
       />
       <Script src="/js/email-decode.min.js" strategy="afterInteractive" />
       <Script src="/js/app-16e2282a.js" strategy="afterInteractive" />

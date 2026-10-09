@@ -55,9 +55,13 @@ export default function Home() {
   const teamSection = '<div class="module module-team-slideshow"';
   const previousStart = homepageHtml.indexOf(previousSection);
   const teamStart = homepageHtml.indexOf(teamSection, previousStart);
-  const bodyHtml = previousStart >= 0 && teamStart > previousStart
+  const htmlWithGlobe = previousStart >= 0 && teamStart > previousStart
     ? `${homepageHtml.slice(0, previousStart)}<div id="sf-image-globe-root" data-headercolor="light-transparent"></div>${homepageHtml.slice(teamStart)}`
     : homepageHtml.replace(teamSection, `<div id="sf-image-globe-root" data-headercolor="light-transparent"></div>${teamSection}`);
+  const sfFillScript = htmlWithGlobe.match(
+    /<script\b(?=[^>]*\bid=["']sf-fill-script["'])[^>]*>([\s\S]*?)<\/script\s*>/i,
+  )?.[1] ?? "";
+  const bodyHtml = htmlWithGlobe.replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi, "");
 
   return (
     <>
@@ -75,6 +79,13 @@ export default function Home() {
       {/* Load core scripts */}
       <Script src="/js/email-decode.min.js" strategy="afterInteractive" />
       <Script src="/js/app-16e2282a.js" strategy="afterInteractive" />
+      {sfFillScript && (
+        <Script
+          id="sf-fill-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: sfFillScript }}
+        />
+      )}
     </>
   );
 }

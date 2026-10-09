@@ -6,6 +6,7 @@ import PageTransition from "@/components/PageTransition";
 import NetworkGlobe from "@/components/NetworkGlobe";
 import { withAboutGlobeMount } from "@/lib/aboutGlobeMarkup";
 import { withSolutionsNav } from "@/lib/solutionsNavMarkup";
+import { extractSanfreightFillScript, removeEmbeddedScripts } from "@/lib/legacyRender";
 import "./network-explorer.css";
 import teamMembers from "../teamMembers.json";
 
@@ -95,6 +96,7 @@ export default async function DynamicPage({ params }: PageProps) {
   const slug = resolvedParams.slug;
   const data = getPageData(slug);
   const isAbout = slug.join("/") === "about" || slug.join("/") === "en/about";
+  const sfFillScript = extractSanfreightFillScript(data.bodyHtml);
 
   return (
     <>
@@ -103,11 +105,20 @@ export default async function DynamicPage({ params }: PageProps) {
       <div
         suppressHydrationWarning={true}
         dangerouslySetInnerHTML={{
-          __html: withSolutionsNav(isAbout ? withAboutGlobeMount(data.bodyHtml) : data.bodyHtml),
+          __html: removeEmbeddedScripts(
+            withSolutionsNav(isAbout ? withAboutGlobeMount(data.bodyHtml) : data.bodyHtml),
+          ),
         }}
       />
       <Script src="/js/email-decode.min.js" strategy="afterInteractive" />
       <Script src="/js/app-16e2282a.js" strategy="afterInteractive" />
+      {sfFillScript ? (
+        <Script
+          id="sanfreight-fill-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: sfFillScript }}
+        />
+      ) : null}
     </>
   );
 }

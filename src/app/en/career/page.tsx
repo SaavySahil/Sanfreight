@@ -5,7 +5,7 @@ import PageTransition from "@/components/PageTransition";
 import { withSolutionsNav } from "@/lib/solutionsNavMarkup";
 import teamMembers from "../../teamMembers.json";
 import { getJobs, type Job } from "@/lib/api";
-import { escapeHtml } from "@/lib/legacyRender";
+import { escapeHtml, extractSanfreightFillScript, removeEmbeddedScripts } from "@/lib/legacyRender";
 
 export const metadata = {
   title: "Career - Sanfreight",
@@ -75,13 +75,21 @@ export default async function CareerPage() {
   const suffix = html.slice(lastCardEndIdx);
   const cardsHtml = jobs.map(renderCard).join("");
   const finalHtml = prefix + cardsHtml + suffix;
+  const sfFillScript = extractSanfreightFillScript(finalHtml);
 
   return (
     <>
       <PageTransition bodyClass={base.bodyClass} teamMembers={teamMembers} />
-      <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: withSolutionsNav(finalHtml) }} />
+      <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: removeEmbeddedScripts(withSolutionsNav(finalHtml)) }} />
       <Script src="/js/email-decode.min.js" strategy="afterInteractive" />
       <Script src="/js/app-16e2282a.js" strategy="afterInteractive" />
+      {sfFillScript ? (
+        <Script
+          id="sanfreight-fill-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: sfFillScript }}
+        />
+      ) : null}
     </>
   );
 }

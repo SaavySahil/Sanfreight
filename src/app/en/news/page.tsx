@@ -5,7 +5,7 @@ import PageTransition from "@/components/PageTransition";
 import { withSolutionsNav } from "@/lib/solutionsNavMarkup";
 import teamMembers from "../../teamMembers.json";
 import { getArticles, type Article } from "@/lib/api";
-import { escapeHtml, formatDotDate } from "@/lib/legacyRender";
+import { escapeHtml, formatDotDate, removeEmbeddedScripts } from "@/lib/legacyRender";
 
 export const metadata = {
   title: "News - Sanfreight",
@@ -99,7 +99,7 @@ export default async function NewsPage() {
   return (
     <>
       <PageTransition bodyClass={base.bodyClass} teamMembers={teamMembers} />
-      <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: withSolutionsNav(finalHtml) }} />
+      <div suppressHydrationWarning={true} dangerouslySetInnerHTML={{ __html: removeEmbeddedScripts(withSolutionsNav(finalHtml)) }} />
       <Script src="/js/email-decode.min.js" strategy="afterInteractive" />
       <Script src="/js/app-16e2282a.js" strategy="afterInteractive" />
     </>
