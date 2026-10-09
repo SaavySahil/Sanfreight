@@ -845,3 +845,47 @@ img[src^="/images/sanfreight-logo-final-"] {
   object-fit: contain !important;
   object-view-box: none !important;
 }
+
+/* Certificate artwork is supplied as white marks with transparent padding. */
+.module-text-and-caption .sf-certificate-logo-list {
+  display: grid !important;
+  grid-auto-flow: row !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  align-items: center !important;
+  justify-content: center;
+  width: min(90vw, 900px);
+  margin-right: auto;
+  margin-left: auto;
+  gap: 28px 32px !important;
+}
+
+.module-text-and-caption .sf-certificate-logo-list img {
+  display: block;
+  width: 100%;
+  max-width: 138px;
+  height: 56px;
+  margin-right: auto;
+  margin-left: auto;
+  object-fit: contain;
+  object-position: center;
+  filter: brightness(0);
+}
+
+@media (max-width: 959px) {
+  .module-text-and-caption .sf-certificate-logo-list {
+    width: min(88vw, 640px);
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 26px 24px !important;
+  }
+}
+
+@media (max-width: 599px) {
+  .module-text-and-caption .sf-certificate-logo-list {
+    width: calc(100% - 32px);
+    gap: 22px 12px !important;
+  }
+
+  .module-text-and-caption .sf-certificate-logo-list img {
+    height: 48px;
+  }
+}
