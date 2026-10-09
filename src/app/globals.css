@@ -846,46 +846,94 @@ img[src^="/images/sanfreight-logo-final-"] {
   object-view-box: none !important;
 }
 
-/* Certificate artwork is supplied as white marks with transparent padding. */
+/* The ESG certificates use the same continuous marquee motion as the homepage hero. */
 .module-text-and-caption .sf-certificate-logo-list {
-  display: grid !important;
-  grid-auto-flow: row !important;
-  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
-  align-items: center !important;
-  justify-content: center;
+  display: block !important;
   width: min(90vw, 900px);
   margin-right: auto;
   margin-left: auto;
-  gap: 28px 32px !important;
+  overflow: hidden;
 }
 
-.module-text-and-caption .sf-certificate-logo-list img {
+.module-text-and-caption .sf-certificate-logo-track {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  animation: sf-certificate-marquee 22s linear infinite;
+  will-change: transform;
+}
+
+.module-text-and-caption .sf-certificate-logo-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: clamp(24px, 3vw, 48px);
+  padding-right: clamp(24px, 3vw, 48px);
+}
+
+.module-text-and-caption .sf-certificate-logo-group img {
   display: block;
-  width: 100%;
-  max-width: 138px;
+  flex: 0 0 auto;
+  width: clamp(100px, 11vw, 138px);
   height: 56px;
-  margin-right: auto;
-  margin-left: auto;
   object-fit: contain;
   object-position: center;
   filter: brightness(0);
 }
 
-@media (max-width: 959px) {
-  .module-text-and-caption .sf-certificate-logo-list {
-    width: min(88vw, 640px);
-    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-    gap: 26px 24px !important;
-  }
+@keyframes sf-certificate-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 @media (max-width: 599px) {
   .module-text-and-caption .sf-certificate-logo-list {
     width: calc(100% - 32px);
-    gap: 22px 12px !important;
   }
 
-  .module-text-and-caption .sf-certificate-logo-list img {
+  .module-text-and-caption .sf-certificate-logo-group,
+  .module-text-and-caption .sf-certificate-logo-group[aria-hidden="true"] {
+    gap: 18px;
+    padding-right: 18px;
+  }
+
+  .module-text-and-caption .sf-certificate-logo-group img {
+    width: 105px;
     height: 48px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .module-text-and-caption .sf-certificate-logo-list {
+    overflow: visible;
+  }
+
+  .module-text-and-caption .sf-certificate-logo-track {
+    width: 100%;
+    animation: none;
+    will-change: auto;
+  }
+
+  .module-text-and-caption .sf-certificate-logo-group:not([aria-hidden="true"]) {
+    display: grid;
+    width: 100%;
+    padding: 0;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    justify-items: center;
+    gap: 28px 24px;
+  }
+
+  .module-text-and-caption .sf-certificate-logo-group[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) and (max-width: 959px) {
+  .module-text-and-caption .sf-certificate-logo-group:not([aria-hidden="true"]) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .module-text-and-caption .sf-certificate-logo-group img {
+    max-width: 100%;
   }
 }

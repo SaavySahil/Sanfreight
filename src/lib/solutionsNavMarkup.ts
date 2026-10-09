@@ -73,12 +73,13 @@ export function withSolutionsNav(html: string): string {
     result = result.replaceAll(missing, fallback);
   }
   if (result.includes('/images/certificates/1.png')) {
-    const logos = certificateLogos
+    const logoImages = certificateLogos
       .map(([src, crop]) => `<img src="${src}" alt="" aria-hidden="true" loading="lazy" decoding="async" style="object-view-box:${crop};"/>`)
       .join("");
+    const logos = `<div class="sf-certificate-logo-group">${logoImages}</div><div class="sf-certificate-logo-group" aria-hidden="true">${logoImages}</div>`;
     result = result.replace(
       /<div class="listImage"([^>]*)>[\s\S]*?<\/div>/,
-      (_match, attributes: string) => `<div class="listImage sf-certificate-logo-list"${attributes} role="group" aria-label="Certifications and logistics memberships">${logos}</div>`,
+      (_match, attributes: string) => `<div class="listImage sf-certificate-logo-list"${attributes} role="group" aria-label="Certifications and logistics memberships"><div class="sf-certificate-logo-track">${logos}</div></div>`,
     );
   }
   const esgCopy: Array<[string, string]> = [
