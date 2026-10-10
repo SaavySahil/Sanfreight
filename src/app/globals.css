@@ -367,6 +367,18 @@ body.sf-story-page .sf-logo {
   height: 33px !important;
 }
 
+@media (min-width: 960px) {
+  body.sf-story-page .sf-logo-link {
+    width: 132px !important;
+    height: 36px !important;
+  }
+
+  body.sf-story-page .sf-logo {
+    width: 132px !important;
+    height: 36px !important;
+  }
+}
+
 /* Homepage "Our Clients" marquee: tighten the gap between logos on mobile
    only (desktop spacing set inline via .sf-track img { margin: 0 64px }
    stays untouched). */
@@ -774,6 +786,20 @@ h3.title.text-black {
   transform-origin: left;
 }
 
+/* Match the Story page logo on tablet-width navigation; keep phone sizing as-is. */
+@media (min-width: 960px) and (max-width: 1159px) {
+  .sf-logo-link {
+    width: 132px !important;
+    height: 36px !important;
+    margin: 16px 20px !important;
+  }
+
+  .sf-logo {
+    width: 132px;
+    height: 36px;
+  }
+}
+
 /* Desktop typography density: equivalent to the text sizing seen at 80%
    browser zoom, without scaling layouts, media, viewport units, or controls. */
 @media (min-width: 1160px) {
@@ -783,14 +809,14 @@ h3.title.text-black {
   }
 
   .sf-logo-link {
-    width: 117px !important;
-    height: 32px !important;
-    margin: 13px 16px !important;
+    width: 132px !important;
+    height: 36px !important;
+    margin: 16px 20px !important;
   }
 
   .sf-logo {
-    width: 117px;
-    height: 32px;
+    width: 132px;
+    height: 36px;
   }
 
   .cta-custom,

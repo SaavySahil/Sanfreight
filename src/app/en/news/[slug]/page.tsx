@@ -6,7 +6,13 @@ import PageTransition from "@/components/PageTransition";
 import { withSolutionsNav } from "@/lib/solutionsNavMarkup";
 import teamMembers from "../../../teamMembers.json";
 import { getArticleBySlug, type Article } from "@/lib/api";
-import { formatLongDate, formatSlashDate, removeEmbeddedScripts } from "@/lib/legacyRender";
+import {
+  escapeHtml,
+  formatLongDate,
+  formatSlashDate,
+  removeEmbeddedScripts,
+  safeArticleImageUrl,
+} from "@/lib/legacyRender";
 
 export const revalidate = 60;
 
@@ -22,17 +28,6 @@ interface LegacyPageData {
 // Reference template: one of the real migrated articles. Every article
 // detail page shares the exact same site markup/CSS (hero, infos, body,
 // "Latest news" widget) — only these dynamic fields differ per article.
-const REFERENCE_TEMPLATE_PATH = [
-  "src",
-  "content",
-  "pages",
-  "en",
-  "2026",
-  "06",
-  "09",
-  "logistics-control-towers-smart-networks-global-trade",
-  "page.json",
-];
 const OLD_TITLE =
   "The Rise of Logistics Control Towers: Building Smart Networks for Unpredictable Global Trade";
 const OLD_IMG = "/images/news-blog4.webp";
@@ -41,18 +36,29 @@ const OLD_PUBLISHED = "09/06/2026";
 const OLD_CATEGORY = "Technology &amp; Operations";
 
 function getReferenceTemplate(): LegacyPageData {
-  const filePath = path.join(process.cwd(), ...REFERENCE_TEMPLATE_PATH);
+  const filePath = path.join(
+    process.cwd(),
+    "src",
+    "content",
+    "pages",
+    "en",
+    "2026",
+    "06",
+    "09",
+    "logistics-control-towers-smart-networks-global-trade",
+    "page.json",
+  );
   return JSON.parse(fs.readFileSync(filePath, "utf-8"));
 }
 
 function renderArticleHtml(article: Article, base: LegacyPageData): string {
   let html = base.bodyHtml;
 
-  const newTitle = article.title.replace(/&/g, "&amp;");
-  const newImg = article.thumbnail || OLD_IMG;
+  const newTitle = escapeHtml(article.title);
+  const newImg = escapeHtml(safeArticleImageUrl(article.thumbnail) || OLD_IMG);
   const newHeroDate = formatLongDate(article.published_at) || OLD_HERO_DATE;
   const newPublished = formatSlashDate(article.published_at) || OLD_PUBLISHED;
-  const newCategory = article.category ? article.category.replace(/&/g, "&amp;") : "";
+  const newCategory = article.category ? escapeHtml(article.category) : "";
 
   html = html.split(OLD_TITLE).join(newTitle);
   html = html.split(OLD_IMG).join(newImg);

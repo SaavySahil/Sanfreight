@@ -8,6 +8,7 @@ import CertificateCarouselPortal from "@/components/CertificateCarouselPortal";
 import { withAboutGlobeMount } from "@/lib/aboutGlobeMarkup";
 import { withSolutionsNav } from "@/lib/solutionsNavMarkup";
 import { extractSanfreightFillScript, removeEmbeddedScripts } from "@/lib/legacyRender";
+import { scrollFillPreserveStyle } from "@/lib/scrollFillTextScript";
 import "./network-explorer.css";
 import teamMembers from "../teamMembers.json";
 
@@ -98,19 +99,23 @@ export default async function DynamicPage({ params }: PageProps) {
   const data = getPageData(slug);
   const isAbout = slug.join("/") === "about" || slug.join("/") === "en/about";
   const isEsg = slug.join("/") === "esg" || slug.join("/") === "en/esg";
-  const sfFillScript = extractSanfreightFillScript(data.bodyHtml);
+  const pageHtml = withSolutionsNav(
+    isAbout ? withAboutGlobeMount(data.bodyHtml) : data.bodyHtml,
+    isEsg,
+  );
+  const sfFillScript = extractSanfreightFillScript(pageHtml);
+  const hasPreservedFillTarget = /\bdata-sf-fill-preserve(?:\s|=|>)/i.test(pageHtml);
 
   return (
     <>
       <PageTransition bodyClass={data.bodyClass} teamMembers={teamMembers} />
       {isAbout && <NetworkGlobe />}
       {isEsg && <CertificateCarouselPortal key={slug.join("/")} />}
+      {hasPreservedFillTarget && <style id="sanfreight-preserved-scroll-fill-style">{scrollFillPreserveStyle}</style>}
       <div
         suppressHydrationWarning={true}
         dangerouslySetInnerHTML={{
-          __html: removeEmbeddedScripts(
-            withSolutionsNav(isAbout ? withAboutGlobeMount(data.bodyHtml) : data.bodyHtml, isEsg),
-          ),
+          __html: removeEmbeddedScripts(pageHtml),
         }}
       />
       <Script src="/js/email-decode.min.js" strategy="afterInteractive" />

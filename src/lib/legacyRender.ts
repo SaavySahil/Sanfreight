@@ -8,6 +8,20 @@ export function escapeHtml(input: string): string {
     .replace(/"/g, "&quot;");
 }
 
+export function safeArticleImageUrl(input: string | null | undefined): string | null {
+  const candidate = input?.trim();
+  if (!candidate) return null;
+  if (/^https?:\/\//i.test(candidate)) return candidate;
+  if (
+    candidate.startsWith("/") &&
+    !candidate.startsWith("//") &&
+    !candidate.includes("\\")
+  ) {
+    return candidate;
+  }
+  return null;
+}
+
 /**
  * Legacy page exports contain their own scripts, including tracking snippets
  * injected by the source host. Render their markup only; app scripts are
@@ -21,7 +35,8 @@ export function removeEmbeddedScripts(html: string): string {
 /** Preserve the site's own fill-in markup helper while discarding scraped host scripts. */
 export function extractSanfreightFillScript(html: string): string {
   const hasLegacyFillScript = /<script\b(?=[^>]*\bid=["']sf-fill-script["'])[^>]*>[\s\S]*?<\/script\s*>/i.test(html);
-  return hasLegacyFillScript ? scrollFillTextScript : "";
+  const hasPreservedFillTarget = /\bdata-sf-fill-preserve(?:\s|=|>)/i.test(html);
+  return hasLegacyFillScript || hasPreservedFillTarget ? scrollFillTextScript : "";
 }
 
 export function formatDotDate(dateStr: string | null): string {

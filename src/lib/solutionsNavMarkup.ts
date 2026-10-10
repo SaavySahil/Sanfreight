@@ -36,6 +36,24 @@ export function withFinalSanfreightLogo(html: string): string {
     .replaceAll('/images/sanfreight-logo-white-new.webp', '/images/sanfreight-logo-final-light.png');
 }
 
+export function markTextElement(html: string, content: string, tagName: string, fillEndColor?: "white"): string {
+  const contentIndex = html.indexOf(content);
+  if (contentIndex < 0) return html;
+
+  const openingStart = html.lastIndexOf(`<${tagName}`, contentIndex);
+  const openingEnd = html.indexOf(">", openingStart);
+  if (openingStart < 0 || openingEnd < 0 || openingEnd > contentIndex) return html;
+  let openingTag = html.slice(openingStart, openingEnd);
+  if (!/\btext-fill-scroll(?:\s|=|>)/i.test(openingTag)) openingTag += " text-fill-scroll";
+  if (!/\bdata-sf-fill-preserve(?:\s|=|>)/i.test(openingTag)) openingTag += ' data-sf-fill-preserve=""';
+  if (fillEndColor) {
+    openingTag = openingTag.replace(/\sdata-sf-fill-end="[^"]*"/i, "");
+    openingTag += ` data-sf-fill-end="${fillEndColor}"`;
+  }
+
+  return `${html.slice(0, openingStart)}${openingTag}${html.slice(openingEnd)}`;
+}
+
 export function withSolutionsNav(html: string, isEsgPage = false): string {
   const opening = '<div class="slideshow-wrapper embla__container">';
   const ending = '</div></div><div class="progress-w">';
@@ -46,7 +64,43 @@ export function withSolutionsNav(html: string, isEsgPage = false): string {
   // ESG is now a live route: restore its navigation links across desktop,
   // mobile and footer markup imported from the legacy page snapshots.
   let result = withFinalSanfreightLogo(html)
-    .replaceAll('data-disabled-href="/en/esg/"', 'href="/en/esg/"');
+    .replaceAll('data-disabled-href="/en/esg/"', 'href="/en/esg/"')
+    .replaceAll('href="/page-a-propos/"', 'href="/en/about/"');
+  // The legacy disclaimer nests its Continue button inside an empty anchor.
+  // Keep the button (the legacy script binds to .cta-small) and remove the
+  // invalid interactive wrapper.
+  result = result.replace(
+    /<a>\s*(<button\b(?=[^>]*class="[^"]*\bcta-small\b[^"]*")[^>]*>[\s\S]*?<span>\s*Continue\s*<\/span>[\s\S]*?<\/button>)\s*<\/a>/gi,
+    "$1",
+  );
+  // Drop the scraped real-estate project entry: that route belongs to the old
+  // Mimco site and has no Sanfreight destination.
+  result = result.replace(
+    /<li>\s*<a\b(?=[^>]*\bhref="\/real-estate\/realisations\/")[^>]*>[\s\S]*?<\/a>\s*<\/li>/g,
+    "",
+  );
+  const footerSolutionLinks = solutions
+    .map(([title, , , href]) => `<li><a href="${href}" class="footer-link"><span>${title}</span></a></li>`)
+    .join("");
+  result = result.replace(
+    /(<div class="group-w">\s*<div class="investment footer-link">\s*<span>Our solutions<\/span>\s*<\/div>\s*<ul>)[\s\S]*?(<\/ul>\s*<\/div>)/,
+    `$1${footerSolutionLinks}$2`,
+  );
+  result = result.replace(
+    /(<div id="menu-mobile"[\s\S]*?<ul class="header-capital pages">)([\s\S]*?)(<\/ul>)/,
+    (_match, menuOpen: string, menuItems: string, menuClose: string) => {
+      const updatedMenuItems = menuItems
+        .replace(
+          /<li>\s*<a\b(?=[^>]*\bclass="subpage-link")[^>]*>\s*News\s*<\/a>\s*<\/li>/,
+          "",
+        )
+        .replace(
+          /(<a\b(?=[^>]*\bclass="subpage-link")[^>]*>\s*)References(\s*<\/a>)/,
+          "$1Newsroom$2",
+        );
+      return `${menuOpen}${updatedMenuItems}${menuClose}`;
+    },
+  );
   result = result.replace(
     /<a\b([^>]*)>(\s*<span>Expertises<\/span>\s*)<\/a>/g,
     (_match, attributes: string, label: string) => {
@@ -95,6 +149,14 @@ export function withSolutionsNav(html: string, isEsgPage = false): string {
     ["Certificates of contribution", "Compliance credentials"],
   ];
   for (const [current, replacement] of esgCopy) result = result.replaceAll(current, replacement);
+  if (isEsgPage) {
+    result = markTextElement(
+      result,
+      "We believe responsible logistics is fundamental to creating lasting value for our customers, our people and the communities we operate in.",
+      "div",
+    );
+    result = markTextElement(result, "Our responsible logistics framework", "h2");
+  }
   const esgPrinciples = [
     [/(<p class="description"[^>]*>)For its future real estate development[\s\S]*?energy consumption of buildings\.(<\/p>)/, "We improve routing, cargo consolidation and resource use across our operations. By reducing avoidable movement and supporting efficient transport decisions, we aim to limit environmental impact while maintaining dependable service."],
     [/(<p class="description"[^>]*>)Sanfreight places people at the heart[\s\S]*?working conditions\.(<\/p>)/, "Our people and partners are central to every shipment. We promote safe working practices, continuous learning, respectful collaboration and clear communication across our offices, warehouses and international logistics network."],
@@ -178,7 +240,8 @@ export function withSolutionsNav(html: string, isEsgPage = false): string {
         let intro = page.slice(textModuleStart, cardsModuleStart);
         intro = intro.replace(
           /(<div class="content" data-animation="reveal-words">)[\s\S]*?(<\/div>)/,
-          "$1Our teams coordinate freight, customs, storage and specialized cargo to make complex supply chains more dependable.$2"
+          (_match, opening: string, closing: string) =>
+            `${opening.replace(/>$/, ' text-fill-scroll data-sf-fill-preserve="">')}Our teams coordinate freight, customs, storage and specialized cargo to make complex supply chains more dependable.${closing}`
         );
         intro = intro.replace(
           /<p data-animation="reveal-lines">[\s\S]*?<\/p>/,

@@ -5,7 +5,12 @@ import PageTransition from "@/components/PageTransition";
 import { withSolutionsNav } from "@/lib/solutionsNavMarkup";
 import teamMembers from "../../teamMembers.json";
 import { getArticles, type Article } from "@/lib/api";
-import { escapeHtml, formatDotDate, removeEmbeddedScripts } from "@/lib/legacyRender";
+import {
+  escapeHtml,
+  formatDotDate,
+  removeEmbeddedScripts,
+  safeArticleImageUrl,
+} from "@/lib/legacyRender";
 
 export const metadata = {
   title: "News - Sanfreight",
@@ -38,7 +43,7 @@ function getBaseTemplate(): LegacyPageData {
 
 function renderCard(article: Article): string {
   const href = `/en/news/${encodeURIComponent(article.slug)}`;
-  const img = article.thumbnail || "";
+  const img = safeArticleImageUrl(article.thumbnail) || "";
   const dateLabel = formatDotDate(article.published_at);
   const category = article.category || "";
   return `

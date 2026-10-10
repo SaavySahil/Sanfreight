@@ -1,9 +1,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import Script from "next/script";
-import { withFinalSanfreightLogo, withSolutionsNav } from "@/lib/solutionsNavMarkup";
+import { markTextElement, withFinalSanfreightLogo, withSolutionsNav } from "@/lib/solutionsNavMarkup";
 import type { LogisticsServiceContent } from "@/lib/logisticsServiceContent";
 import PageTransition from "@/components/PageTransition";
+import { scrollFillPreserveStyle, scrollFillTextScript } from "@/lib/scrollFillTextScript";
 
 function matchingElementEnd(html: string, start: number, tagName: string): number {
   const tags = new RegExp(`<\\/?${tagName}\\b[^>]*>`, "gi");
@@ -119,6 +120,7 @@ function preparePage(service: LogisticsServiceContent) {
   for (const [current, replacement] of copyReplacements) {
     body = replaceRequired(body, current, replacement);
   }
+  body = markTextElement(body, service.detailHeading, "h2", "white");
 
   body = replaceRequired(body, "Au plus proche de <span>vos besoins</span>", service.showcaseHeading);
   body = replaceRequired(
@@ -292,6 +294,7 @@ export default function LogisticsServicePage({
           display: none !important;
         }
       `}</style>
+      <style id="sanfreight-preserved-scroll-fill-style">{scrollFillPreserveStyle}</style>
       <div id="logistics-platform-page" suppressHydrationWarning dangerouslySetInnerHTML={{ __html: body }} />
       <Script
         id="sanfreight-service-contact-cta"
@@ -320,6 +323,11 @@ export default function LogisticsServicePage({
       <Script src="/scraped-preview/js/email-decode.min.js" strategy="afterInteractive" />
       <Script src="/js/app-16e2282a.js" strategy="afterInteractive" />
       <Script src="/scraped-preview/js/app-yqyc1a_n.js" type="module" strategy="afterInteractive" />
+      <Script
+        id="sanfreight-service-scroll-fill"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{ __html: scrollFillTextScript }}
+      />
     </>
   );
 }
