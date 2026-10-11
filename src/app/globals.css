@@ -871,3 +871,85 @@ img[src^="/images/sanfreight-logo-final-"] {
   object-fit: contain !important;
   object-view-box: none !important;
 }
+
+/* Keep job detail copy comfortable to read without changing other pages. */
+body.single-job-offers .module-about .dflex .right .description,
+body.single-job-offers .module-about .dflex .right .description p {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+}
+
+@media (min-width: 960px) {
+  body.single-job-offers .module-about .dflex .right .description,
+  body.single-job-offers .module-about .dflex .right .description p {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+}
+
+body.single-job-offers .module-lists .information-card-wrapper .information-card .right .options-texts-w .options-texts {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+/* Use a consistent 16px minimum for readable copy while keeping compact UI text intact. */
+.ts-xs,
+.reference-card .description,
+.new-container .dflex .right-container .new-description-wrapper,
+.partial-job .dflex .right-container .preview-wrapper,
+.partial-localisations .inner .localisation-card .address,
+.partial-localisations .inner .localisation-card .email,
+.module-homepage-intro .embla .slideshow-container .slide .slide-content .slide-info .information,
+.module-homepage-intro .embla .mobile-information,
+.module-homepage-interactive-image .inner .foreground .wrapper .description-wrapper,
+.module-expandable-list .content-wrapper .list-content .list-item .content-trigger .right .list-description .list-description-wrapper,
+.module-folding-list .content .item-w .answer-w .answer-c .answer,
+.module-key-numbers .dflex .annotation-wrapper,
+.module-projects-details .project-details .parts .bullet-list li span,
+.module-text-and-description .description-wrapper .right .description,
+.module-lists .inner .information-card-wrapper .information-card .right .options-texts-w .options-texts,
+.module-features .bottom .content-container .content div,
+.module-features-2 .bottom .content-container .content div,
+.module-disclaimer .content .right .description,
+.module-disclaimer .content .right .disclaimer,
+.module-disclaimer-popin .disclaimer .form .row .form-select .label,
+.module-disclaimer-popin .disclaimer .form .hint,
+.module-contact-popin .content .form .contacts-anchor,
+.module-references-hero .bottom .infos-content .left .subtitle,
+.module-references-hero .bottom .infos-content .right .infos .project .description,
+.module-apply-popin .content .wrapper .form .bottom .disclaimer-w,
+.module-expertises-list .expertises-details .parts .bullet-list li span,
+.module-expertises-slideshow .wrapper .left ul li p,
+.module-expertises-slideshow .wrapper .right .slide .description,
+.module-investment-stages .slide .content .bottom .table-w .line-w .text,
+.module-investment-stages .slide .content .bottom .description,
+.card-and-text .text-wrapper-inside p,
+#header .header-slideshow .embla .slideshow-wrapper .slide .content .bottom-content p,
+#panel-navigation .inner ul li .description,
+#menu-desktop .panel-wrapper .panel .left .page-description {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+/* Footer navigation and utility links are readable at the same 16px size. */
+#footer .bottom .left,
+#footer .bottom .right,
+#footer .middle .left,
+#footer .middle .right .links a,
+#footer .bottom .footer-link,
+#footer .scroll-top span,
+#footer .copyright,
+#footer .bottom .left .cta-custom,
+#footer .middle .left .cta-custom,
+#footer a.cta-custom .cta-custom-content .cta-custom-wrapper .text,
+#footer button.cta-custom .cta-custom-content .cta-custom-wrapper .text {
+  font-size: 14px;
+}
+
+/* Match the live site's office contact sizing and line spacing. */
+#footer .partial-localisations .inner .localisation-card .address,
+#footer .partial-localisations .inner .localisation-card .address span,
+#footer .partial-localisations .inner .localisation-card .address a {
+  font-size: 0.875rem;
+  line-height: 1rem;
+}

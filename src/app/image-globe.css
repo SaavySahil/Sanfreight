@@ -43,7 +43,7 @@
 .sf-v8-office-card h2{font-size:27px}
 .sf-v8-office-card__type{font-size:10px}
 .sf-v8-office-card__city{font-size:13px}
-.sf-v8-office-card__copy{font-size:14px;line-height:1.46}
+.sf-v8-office-card__copy{font-size:16px;line-height:1.46}
 .sf-v8-office-card__meta{font-size:10px}
 @media(min-width:960px){.sf-v8-network-heading h2{font-size:4.5rem;line-height:4.75rem}}
 @media(max-width:959px){.sf-v8-network-map{min-height:640px}.sf-v8-network-heading{top:7%}.sf-v8-globe-stage>img{bottom:calc(40% - 64vw);width:175vw}.sf-v8-office-marker{transform:translate(-50%,-50%) scale(.9)}.sf-v8-office-card{top:auto!important;right:18px;bottom:70px;left:18px!important;width:auto;padding:20px}.sf-v8-office-card__close{display:none}.sf-v8-network-legend{bottom:28px;left:18px;gap:14px}.sf-v8-network-legend p:nth-child(3){display:none}.sf-v8-network-count{right:18px;bottom:27px}.sf-v8-office-card__copy{min-height:0}}
