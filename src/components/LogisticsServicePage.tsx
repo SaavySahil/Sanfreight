@@ -254,6 +254,14 @@ export default function LogisticsServicePage({
         #logistics-platform-page .module.projects-slideshow .slideshow-container .slide .project-card .project-image {
           border-radius: clamp(44px, 5vw, 75px) 3px clamp(44px, 5vw, 75px) 3px;
         }
+        /* Supporting section title: plain white. The scraped sheet colors it
+           brand gold and shades it with a gradient overlay (:after). */
+        #logistics-platform-page .module.invest .title {
+          color: var(--white);
+        }
+        #logistics-platform-page .module.invest .title:after {
+          content: none;
+        }
         #logistics-platform-page .sf-hero-title-break { display: none; }
         @media (min-width: 1160px) {
           #logistics-platform-page .module.hero.centered .main-title { max-width: 1100px !important; }
