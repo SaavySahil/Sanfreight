@@ -58,7 +58,7 @@ export function withSolutionsNav(html: string, isEsgPage = false): string {
   const opening = '<div class="slideshow-wrapper embla__container">';
   const ending = '</div></div><div class="progress-w">';
   const slides = solutions.map(([title, description, image, href]) =>
-    `<a class="slide embla__slide sf-solution-card-link" href="${href}" aria-label="Explore ${title} services" style="display:block;cursor:pointer;"><div class="image-wrapper"><img src="/images/${image}" class="picture image" loading="lazy" alt="" draggable="false"/></div><div class="content"><div class="top"><h3 class="title ts-xl">${title}</h3><p class="investment-description ts-xs">${description}</p></div><div class="bottom-content"><div><svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block;color:var(--black)"><path d="M3 11h12.17L11.59 7.41 13 6l6 6-6 6-1.41-1.41L15.17 13H3z"/></svg></div><p>SanFreight Logistics</p></div></div></a>`
+    `<a class="slide embla__slide sf-solution-card-link" href="${href}" aria-label="Explore ${title} services" style="display:block;cursor:pointer;"><div class="image-wrapper"><img src="/images/${image}" class="picture image" loading="lazy" alt="" draggable="false"/></div><div class="content"><div class="top"><h3 class="title ts-xl">${title}</h3><p class="investment-description ts-xs">${description}</p></div><div class="bottom-content"><div><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="display:block;color:var(--black)"><path d="M3 11h12.17L11.59 7.41 13 6l6 6-6 6-1.41-1.41L15.17 13H3z"/></svg></div><p>SanFreight Logistics</p></div></div></a>`
   ).join("");
 
   // ESG is now a live route: restore its navigation links across desktop,
