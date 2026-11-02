@@ -26,3 +26,13 @@
 @media (prefers-reduced-motion: reduce) {
   .module-key-numbers .sf-figure-reel { transition: none; }
 }
+/* Key Insights: KPI description under each number, fixed at 18px, left-aligned. */
+.module-key-numbers .dflex .content .text {
+  font-size: 18px;
+  text-align: left;
+}
+/* Sahil (3 Nov, final): Key Figures numbers and texts are LEFT-aligned
+   on desktop and mobile alike (supersedes the earlier centre-align ask). */
+.module-key-numbers .content .numberlist .number-wrapper .number {
+  text-align: left;
+}

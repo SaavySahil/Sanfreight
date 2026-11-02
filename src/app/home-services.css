@@ -102,11 +102,13 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
   flex: 0 0 38px;
   width: 38px;
   height: 32px;
   border-radius: 10px 0 10px 0;
-  background: var(--magic-mint-1, #ffcc00);
+  background: transparent;
+  border: 1px solid rgba(0,0,0,.1);
   color: var(--blue-1,#221d3e);
   font-size: 11px;
   font-weight: 600;
@@ -194,4 +196,10 @@
   height: 4px;
   background: var(--grey-1);
   pointer-events: none;
+}
+
+/* Homepage About: keep paragraph wrapping clean at every viewport —
+   "pretty" avoids stranded single words on the last line. */
+.module-homepage-about .dflex .right .description p {
+  text-wrap: pretty;
 }
